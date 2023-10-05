@@ -35,28 +35,28 @@ aufhbButton = ttk.Button(root, text="AUFHEBEN", padding=(50, 10), width=button_w
 aufhbButton.place(x=910, y=680)
 
 #Der links Pfeil
-linksPfeilBild = tk.PhotoImage(file="C:\\Users\\Alex\\Documents\\GitHub\\Schatten_ueber_Veridia\\Main\\Arrow_Left.png")
+linksPfeilBild = tk.PhotoImage(file="C:\\GitHub\\Schatten_ueber_Veridia\\Main\\Arrow_Left.png")
 lnkPfeil = ttk.Button(root, image=linksPfeilBild)
 lnkPfeil.place(x=18, y=350)
 
 #Der rechts Pfeil
-rechtsPfeilBild = tk.PhotoImage(file="C:\\Users\\Alex\\Documents\\GitHub\\Schatten_ueber_Veridia\\Main\\Arrow_Right.png")
+rechtsPfeilBild = tk.PhotoImage(file="C:\\GitHub\\Schatten_ueber_Veridia\\Main\\Arrow_Right.png")
 rchtsPfeil = ttk.Button(root, image=rechtsPfeilBild)
 rchtsPfeil.place(x=1200, y=350)
 
 #Der front Pfeil
-vorPfeilBild = tk.PhotoImage(file="C:\\Users\\Alex\\Documents\\GitHub\\Schatten_ueber_Veridia\\Main\\Arrow_Front.png")
+vorPfeilBild = tk.PhotoImage(file="C:\\GitHub\\Schatten_ueber_Veridia\\Main\\Arrow_Front.png")
 vorPfeil = ttk.Button(root, image=vorPfeilBild)
 vorPfeil.place(x=600, y=20)
 
 #Der return Pfeil
-returnPfeilBild = Image.open("C:\\Users\\Alex\\Documents\\GitHub\\Schatten_ueber_Veridia\\Main\\Arrow_Return.png")
+returnPfeilBild = Image.open("C:\\GitHub\\Schatten_ueber_Veridia\\Main\\Arrow_Return.png")
 photo = ImageTk.PhotoImage(returnPfeilBild)
 returnPfeil = ttk.Button(root, image=photo)
 returnPfeil.place(x=20, y=670)
 
 #Die Karte
-MapImage = tk.PhotoImage(file="C:\\Users\\Alex\\Documents\\GitHub\\Schatten_ueber_Veridia\\Main\\Map.png")
+MapImage = tk.PhotoImage(file="C:\\GitHub\\Schatten_ueber_Veridia\\Main\\Map.png")
 Map = ttk.Button(root, image=MapImage)
 Map.place(x=1250, y=20)
 
