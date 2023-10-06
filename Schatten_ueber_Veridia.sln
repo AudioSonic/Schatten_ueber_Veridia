@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Main", "Main.pyproj", "{6A43DC02-FBAA-494F-8A3E-A7935EA670C9}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Schatten_ueber_Veridia", "Schatten_ueber_Veridia.pyproj", "{1E129DB8-F1B4-49DB-9E51-6032BE24CE91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +11,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6A43DC02-FBAA-494F-8A3E-A7935EA670C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A43DC02-FBAA-494F-8A3E-A7935EA670C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E129DB8-F1B4-49DB-9E51-6032BE24CE91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E129DB8-F1B4-49DB-9E51-6032BE24CE91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DD7803E2-346C-4955-8A62-2595EC5A5E1F}
+		SolutionGuid = {10665FD4-78D2-4903-882D-F267C264DB6B}
 	EndGlobalSection
 EndGlobal
