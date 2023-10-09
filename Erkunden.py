@@ -8,14 +8,11 @@ def explore(root, parent_frame):
     for widget in parent_frame.winfo_children():
         widget.destroy()
   
-
-    # Erstellen Sie einen Stil f�r das Widget
+    #Erstellt einen Stil für die Schrift. In dem Fall Times New Roman
     style = ttk.Style()
+    style.configure("TNR.TLabel", font=("Times New Roman", 14))  
 
-    # �ndern Sie die Schriftart im Stil
-    style.configure("TNR.TLabel", font=("Times New Roman", 14))  # Hier wird die Schriftart auf Helvetica mit Gr��e 14 gesetzt
-
-    # Hintergrundbild einf�gen
+    # Hintergrundbild einfuegen
     bg_pfad = Image.open(Veridia)
     bg_image = ImageTk.PhotoImage(bg_pfad)
     bg_label = tk.Label(root, image=bg_image)
@@ -69,15 +66,13 @@ def explore(root, parent_frame):
     mb_Button = ttk.Button(root, image=mb_image)
     mb_Button.place(x=1250, y=20)
 
-    # Textfeld f�r die Ausgabe
-
+    # Textfeld fuer die Ausgabe
     text_output = tk.Text(root, height=6, width=90, wrap="none")
     text_output.place(x = 18, y = 470)
     text_output.config(state=tk.DISABLED)  # Sperrt das Textfeld
 
 
-    #Einf�gen und �ndern des Lauftext
-
+    #Einfuegen und aendern des Lauftext
     text_output.config(state=tk.NORMAL)
     text_output.insert(tk.END, "A\nB\nC\nD\nF\nG")
     text_output.config(state=tk.DISABLED)      
