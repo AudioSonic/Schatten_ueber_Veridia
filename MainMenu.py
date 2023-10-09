@@ -23,12 +23,19 @@ def mainMenu():
 
     def StartButtonClicked():
         # Blende den Button nach dem Klicken aus
-        StartButton.place_forget()  
+        StartButton.place_forget() 
+        hgLabel.place_forget()
+        pygame.mixer.music.stop()
         #Starte die "explore" Funktion aus der Erkunden Datei
         explore(root, content_frame)
 
     StartButton = tk.Button(root, text="SPIEL STARTEN", font=("Times New Roman", 16),command=StartButtonClicked)
     StartButton.place(x=550, y=670)
+    
+    hintergrund = Image.open(Veridia)
+    tk_image = ImageTk.PhotoImage(hintergrund)
+    hgLabel = tk.Label(root, image=tk_image)
+    hgLabel.place(x=250, y=100)
 
     root.mainloop()
 
