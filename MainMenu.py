@@ -14,7 +14,8 @@ def mainMenu():
     root.attributes("-fullscreen", False)
     pygame.init()
     
-    pygame.mixer.music.load("hintergrundmusik.mp3")
+    pygame.mixer.music.load("C:\GitHub\Schatten_ueber_Veridia\Audio\MainMenu.mp3")
+    pygame.mixer.music.play(-1)
 
     # Erstelle ein Frame, um den Inhalt der explore-Funktion anzuzeigen
     content_frame = tk.Frame(root, bg="#6B6B6B")
