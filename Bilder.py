@@ -1,6 +1,7 @@
 arrowFront = "C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\Arrow_Front.png"
 arrowLeft = "C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\Arrow_Left.png"
 arrowRight = "C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\Arrow_Right.png"
+arrowBack = "C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\Arrow_Back.png"
 arrowReturn = "C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\Arrow_Return.png"
 Brigitte = "C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\Brigitte.png"
 Ulrich = "C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\Ulrich.png"
