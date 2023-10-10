@@ -53,6 +53,7 @@ def explore(root, parent_frame):
         (3, 3): Veridia_20
     }
 
+    Miriam_Dialog = []
     def examine_1():
         Dialog.update_text(Veridia_1)
 
@@ -72,6 +73,8 @@ def explore(root, parent_frame):
         if tuple(pc_loc) in grid_actions:
             action = grid_actions[tuple(pc_loc)]
         Dialog.update_text(action)
+        
+
         
     def links():
         pc_loc[0] -= 1
@@ -96,8 +99,19 @@ def explore(root, parent_frame):
             if tuple(pc_loc) in grid_actions:
                 action = grid_actions[tuple(pc_loc)]
             Dialog.update_text(action)
+    def reset():
+            pc_loc[1] = 0
+            pc_loc[0] = 1
+            print(pc_loc)
+    
+            if tuple(pc_loc) in grid_actions:
+                action = grid_actions[tuple(pc_loc)]
+            Dialog.update_text(action)
 
-        
+    def Miriam():
+        if pc_loc == pc_loc[1, 1]:
+            Miriam_Dialog.append(Miriam_1)
+            print(Miriam_Dialog)
 
     # Setzt die Breite der Buttons fest
     button_width = 15
@@ -121,24 +135,30 @@ def explore(root, parent_frame):
     lp_pfad = Image.open(arrowLeft)
     lp_image = ImageTk.PhotoImage(lp_pfad)
     lp_Button = ttk.Button(root, image=lp_image, command=links)
-    lp_Button.place(x=18, y=350)
+    lp_Button.place(x=125, y=200)
 
     # Der rechts Pfeil
     rp_pfad = Image.open(arrowRight)
     rp_image = ImageTk.PhotoImage(rp_pfad)
     rp_Button = ttk.Button(root, image=rp_image, command=rechts)
-    rp_Button.place(x=1200, y=350)
+    rp_Button.place(x=1080, y=200)
 
     # Der front Pfeil
     vp_pfad = Image.open(arrowFront)
     vp_image = ImageTk.PhotoImage(vp_pfad)
     vp_Button = ttk.Button(root, image=vp_image, command=vor)
-    vp_Button.place(x=600, y=20)
+    vp_Button.place(x=600, y=10)
+    
+    # Der back Pfeil
+    zp_pfad = Image.open(arrowBack)
+    zp_image = ImageTk.PhotoImage(zp_pfad)
+    zp_Button = ttk.Button(root, image=zp_image, command=zurueck)
+    zp_Button.place(x=600, y=380)
 
     # Der return Pfeil
     rt_pfad = Image.open(arrowReturn)
     rt_image = ImageTk.PhotoImage(rt_pfad)
-    rt_Button = ttk.Button(root, image=rt_image, command=zurueck)
+    rt_Button = ttk.Button(root, image=rt_image, command=reset)
     rt_Button.place(x=20, y=670)
 
     # Der Button für die Karte
