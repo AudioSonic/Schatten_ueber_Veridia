@@ -5,11 +5,7 @@ from PIL import Image, ImageTk
 from Bilder import *
 from Dialoge import *
 from Dialogsystem import TextboxManager
-
-
-
-#Der Standort des Spielers. X - Y
-
+from Fight import Fight
 
 def explore(root, parent_frame):  
     for widget in parent_frame.winfo_children():
@@ -26,7 +22,6 @@ def explore(root, parent_frame):
     bg_label.place(x=253, y=18)
 
     # Die TextboxManager aus der Dialogsystem Datei
-    # Die TextboxManager aus der Dialogsystem Datei
     Dialog = TextboxManager(parent_frame)
     Dialog.update_text(Einleitung)
 
@@ -34,7 +29,7 @@ def explore(root, parent_frame):
     pc_loc = [1, 0]
 
     # Das Gitter-Wörterbuch, das Koordinaten mit Aktionen verknüpft
-    grid_actions = {
+    grid = {
         (0, 0): Brigitte_1,
         (0, 1): Veridia_6,
         (0, 2): Ulrich_1,
@@ -53,7 +48,6 @@ def explore(root, parent_frame):
         (3, 3): Veridia_20
     }
 
-    Miriam_Dialog = []
     def examine_1():
         Dialog.update_text(Veridia_1)
 
@@ -67,51 +61,51 @@ def explore(root, parent_frame):
         Dialog.update_text(Veridia_4)
 
     def vor():
-        pc_loc[1] += 1
-        print(pc_loc)
-    
-        if tuple(pc_loc) in grid_actions:
-            action = grid_actions[tuple(pc_loc)]
-        Dialog.update_text(action)
-        
-
-        
+        new_y = pc_loc[1] + 1
+        if (pc_loc[0], new_y) in grid:
+            pc_loc[1] = new_y
+            action = grid[(pc_loc[0], pc_loc[1])]
+            Dialog.update_text(action)
+        else:
+            Dialog.update_text("You cannot go further in this direction.")
+          
     def links():
-        pc_loc[0] -= 1
-        print(pc_loc)
-    
-        if tuple(pc_loc) in grid_actions:
-            action = grid_actions[tuple(pc_loc)]
-        Dialog.update_text(action)
+        new_x = pc_loc[0] - 1
+        if (new_x, pc_loc[1]) in grid:
+            pc_loc[0] = new_x
+            action = grid[(pc_loc[0], pc_loc[1])]
+            Dialog.update_text(action)
+        else:
+            Dialog.update_text("You cannot go further in this direction.")
     
     def rechts():
-        pc_loc[0] += 1
-        print(pc_loc)
-    
-        if tuple(pc_loc) in grid_actions:
-            action = grid_actions[tuple(pc_loc)]
-        Dialog.update_text(action)
+        new_x = pc_loc[0] + 1
+        if (new_x, pc_loc[1]) in grid:
+            pc_loc[0] = new_x
+            action = grid[(pc_loc[0], pc_loc[1])]
+            Dialog.update_text(action)
+        else:
+            Dialog.update_text("You cannot go further in this direction.")
         
     def zurueck():
-            pc_loc[1] -= 1
-            print(pc_loc)
-    
-            if tuple(pc_loc) in grid_actions:
-                action = grid_actions[tuple(pc_loc)]
+        new_y = pc_loc[1] - 1
+        if (pc_loc[0], new_y) in grid:
+            pc_loc[1] = new_y
+            action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+        else:
+            Dialog.update_text("You cannot go further in this direction.")
     def reset():
             pc_loc[1] = 0
             pc_loc[0] = 1
             print(pc_loc)
     
-            if tuple(pc_loc) in grid_actions:
-                action = grid_actions[tuple(pc_loc)]
+            if tuple(pc_loc) in grid:
+                action = grid[tuple(pc_loc)]
             Dialog.update_text(action)
-
-    def Miriam():
-        if pc_loc == pc_loc[1, 1]:
-            Miriam_Dialog.append(Miriam_1)
-            print(Miriam_Dialog)
+    def delete():
+        for widget in parent_frame.winfo_children():
+            widget.destroy()
 
     # Setzt die Breite der Buttons fest
     button_width = 15
@@ -158,7 +152,7 @@ def explore(root, parent_frame):
     # Der return Pfeil
     rt_pfad = Image.open(arrowReturn)
     rt_image = ImageTk.PhotoImage(rt_pfad)
-    rt_Button = ttk.Button(root, image=rt_image, command=reset)
+    rt_Button = ttk.Button(root, image=rt_image, command=delete)
     rt_Button.place(x=20, y=670)
 
     # Der Button für die Karte
