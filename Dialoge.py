@@ -23,6 +23,12 @@ Veridia_20 = "o"
 
 
 Brigitte_1 = "Before you stands a middle-aged woman with a warm and welcoming demeanor. She exudes an aura of \nwisdom and kindness, wearing modest, earth-toned clothing. Her eyes sparkle with genuine care, and her presence \nin this unsettling atmosphere offers a glimmer of comfort and hope. \nHowever, something appears to weigh heavily on her, evident in the subtle lines of concern etched on her face."
+Brigitte_2 = "Hmmmmmmmmmmmmmm"
+
 Ulrich_1 = "Before you stands a rugged figure, a fisherman by the looks of him. His clothing is worn and salt-stained, evidence \nof years spent battling the elements. His face, etched with lines from countless days at sea, is weather-beaten \nand stern. He regards you with a mix of curiosity and wariness, his eyes reflecting the uncertainty that \nlooms over the village."
+
+
 Gottfried_1 = "The man before you appears to be in his middle years, with a sturdy build and attire that speaks of practicality and \nresilience. His clean hair and calm demeanor suggest a life shaped by both challenges and wisdom."
+
+
 Miriam_1 = "You notice a young girl standing by the fountain, her expression a mix of concern and curiosity. She seems deeply \nabsorbed in studying the old well, her eyes fixed on its moss-covered stones. Her brows are slightly furrowed, \nand she occasionally tilts her head as if trying to decipher some hidden message in the well's worn surface."

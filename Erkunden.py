@@ -6,6 +6,7 @@ from Bilder import *
 from Dialoge import *
 from Dialogsystem import TextboxManager
 from Fight import Fight
+from Dialogfenster import Dialogfenster
 
 def explore(root, parent_frame):  
     for widget in parent_frame.winfo_children():
@@ -59,15 +60,46 @@ def explore(root, parent_frame):
 
     def pickup_1():
         Dialog.update_text(Veridia_4)
-
+    def kampf():
+        if pc_loc[0] == 2 and pc_loc[1] ==2:
+            betrButton.place_forget() 
+            untButton.place_forget()
+            whrButton.place_forget()
+            aufhbButton.place_forget()
+            lp_Button.place_forget()
+            rp_Button.place_forget()
+            vp_Button.place_forget()
+            zp_Button.place_forget()
+            rt_Button.place_forget()
+            mb_Button.place_forget()
+            bg_label.place_forget()
+            Fight(root, parent_frame)
+    def dialog():
+        if pc_loc[0] == 0 and pc_loc[1] ==0:
+            betrButton.place_forget() 
+            untButton.place_forget()
+            whrButton.place_forget()
+            aufhbButton.place_forget()
+            lp_Button.place_forget()
+            rp_Button.place_forget()
+            vp_Button.place_forget()
+            zp_Button.place_forget()
+            rt_Button.place_forget()
+            mb_Button.place_forget()
+            bg_label.place_forget()
+            Dialogfenster(root, parent_frame)
     def vor():
         new_y = pc_loc[1] + 1
+        
         if (pc_loc[0], new_y) in grid:
             pc_loc[1] = new_y
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            kampf()
+            dialog()
         else:
             Dialog.update_text("You cannot go further in this direction.")
+        print(pc_loc)
           
     def links():
         new_x = pc_loc[0] - 1
@@ -75,8 +107,11 @@ def explore(root, parent_frame):
             pc_loc[0] = new_x
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            kampf()
+            dialog()
         else:
             Dialog.update_text("You cannot go further in this direction.")
+        print(pc_loc)        
     
     def rechts():
         new_x = pc_loc[0] + 1
@@ -84,8 +119,11 @@ def explore(root, parent_frame):
             pc_loc[0] = new_x
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            kampf()
+            dialog()
         else:
             Dialog.update_text("You cannot go further in this direction.")
+        print(pc_loc)
         
     def zurueck():
         new_y = pc_loc[1] - 1
@@ -93,8 +131,11 @@ def explore(root, parent_frame):
             pc_loc[1] = new_y
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            kampf()
+            dialog()
         else:
             Dialog.update_text("You cannot go further in this direction.")
+        print(pc_loc)
     def reset():
             pc_loc[1] = 0
             pc_loc[0] = 1
@@ -106,7 +147,6 @@ def explore(root, parent_frame):
     def delete():
         for widget in parent_frame.winfo_children():
             widget.destroy()
-
     # Setzt die Breite der Buttons fest
     button_width = 15
     # Der "Betrachten" Button
@@ -161,7 +201,7 @@ def explore(root, parent_frame):
     mb_Button = ttk.Button(root, image=mb_image)
     mb_Button.place(x=1250, y=20)
     
-    if pc_loc[0] == [1] and pc_loc[1] ==[1]:
+    if pc_loc[0] == [1] and pc_loc[1] == [1]:
         Dialog.update_text(Veridia_5)
         print("Update")
 
