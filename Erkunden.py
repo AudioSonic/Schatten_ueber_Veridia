@@ -5,11 +5,8 @@ from PIL import Image, ImageTk
 from Bilder import *
 from Dialoge import *
 from Dialogsystem import TextboxManager
-
-
-
-#Der Standort des Spielers. X - Y
-
+from Fight import Fight
+from Dialogfenster import Dialogfenster
 
 def explore(root, parent_frame):  
     for widget in parent_frame.winfo_children():
@@ -26,7 +23,6 @@ def explore(root, parent_frame):
     bg_label.place(x=253, y=18)
 
     # Die TextboxManager aus der Dialogsystem Datei
-    # Die TextboxManager aus der Dialogsystem Datei
     Dialog = TextboxManager(parent_frame)
     Dialog.update_text(Einleitung)
 
@@ -34,7 +30,7 @@ def explore(root, parent_frame):
     pc_loc = [1, 0]
 
     # Das Gitter-Wörterbuch, das Koordinaten mit Aktionen verknüpft
-    grid_actions = {
+    grid = {
         (0, 0): Brigitte_1,
         (0, 1): Veridia_6,
         (0, 2): Ulrich_1,
@@ -53,7 +49,6 @@ def explore(root, parent_frame):
         (3, 3): Veridia_20
     }
 
-    Miriam_Dialog = []
     def examine_1():
         Dialog.update_text(Veridia_1)
 
@@ -65,54 +60,93 @@ def explore(root, parent_frame):
 
     def pickup_1():
         Dialog.update_text(Veridia_4)
-
+    def kampf():
+        if pc_loc[0] == 2 and pc_loc[1] ==2:
+            betrButton.place_forget() 
+            untButton.place_forget()
+            whrButton.place_forget()
+            aufhbButton.place_forget()
+            lp_Button.place_forget()
+            rp_Button.place_forget()
+            vp_Button.place_forget()
+            zp_Button.place_forget()
+            rt_Button.place_forget()
+            mb_Button.place_forget()
+            bg_label.place_forget()
+            Fight(root, parent_frame)
+    def dialog():
+        if pc_loc[0] == 0 and pc_loc[1] ==0:
+            betrButton.place_forget() 
+            untButton.place_forget()
+            whrButton.place_forget()
+            aufhbButton.place_forget()
+            lp_Button.place_forget()
+            rp_Button.place_forget()
+            vp_Button.place_forget()
+            zp_Button.place_forget()
+            rt_Button.place_forget()
+            mb_Button.place_forget()
+            bg_label.place_forget()
+            Dialogfenster(root, parent_frame)
     def vor():
-        pc_loc[1] += 1
+        new_y = pc_loc[1] + 1
+        
+        if (pc_loc[0], new_y) in grid:
+            pc_loc[1] = new_y
+            action = grid[(pc_loc[0], pc_loc[1])]
+            Dialog.update_text(action)
+            kampf()
+            dialog()
+        else:
+            Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
-    
-        if tuple(pc_loc) in grid_actions:
-            action = grid_actions[tuple(pc_loc)]
-        Dialog.update_text(action)
-        
-
-        
+          
     def links():
-        pc_loc[0] -= 1
-        print(pc_loc)
-    
-        if tuple(pc_loc) in grid_actions:
-            action = grid_actions[tuple(pc_loc)]
-        Dialog.update_text(action)
+        new_x = pc_loc[0] - 1
+        if (new_x, pc_loc[1]) in grid:
+            pc_loc[0] = new_x
+            action = grid[(pc_loc[0], pc_loc[1])]
+            Dialog.update_text(action)
+            kampf()
+            dialog()
+        else:
+            Dialog.update_text("You cannot go further in this direction.")
+        print(pc_loc)        
     
     def rechts():
-        pc_loc[0] += 1
+        new_x = pc_loc[0] + 1
+        if (new_x, pc_loc[1]) in grid:
+            pc_loc[0] = new_x
+            action = grid[(pc_loc[0], pc_loc[1])]
+            Dialog.update_text(action)
+            kampf()
+            dialog()
+        else:
+            Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
-    
-        if tuple(pc_loc) in grid_actions:
-            action = grid_actions[tuple(pc_loc)]
-        Dialog.update_text(action)
         
     def zurueck():
-            pc_loc[1] -= 1
-            print(pc_loc)
-    
-            if tuple(pc_loc) in grid_actions:
-                action = grid_actions[tuple(pc_loc)]
+        new_y = pc_loc[1] - 1
+        if (pc_loc[0], new_y) in grid:
+            pc_loc[1] = new_y
+            action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            kampf()
+            dialog()
+        else:
+            Dialog.update_text("You cannot go further in this direction.")
+        print(pc_loc)
     def reset():
             pc_loc[1] = 0
             pc_loc[0] = 1
             print(pc_loc)
     
-            if tuple(pc_loc) in grid_actions:
-                action = grid_actions[tuple(pc_loc)]
+            if tuple(pc_loc) in grid:
+                action = grid[tuple(pc_loc)]
             Dialog.update_text(action)
-
-    def Miriam():
-        if pc_loc == pc_loc[1, 1]:
-            Miriam_Dialog.append(Miriam_1)
-            print(Miriam_Dialog)
-
+    def delete():
+        for widget in parent_frame.winfo_children():
+            widget.destroy()
     # Setzt die Breite der Buttons fest
     button_width = 15
     # Der "Betrachten" Button
@@ -158,7 +192,7 @@ def explore(root, parent_frame):
     # Der return Pfeil
     rt_pfad = Image.open(arrowReturn)
     rt_image = ImageTk.PhotoImage(rt_pfad)
-    rt_Button = ttk.Button(root, image=rt_image, command=reset)
+    rt_Button = ttk.Button(root, image=rt_image, command=delete)
     rt_Button.place(x=20, y=670)
 
     # Der Button für die Karte
@@ -167,7 +201,7 @@ def explore(root, parent_frame):
     mb_Button = ttk.Button(root, image=mb_image)
     mb_Button.place(x=1250, y=20)
     
-    if pc_loc[0] == [1] and pc_loc[1] ==[1]:
+    if pc_loc[0] == [1] and pc_loc[1] == [1]:
         Dialog.update_text(Veridia_5)
         print("Update")
 

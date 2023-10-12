@@ -8,7 +8,7 @@ from Fight import Fight
 
 def mainMenu():
     root = tk.Tk()
-    root.title("Main")
+    root.title("Schatten ueber Veridia")
     root.geometry("1300x750")
     root.resizable(False, False)
     root.configure(bg="#6B6B6B")
@@ -27,6 +27,7 @@ def mainMenu():
         StartButton.place_forget()  
         FightButton.place_forget() 
         #Starte die "explore" Funktion aus der Erkunden Datei
+        pygame.mixer.music.stop()
         explore(root, content_frame)
        
     def FightButtonClicked():
@@ -34,6 +35,7 @@ def mainMenu():
         FightButton.place_forget() 
         StartButton.place_forget() 
         #Starte die "explore" Funktion aus der Erkunden Datei
+        pygame.mixer.music.stop()
         Fight(root, content_frame)
 
     StartButton = tk.Button(root, text="SPIEL STARTEN", font=("Times New Roman", 16),command=StartButtonClicked)
