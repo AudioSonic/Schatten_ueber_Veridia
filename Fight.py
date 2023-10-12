@@ -1,17 +1,17 @@
+import random
 import tkinter as tk
 from tkinter import ttk
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
 from Bilder import *
-
-
+import random
 
 def Fight(root, parent_frame):
     for widget in parent_frame.winfo_children():
         widget.destroy()
   
 
-    #Erstellt einen Stil für die Schrift. In dem Fall Times New Roman
+    #Erstellt einen Stil fï¿½r die Schrift. In dem Fall Times New Roman
     style = ttk.Style()
     style.configure("TNR.TLabel", font=("Times New Roman", 14))  
 
@@ -26,66 +26,93 @@ def Fight(root, parent_frame):
     #Boss HP Balken
     def attack():
         text_output.config(state=tk.NORMAL)
-        text_output.delete(1.0, tk.END)  # Löscht den aktuellen Text
+        text_output.delete(1.0, tk.END)  # Lï¿½scht den aktuellen Text
         text_output.config(state=tk.DISABLED)
         update_progress()
         current_boss_hp = boss_hp.get()
+        current_player_hp = player_hp.get()
         if player_STM.get() >=10:
-            if current_boss_hp > 0:   
+            if current_boss_hp and current_player_hp > 0:   
                 boss_hp.set(current_boss_hp - 10)
                 update_progress()
                 stamina_attack()
+                boss_attack()
                 update_player_stats()
+               
         else:
-            if current_boss_hp > 0:     
+            if current_player_hp <=0:
                 text_output.config(state=tk.NORMAL)
-                text_output.delete(1.0, tk.END)  # Löscht den aktuellen Text
+                text_output.delete(1.0, tk.END)  # Lï¿½scht den aktuellen Text
+                text_output.insert(tk.END, "GAME OVER")
+                text_output.config(state=tk.DISABLED)
+                
+            elif current_boss_hp > 0:     
+                text_output.config(state=tk.NORMAL)
+                text_output.delete(1.0, tk.END)  # Lï¿½scht den aktuellen Text
                 text_output.insert(tk.END, "Not enough stamina for this action recover first")
-                text_output.config(state=tk.DISABLED) 
+                text_output.config(state=tk.DISABLED)
             else:
                 update_progress()
+         
                
                 
     def counter():
         text_output.config(state=tk.NORMAL)
-        text_output.delete(1.0, tk.END)  # Löscht den aktuellen Text
+        text_output.delete(1.0, tk.END)  # Lï¿½scht den aktuellen Text
         text_output.config(state=tk.DISABLED)
         update_progress()
         current_boss_hp = boss_hp.get()
+        current_player_hp = player_hp.get()
         if player_STM.get() >=25:
-            if current_boss_hp > 0:   
+            if current_boss_hp and current_player_hp >= 0:   
                 boss_hp.set(current_boss_hp - 25)
                 update_progress()
                 stamina_counter()
+                boss_attack_counter()
                 update_player_stats()
+               
         else:
-            if current_boss_hp > 0:     
+            if current_player_hp <=0:
                 text_output.config(state=tk.NORMAL)
-                text_output.delete(1.0, tk.END)  # Löscht den aktuellen Text
+                text_output.delete(1.0, tk.END)  # Lï¿½scht den aktuellen Text
+                text_output.insert(tk.END, "GAME OVER")
+                text_output.config(state=tk.DISABLED)
+                
+            elif current_boss_hp > 0:     
+                text_output.config(state=tk.NORMAL)
+                text_output.delete(1.0, tk.END)  # Lï¿½scht den aktuellen Text
                 text_output.insert(tk.END, "Not enough stamina for this action")
-                text_output.config(state=tk.DISABLED)    
+                text_output.config(state=tk.DISABLED)
+            
             else:
                 update_progress()
-              
+                
                 
     def recover():
         update_progress()
         current_boss_hp = boss_hp.get()
-        if current_boss_hp > 0:
+        current_player_hp = player_hp.get()
+        if current_boss_hp and current_player_hp > 0:
             stamina = player_STM.get()
             player_STM.set(stamina + 10)
             text_output.config(state=tk.NORMAL)
-            text_output.delete(1.0, tk.END)  # Löscht den aktuellen Text
+            text_output.delete(1.0, tk.END)  # Lï¿½scht den aktuellen Text
             text_output.insert(tk.END, "You restored 10 stamina")
             text_output.config(state=tk.DISABLED)
+            boss_attack()
             update_player_stats()
+        else:
+            text_output.config(state=tk.NORMAL)
+            text_output.delete(1.0, tk.END)  # Lï¿½scht den aktuellen Text
+            text_output.insert(tk.END, "GAME OVER")
+            text_output.config(state=tk.DISABLED)
         
 
     def update_player_stats():
         show_HP =  f"HP:                  {player_hp.get()}/100"    
         show_STM = f"Stamina:          {player_STM.get()}/30"
         Player_output.config(state=tk.NORMAL)
-        Player_output.delete(1.0, tk.END)  # Löscht den aktuellen Text
+        Player_output.delete(1.0, tk.END)  # Lï¿½scht den aktuellen Text
         Player_output.insert(tk.END, f"{player}\n{show_HP}\n{show_STM}")
         Player_output.config(state=tk.DISABLED)
 
@@ -96,7 +123,7 @@ def Fight(root, parent_frame):
 
         if current_boss_hp <= 0:
             text_output.config(state=tk.NORMAL)
-            text_output.delete(1.0, tk.END)  # Löscht den aktuellen Text
+            text_output.delete(1.0, tk.END)  # Lï¿½scht den aktuellen Text
             text_output.insert(tk.END, "Victory")
             text_output.config(state=tk.DISABLED) 
    
@@ -112,8 +139,22 @@ def Fight(root, parent_frame):
         if current_stmna >= 25:
             player_STM.set(current_stmna - 25)
         
+    def boss_attack():
+        dmg = [10,20,30]
+        random_dmg = random.choice(dmg)
+        current_player_hp = player_hp.get()
+        if current_player_hp >= 0:
+           player_hp.set(current_player_hp - random_dmg)
+    
+    def boss_attack_counter():
+        dmg = [10,20,30]
+        random_dmg = random.choice(dmg)
+        current_player_hp = player_hp.get()
+        if current_player_hp >= 0:
+           player_hp.set(current_player_hp - (random_dmg + random_dmg))
+
        
-            
+
     # Erstelle eine Variable zur Verfolgung der Spieler-HP
     player_hp = tk.IntVar()
     player_hp.set(100)  # Starte mit vollen HP
@@ -141,7 +182,7 @@ def Fight(root, parent_frame):
     gegner_name.insert(tk.END, "Vorluna:")
     gegner_name.config(state=tk.DISABLED)
     
-    # Erstelle einen determinierten Ladebalken für die Boss-HP
+    # Erstelle einen determinierten Ladebalken fï¿½r die Boss-HP
     progress_bar = ttk.Progressbar(root, mode="determinate", variable=boss_hp, length=300)
     progress_bar.place(x = 450, y = 50)
    
@@ -150,7 +191,7 @@ def Fight(root, parent_frame):
     button_width = 12
     
 
-    # Button für den Spielerangriff
+    # Button fï¿½r den Spielerangriff
     attack_button = ttk.Button(root, text="Attack", padding=(50, 10), width= button_width, style="TNR.TLabel", command=attack)
     attack_button.place(x=43, y=680)
 
