@@ -21,10 +21,4 @@ class TextboxManager:
         self.text_output.insert(tk.END, text)
         self.text_output.config(state=tk.DISABLED)
 
-        if delay > 0:
-            self.parent_frame.after(delay, self.clear_text)
 
-    def clear_text(self):
-        self.text_output.config(state=tk.NORMAL)
-        self.text_output.delete("1.0", tk.END)
-        self.text_output.config(state=tk.DISABLED)

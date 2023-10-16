@@ -23,7 +23,8 @@ Veridia_20 = "o"
 
 
 Brigitte_1 = "Before you stands a middle-aged woman with a warm and welcoming demeanor. She exudes an aura of \nwisdom and kindness, wearing modest, earth-toned clothing. Her eyes sparkle with genuine care, and her presence \nin this unsettling atmosphere offers a glimmer of comfort and hope. \nHowever, something appears to weigh heavily on her, evident in the subtle lines of concern etched on her face."
-Brigitte_2 = "Hmmmmmmmmmmmmmm"
+Brigitte_2 = "Ist doch alles kacke"
+Brigitte_3 = "Those damn lights are fucking annoying"
 
 Ulrich_1 = "Before you stands a rugged figure, a fisherman by the looks of him. His clothing is worn and salt-stained, evidence \nof years spent battling the elements. His face, etched with lines from countless days at sea, is weather-beaten \nand stern. He regards you with a mix of curiosity and wariness, his eyes reflecting the uncertainty that \nlooms over the village."
 
