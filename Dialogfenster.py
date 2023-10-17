@@ -1,4 +1,3 @@
-from lib2to3.fixes.fix_next import bind_warning
 import tkinter as tk
 from tkinter import ttk
 from tkinter import PhotoImage
@@ -6,10 +5,10 @@ from PIL import Image, ImageTk
 from Bilder import *
 from Dialoge import *
 from Dialogsystem import TextboxManager
-from Charaktere import Charakter
+
 
 current_index = 0
-character = ""
+#character = ""
 
 def Dialogfenster(root, parent_frame, character):
     for widget in parent_frame.winfo_children():
@@ -90,10 +89,6 @@ def Dialogfenster(root, parent_frame, character):
     rt_image = ImageTk.PhotoImage(rt_pfad)
     rt_Button = ttk.Button(root, image=rt_image)
     rt_Button.place(x=1160, y=670)
-    
-    
-    
-    
 
     root.mainloop()
     return root
