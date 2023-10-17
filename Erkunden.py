@@ -244,9 +244,11 @@ def explore(root, parent_frame):
     mb_Button.place(x=1250, y=20)
 
     #Die textbox mit den Koordinaten
-    coord = tk.Text(root, width=18, height=1)
+    coord = tk.Text(root, width=15, height=1, font=("Times New Roman", 14))
+    loc = tk.Text(root, width=18, height=1, font=("Times New Roman", 14))
+    loc.insert(tk.END, "Veridia")
     #coord.insert(tk.END, " Location: " + str(pc_loc))
     coord.place(x=20, y=445)    
-
+    loc.place(x=1115, y=445)
     root.mainloop()
     return root

@@ -5,6 +5,7 @@ from PIL import Image, ImageTk
 from Bilder import *
 from Erkunden import explore
 from Fight import Fight
+from Erkunden_Wald import forest
 
 def mainMenu():
     root = tk.Tk()
@@ -34,15 +35,28 @@ def mainMenu():
         # Blende den Button nach dem Klicken aus
         FightButton.place_forget() 
         StartButton.place_forget() 
+        ForestButton.place_forget()
         #Starte die "explore" Funktion aus der Erkunden Datei
         pygame.mixer.music.stop()
         Fight(root, content_frame)
+        ForestButton.place_forget()
+    def ForestButtonClicked():
+        # Blende den Button nach dem Klicken aus
+        FightButton.place_forget() 
+        StartButton.place_forget() 
+        ForestButton.place_forget()
+        #Starte die "explore" Funktion aus der Erkunden Datei
+        pygame.mixer.music.stop()
+        forest(root, content_frame)
 
     StartButton = tk.Button(root, text="SPIEL STARTEN", font=("Times New Roman", 16),command=StartButtonClicked)
-    StartButton.place(x=550, y=670)
+    StartButton.place(x=550, y=650)
     
     FightButton = tk.Button(root, text="Fight", font=("Times New Roman", 16),command=FightButtonClicked)
-    FightButton.place(x=550, y=500)
+    FightButton.place(x=550, y=600)
+    
+    ForestButton = tk.Button(root, text="Forest", font=("Times New Roman", 16),command=ForestButtonClicked)
+    ForestButton.place(x=550, y=550)
 
     root.mainloop()
 
