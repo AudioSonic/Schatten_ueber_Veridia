@@ -1,4 +1,4 @@
-ï»¿import tkinter as tk
+import tkinter as tk
 from tkinter import ttk
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
@@ -8,11 +8,11 @@ from Dialogsystem import TextboxManager
 from Fight import Fight
 from Dialogfenster import Dialogfenster
 
-def explore(root, parent_frame):  
+def forestExplore(root, parent_frame):  
     for widget in parent_frame.winfo_children():
         widget.destroy()
   
-    # Erstellt einen Stil fÃ¼r die Schrift. In dem Fall Times New Roman
+    # Erstellt einen Stil für die Schrift. In dem Fall Times New Roman
     style = ttk.Style()
     style.configure("TNR.TLabel", font=("Times New Roman", 14))  
 
@@ -29,7 +29,7 @@ def explore(root, parent_frame):
     # Die Startposition des Charakters
     pc_loc = [1, 0]
 
-    # Das Gitter-WÃ¶rterbuch, das Koordinaten mit Aktionen verknÃ¼pft
+    # Das Gitter-Wörterbuch, das Koordinaten mit Aktionen verknüpft
     grid = {
         (0, 0): Brigitte_1,
         (0, 1): Veridia_6,
@@ -134,7 +134,6 @@ def explore(root, parent_frame):
             pc_loc[1] = new_y
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
-            coord.insert(tk.END, " Location: " + str(pc_loc))
             kampf()
             dialog()
         else:
@@ -147,7 +146,6 @@ def explore(root, parent_frame):
             pc_loc[0] = new_x
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
-            
             kampf()
             dialog()
         else:
@@ -160,7 +158,6 @@ def explore(root, parent_frame):
             pc_loc[0] = new_x
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
-            coord.insert(tk.END, " Location: " + str(pc_loc))
             kampf()
             dialog()
         else:
@@ -173,13 +170,11 @@ def explore(root, parent_frame):
             pc_loc[1] = new_y
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
-            coord.insert(tk.END, " Location: " + str(pc_loc))
             kampf()
             dialog()
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
-        
     def reset():
             pc_loc[1] = 0
             pc_loc[0] = 1
@@ -187,7 +182,6 @@ def explore(root, parent_frame):
             if tuple(pc_loc) in grid:
                 action = grid[tuple(pc_loc)]
             Dialog.update_text(action)
-            coord.insert(tk.END, " Location: " + str(pc_loc))
 
     # Setzt die Breite der Buttons fest
     button_width = 15
@@ -237,16 +231,11 @@ def explore(root, parent_frame):
     rt_Button = ttk.Button(root, image=rt_image, command=reset)
     rt_Button.place(x=20, y=670)
 
-    # Der Button fÃ¼r die Karte
+    # Der Button für die Karte
     mb_pfad = Image.open(KarteButton)
     mb_image = ImageTk.PhotoImage(mb_pfad)
     mb_Button = ttk.Button(root, image=mb_image)
     mb_Button.place(x=1250, y=20)
-
-    #Die textbox mit den Koordinaten
-    coord = tk.Text(root, width=18, height=1)
-    #coord.insert(tk.END, " Location: " + str(pc_loc))
-    coord.place(x=20, y=445)    
 
     root.mainloop()
     return root
