@@ -27,6 +27,7 @@ def mainMenu():
         # Blende den Button nach dem Klicken aus
         StartButton.place_forget()  
         FightButton.place_forget() 
+        ForestButton.place_forget()
         #Starte die "explore" Funktion aus der Erkunden Datei
         pygame.mixer.music.stop()
         explore(root, content_frame)
