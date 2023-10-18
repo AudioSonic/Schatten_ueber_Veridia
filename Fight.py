@@ -6,7 +6,7 @@ from PIL import Image, ImageTk
 from Bilder import *
 import random
 
-def Fight(root, parent_frame):
+def Fight(root, parent_frame, ):
     for widget in parent_frame.winfo_children():
         widget.destroy()
   
@@ -23,7 +23,7 @@ def Fight(root, parent_frame):
     Hhle_label.place(x=210, y=30)
     
 
-    #Boss HP Balken
+    # Druck des Attack Button
     def attack():
         update_progress()
         current_boss_hp = boss_hp.get()
@@ -46,7 +46,7 @@ def Fight(root, parent_frame):
         else:
             GAME_OVER()
                
-                
+    # Druck des Counter Button            
     def counter():
         update_progress()
         current_boss_hp = boss_hp.get()
@@ -68,7 +68,8 @@ def Fight(root, parent_frame):
              update_progress()
                    
         else: GAME_OVER()        
-                
+     
+    # Druck des Recover Button
     def recover():
         player_hp_anzeige = player_hp.get()
         update_progress()
@@ -91,6 +92,21 @@ def Fight(root, parent_frame):
                     text_output.config(state=tk.DISABLED)
         else:
             player_hp.set(0)
+            GAME_OVER()
+            
+    # Druck des Potioin Button
+    def potion():
+        current_player_hp = player_hp.get()
+        if current_player_hp >0: 
+            if current_player_hp <60:
+               player_hp.set(current_player_hp+60)
+                
+            else: 
+                text_output.config(state=tk.NORMAL)
+                text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+                text_output.insert(tk.END, "Es ist noch zu früh einen Tank zu nehmen")
+                text_output.config(state=tk.DISABLED)
+        else:
             GAME_OVER()
             
         
@@ -160,24 +176,8 @@ def Fight(root, parent_frame):
            
            if current_player_hp <= 0:
                GAME_OVER()
-
-    def potion():
-        current_player_hp = player_hp.get()
-        current_potion = player_pot.get()
-        if current_player_hp >0: 
-            if current_player_hp <60:
-                if current_potion >0:
-                    player_pot.set(current_potion-1)
-                    player_hp.set(current_player_hp+60)
-                    update_player_stats()
-                
-            else: 
-                text_output.config(state=tk.NORMAL)
-                text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
-                text_output.insert(tk.END, "Es ist noch zu früh einen Tank zu nehmen")
-                text_output.config(state=tk.DISABLED)
-        else:
-            GAME_OVER()
+               
+    
         
     # Erstelle eine Variable zur Verfolgung der Spieler-HP
     player_hp = tk.IntVar()
@@ -187,11 +187,6 @@ def Fight(root, parent_frame):
     # Erstelle eine Variable zur Verfolgung der Spieler-STM
     player_STM = tk.IntVar()
     player_STM.set(30)  # Starte mit voller Stamina
-    
-    # Erstelle eine Variable zur Verfolgung der Tränke
-    player_pot = tk.IntVar()
-    player_pot.set(5)  # Starte mit voller Stamina
-    
 
     # Erstelle eine Variable zur Verfolgung der Boss-HP
     boss_hp = tk.IntVar()
