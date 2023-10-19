@@ -6,7 +6,6 @@ from Bilder import *
 from Dialoge import *
 from Dialogsystem import TextboxManager
 from Fight import Fight
-from Dialogfenster import Dialogfenster
 
 def forest(root, parent_frame):  
     for widget in parent_frame.winfo_children():

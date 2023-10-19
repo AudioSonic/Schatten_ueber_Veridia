@@ -2,7 +2,7 @@ Einleitung = "You are an adventurer who has wandered into this area for the firs
 
 Brigitte_1 = "Well, hello there, stranger. I'm Brigitte. You find yourself in the quiet village of Veridia.What can I do for you?"
 Brigitte_2 = "You want to know more about this place? Well, it's not what it used to be, that's for sure. These last few months, \nthings have taken a dark turn. "
-Brigitte_3 = "Unsettling occurrences, like people vanishing without a trace, strange sounds echoing in the night, and those \nmysterious lights that draw the curious into the unknown. \nMany who wander towards those lights are never seen again."
+Brigitte_3 = "Unsettling occurrences, like people vanishing without a trace, strange sounds echoing in the night, and those \nmysterious lights that draw the curious into the unknown. Many who wander towards those lights are never \nseen again."
 Brigitte_4 = " It's said that these lights dance over the water or between the woods, far off in the distance, luring those who seek \nanswers into the heart of darkness. \nSome say it's the work of spirits or otherworldly forces, but no one knows for sure."
 Brigitte_5 = "I have never seen them myself but I've heard the stories, and it's enough to send shivers down your spine. \nI've seen good people disappear, and it's as if the village itself is holding onto secrets that it refuses to share."
 Brigitte_6 = "Veridia needs all the help it can get in these troubled times. \nBe careful, though, for there's something dark and ancient that stirs in the heart of this misty village."
@@ -260,7 +260,7 @@ Ebene_9_Touch = "The fog becomes denser as you proceed, and your sense of touch 
 Ebene_9_Perceive = "Each step is an exploration into the unknown. The fog teases your senses, and you can't help but feel that something remarkable lies concealed in this misty realm."
 Ebene_9_PickUp = "The grassland offers nothing tangible to pick up, but the promise of hidden treasure keeps your curiosity burning."
 
-Veridia_1 = "In the misty marketplace, a woman with flowing brown hair and a yellow dress tends to her open-air stall, offering a variety of wares, her presence casting a gentle warmth on the otherwise quiet square."
+Veridia_1 = "In the misty marketplace, a woman with flowing brown hair and a yellow dress tends to her open-air stall, offering \na variety of wares, her presence casting a gentle warmth on the otherwise quiet square."
 Veridia_2 = "An old market stall stands empty, its faded awning sagging under the weight of time. Silhouettes can be seen in the background, moving quietly through the mist."
 Veridia_3 = "A weathered man, dressed in the attire of a fisherman, stands near his collection of fishing gear. He appears deeply concerned, his eyes focused on something unseen in the mist. \nThe air is heavy with anticipation, and silhouettes occasionally pass by, shrouded in mystery."
 Veridia_4 = "A stone well, covered in moss and vines, sits in the misty square. The well seems to have been unused for a long time, and silhouettes gather around it, perhaps drawing water or sharing stories."
@@ -271,7 +271,7 @@ Veridia_8 = "An old statue, now weathered and partially overgrown, stands as a s
 Veridia_9 = "As you venture deeper into the misty marketplace, you come across a self-assured middle-aged man with a white shirt and a brown vest. \nHe stands by a stall selling various artifacts that are unfamiliar to you."
 Veridia_1_Examine = "The marketplace stands eerily quiet, shrouded in a light mist that lends an air of abandonment. Faint silhouettes move in the distance, carrying the secrets of the village."
 Veridia_1_Touch = "The cobblestones underfoot feel cool and slightly damp, as if they hold the memories of countless footsteps. The mist clings to your skin, making every touch an ethereal experience."
-Veridia_1_Perceive = "The silence in the marketplace is profound, save for the soft whispers of the mist. The silhouettes move quietly, leaving you to wonder about the lives hidden in the fog."
+Veridia_1_Perceive = "The silence in the marketplace is profound, save for the soft whispers of the mist. The silhouettes move quietly, \nleaving you to wonder about the lives hidden in the fog."
 Veridia_1_PickUp = "In this deserted square, you find nothing worth picking up, but the enigmatic silhouettes beckon you to explore."
 Veridia_2_Examine = "An old market stall stands as a relic of busier days, its emptiness telling tales of a past long gone. Silhouettes can be seen in the background, their purpose veiled in mystery."
 Veridia_2_Touch = "The wooden frame of the abandoned stall feels weathered and slightly rough under your hand. The presence of silhouettes nearby adds to the intrigue of this forgotten space."
