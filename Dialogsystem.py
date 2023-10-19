@@ -1,5 +1,5 @@
-# TextboxManager.py
 import tkinter as tk
+
 
 class TextboxManager:
     def __init__(self, parent_frame):
@@ -20,5 +20,3 @@ class TextboxManager:
         self.text_output.delete("1.0", tk.END)
         self.text_output.insert(tk.END, text)
         self.text_output.config(state=tk.DISABLED)
-
-

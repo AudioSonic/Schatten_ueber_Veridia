@@ -45,6 +45,8 @@ def explore(root, parent_frame):
 
     def examine():
         if pc_loc[0] == 0 and pc_loc[1] == 0:
+            loc.place_forget()
+            coord.place_forget()
             betrButton.place_forget() 
             untButton.place_forget()
             whrButton.place_forget()
@@ -60,6 +62,8 @@ def explore(root, parent_frame):
         elif pc_loc[0] == 0 and pc_loc[1] == 1:
             Dialog.update_text(Veridia_2_Examine)
         elif pc_loc[0] == 0 and pc_loc[1] == 2:
+            loc.place_forget()
+            coord.place_forget()
             betrButton.place_forget() 
             untButton.place_forget()
             whrButton.place_forget()
@@ -75,6 +79,8 @@ def explore(root, parent_frame):
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
             Dialog.update_text(Veridia_4_Examine)   
         elif pc_loc[0] == 1 and pc_loc[1] == 1:
+            loc.place_forget()
+            coord.place_forget()
             betrButton.place_forget() 
             untButton.place_forget()
             whrButton.place_forget()
@@ -94,6 +100,8 @@ def explore(root, parent_frame):
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Veridia_8_Examine) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
+            loc.place_forget()
+            coord.place_forget()
             betrButton.place_forget() 
             untButton.place_forget()
             whrButton.place_forget()
@@ -109,6 +117,8 @@ def explore(root, parent_frame):
 
     def touch():
         if pc_loc[0] == 0 and pc_loc[1] == 0:
+            loc.place_forget()
+            coord.place_forget()
             betrButton.place_forget() 
             untButton.place_forget()
             whrButton.place_forget()
@@ -124,6 +134,8 @@ def explore(root, parent_frame):
         elif pc_loc[0] == 0 and pc_loc[1] == 1:
             Dialog.update_text(Veridia_2_Touch)
         elif pc_loc[0] == 0 and pc_loc[1] == 2:
+            loc.place_forget()
+            coord.place_forget()
             betrButton.place_forget() 
             untButton.place_forget()
             whrButton.place_forget()
@@ -139,6 +151,8 @@ def explore(root, parent_frame):
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
             Dialog.update_text(Veridia_4_Touch)   
         elif pc_loc[0] == 1 and pc_loc[1] == 1:
+            loc.place_forget()
+            coord.place_forget()
             betrButton.place_forget() 
             untButton.place_forget()
             whrButton.place_forget()
@@ -158,6 +172,8 @@ def explore(root, parent_frame):
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Veridia_8_Touch) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
+            loc.place_forget()
+            coord.place_forget()
             betrButton.place_forget() 
             untButton.place_forget()
             whrButton.place_forget()
@@ -193,6 +209,8 @@ def explore(root, parent_frame):
 
     def pickup():
         if pc_loc[0] == 0 and pc_loc[1] == 0:
+            loc.place_forget()
+            coord.place_forget()
             betrButton.place_forget() 
             untButton.place_forget()
             whrButton.place_forget()
@@ -208,6 +226,8 @@ def explore(root, parent_frame):
         elif pc_loc[0] == 0 and pc_loc[1] == 1:
             Dialog.update_text(Veridia_2_PickUp)
         elif pc_loc[0] == 0 and pc_loc[1] == 2:
+            loc.place_forget()
+            coord.place_forget()
             betrButton.place_forget() 
             untButton.place_forget()
             whrButton.place_forget()
@@ -223,6 +243,8 @@ def explore(root, parent_frame):
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
             Dialog.update_text(Veridia_4_PickUp)   
         elif pc_loc[0] == 1 and pc_loc[1] == 1:
+            loc.place_forget()
+            coord.place_forget()
             betrButton.place_forget() 
             untButton.place_forget()
             whrButton.place_forget()
@@ -242,6 +264,8 @@ def explore(root, parent_frame):
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Veridia_8_PickUp) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
+            loc.place_forget()
+            coord.place_forget()
             betrButton.place_forget() 
             untButton.place_forget()
             whrButton.place_forget()
