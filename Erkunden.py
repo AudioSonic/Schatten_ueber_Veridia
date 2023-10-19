@@ -6,7 +6,7 @@ from Bilder import *
 from Dialoge import *
 from Dialogsystem import TextboxManager
 from Fight import Fight
-#from Dialogfenster import Dialogfenster
+from Erkunden_Wald import forest
 
 def explore(root, parent_frame):  
     for widget in parent_frame.winfo_children():
@@ -29,7 +29,7 @@ def explore(root, parent_frame):
     # Die Startposition des Charakters
     pc_loc = [1, 0]
 
-    # Das Gitter-Wörterbuch, das Koordinaten mit Aktionen verknüpft
+    # Das Grid-Wörterbuch, das Koordinaten mit Aktionen verknüpft
     grid = {
         (0, 0): Veridia_1,
         (0, 1): Veridia_2,
@@ -335,6 +335,29 @@ def explore(root, parent_frame):
             Dialog.update_text(action)
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))
+            
+    def MapButton():
+        Map = tk.Toplevel(root)
+        Map.title("Map")
+        Map.geometry("750x750")
+        Map.resizable(False, False)
+        Map.configure(bg="#6B6B6B")
+        Map.attributes("-fullscreen", False)
+        
+        bg_pfad = WorldMap
+        bg_pfad = Image.open(bg_pfad)
+        bg_image = ImageTk.PhotoImage(bg_pfad)
+        bg_label = tk.Label(Map, image=bg_image)
+        bg_label.pack()
+        
+        def WaldButton(root, parent_frame):
+            for widget in parent_frame.winfo_children():
+                widget.destroy()
+            forest(root, parent_frame)
+        Wald_Button = tk.Button(Map, text="Forest", command=lambda: WaldButton(root, parent_frame))
+        Wald_Button.pack()  
+        Veridia_Button = tk.Button(Map, text="Veridia", command=lambda: explore(root, parent_frame))
+        Veridia_Button.pack()  
 
     # Setzt die Breite der Buttons fest
     button_width = 15
@@ -387,7 +410,7 @@ def explore(root, parent_frame):
     # Der Button für die Karte
     mb_pfad = Image.open(KarteButton)
     mb_image = ImageTk.PhotoImage(mb_pfad)
-    mb_Button = ttk.Button(root, image=mb_image)
+    mb_Button = ttk.Button(root, image=mb_image, command=MapButton)
     mb_Button.place(x=1250, y=20)
 
     #Die textbox mit den Koordinaten
