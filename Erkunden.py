@@ -339,25 +339,27 @@ def explore(root, parent_frame):
     def MapButton():
         Map = tk.Toplevel(root)
         Map.title("Map")
-        Map.geometry("750x750")
+        Map.geometry("636x592")
         Map.resizable(False, False)
         Map.configure(bg="#6B6B6B")
         Map.attributes("-fullscreen", False)
-        
-        bg_pfad = WorldMap
-        bg_pfad = Image.open(bg_pfad)
-        bg_image = ImageTk.PhotoImage(bg_pfad)
-        bg_label = tk.Label(Map, image=bg_image)
-        bg_label.pack()
+
+        m_pfad = Image.open("C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\WorldMap.png")
+        m_image = ImageTk.PhotoImage(m_pfad)
+        m_label = tk.Label(Map, image=m_image)
+        m_label.image = m_image  # Wichtig: Behalte eine Referenz auf das Bild, um es anzuzeigen.
+        m_label.place(x=-1, y=0)
         
         def WaldButton(root, parent_frame):
             for widget in parent_frame.winfo_children():
                 widget.destroy()
             forest(root, parent_frame)
         Wald_Button = tk.Button(Map, text="Forest", command=lambda: WaldButton(root, parent_frame))
-        Wald_Button.pack()  
+        Wald_Button.place(x=370, y=300) 
         Veridia_Button = tk.Button(Map, text="Veridia", command=lambda: explore(root, parent_frame))
-        Veridia_Button.pack()  
+        Veridia_Button.place(x=230, y=315) 
+        Kueste_Button = tk.Button(Map, text="Coast", command=lambda: explore(root, parent_frame))
+        Kueste_Button.place(x=300, y=10) 
 
     # Setzt die Breite der Buttons fest
     button_width = 15
