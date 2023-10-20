@@ -4,9 +4,10 @@ from tkinter import ttk
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
 from Bilder import *
+from Gegnerliste import *
 import random
 
-def Fight(root, parent_frame, ):
+def Fight(root, parent_frame, gegner ):
     for widget in parent_frame.winfo_children():
         widget.destroy()
   
@@ -17,10 +18,10 @@ def Fight(root, parent_frame, ):
 
 
     # Hintergrundbild einfuegen
-    Hhle_pfad = Image.open(Hoehle_Vorlunda)
-    Hhle_image = ImageTk.PhotoImage(Hhle_pfad)
-    Hhle_label = tk.Label(root, image= Hhle_image)
-    Hhle_label.place(x=210, y=30)
+    gegner_pfad = Image.open(gegner[4])
+    gegner_image = ImageTk.PhotoImage(gegner_pfad)
+    gegner_label = tk.Label(root, image= gegner_image)
+    gegner_label.place(x=210, y=30)
     
 
     # Druck des Attack Button
@@ -157,7 +158,7 @@ def Fight(root, parent_frame, ):
             player_STM.set(current_stmna - 25)
         
     def boss_attack():
-        dmg = [10,20,30]
+        dmg = [gegner[1], gegner[2], gegner[3]]
         random_dmg = random.choice(dmg)
         current_player_hp = player_hp.get()
         if current_player_hp > 0:
@@ -168,7 +169,7 @@ def Fight(root, parent_frame, ):
        
             
     def boss_attack_counter():
-        dmg = [10,20,30]
+        dmg = [gegner[1], gegner[2], gegner[3]]
         random_dmg = random.choice(dmg)
         current_player_hp = player_hp.get()
         if current_player_hp > 0:
@@ -190,8 +191,8 @@ def Fight(root, parent_frame, ):
 
     # Erstelle eine Variable zur Verfolgung der Boss-HP
     boss_hp = tk.IntVar()
-    boss_hp.set(100)  # Starte mit vollen HP
-
+    boss_hp.set(gegner[0])  # Starte mit vollen HP
+    
     # Textfeld fuer die Ausgabe
     gegner_name = tk.Text(root, height=1, width=33, wrap="none")
     gegner_name.place(x = 355, y = 45)
