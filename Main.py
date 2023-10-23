@@ -5,7 +5,7 @@ from PIL import Image, ImageTk
 from Bilder import *
 from Erkunden import explore
 from Fight import Fight
-from Erkunden_Wald import forest
+from Erkunden_ZVeridia import zveridia
 
 def mainMenu():
     root = tk.Tk()
@@ -48,7 +48,7 @@ def mainMenu():
         ForestButton.place_forget()
         #Starte die "explore" Funktion aus der Erkunden Datei
         pygame.mixer.music.stop()
-        forest(root, content_frame)
+        zveridia(root, content_frame)
 
     StartButton = tk.Button(root, text="SPIEL STARTEN", font=("Times New Roman", 16),command=StartButtonClicked)
     StartButton.place(x=550, y=650)

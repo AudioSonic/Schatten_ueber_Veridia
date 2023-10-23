@@ -17,6 +17,6 @@ Karte = "C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\Karte.png"
 KarteButton = "C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\Map_Button.png"
 Vorluna_Bild= "C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\Hoehle_Vorlunda.png"
 WorldMap = "C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\WorldMap.png"
-
+ZVeridia = "C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\ZVeridia.png"
 
 
