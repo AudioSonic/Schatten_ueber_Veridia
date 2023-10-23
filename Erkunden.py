@@ -7,6 +7,7 @@ from Dialoge import *
 from Dialogsystem import TextboxManager
 from Fight import Fight
 from Erkunden_Wald import forest
+from Hub import hub
 
 def explore(root, parent_frame):  
     for widget in parent_frame.winfo_children():
@@ -353,10 +354,42 @@ def explore(root, parent_frame):
         def WaldButton(root, parent_frame):
             for widget in parent_frame.winfo_children():
                 widget.destroy()
+            loc.place_forget()
+            coord.place_forget()
+            betrButton.place_forget() 
+            untButton.place_forget()
+            whrButton.place_forget()
+            aufhbButton.place_forget()
+            lp_Button.place_forget()
+            rp_Button.place_forget()
+            vp_Button.place_forget()
+            zp_Button.place_forget()
+            rt_Button.place_forget()
+            mb_Button.place_forget()
+            bg_label.place_forget()
             forest(root, parent_frame)
+            
+        def VeridiaButton(root, parent_frame):
+            for widget in parent_frame.winfo_children():
+                widget.destroy()
+            loc.place_forget()
+            coord.place_forget()
+            betrButton.place_forget() 
+            untButton.place_forget()
+            whrButton.place_forget()
+            aufhbButton.place_forget()
+            lp_Button.place_forget()
+            rp_Button.place_forget()
+            vp_Button.place_forget()
+            zp_Button.place_forget()
+            rt_Button.place_forget()
+            mb_Button.place_forget()
+            bg_label.place_forget()
+            explore(root, parent_frame)
+            
         Wald_Button = tk.Button(Map, text="Forest", command=lambda: WaldButton(root, parent_frame))
         Wald_Button.place(x=370, y=300) 
-        Veridia_Button = tk.Button(Map, text="Veridia", command=lambda: explore(root, parent_frame))
+        Veridia_Button = tk.Button(Map, text="Veridia", command=lambda: VeridiaButton(root, parent_frame))
         Veridia_Button.place(x=230, y=315) 
         Kueste_Button = tk.Button(Map, text="Coast", command=lambda: explore(root, parent_frame))
         Kueste_Button.place(x=300, y=10) 
@@ -419,8 +452,8 @@ def explore(root, parent_frame):
     coord = tk.Text(root, width=15, height=1, font=("Times New Roman", 14))
     loc = tk.Text(root, width=18, height=1, font=("Times New Roman", 14))
     loc.insert(tk.END, "Veridia")
-    coord.place(x=20, y=445)    
-    loc.place(x=1115, y=445)
+    coord.place(x=20, y=440)    
+    loc.place(x=1115, y=440)
     root.mainloop()
     return root
 

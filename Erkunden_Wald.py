@@ -6,6 +6,8 @@ from Bilder import *
 from Dialoge import *
 from Dialogsystem import TextboxManager
 from Fight import Fight
+from Gegnerliste import Vorluna
+
 
 def forest(root, parent_frame):  
     for widget in parent_frame.winfo_children():
@@ -122,6 +124,8 @@ def forest(root, parent_frame):
     def kampf():
         if pc_loc[0] == 2 and pc_loc[1] ==2:
             betrButton.place_forget() 
+            loc.place_forget()
+            coord.place_forget()
             untButton.place_forget()
             whrButton.place_forget()
             aufhbButton.place_forget()
@@ -132,7 +136,7 @@ def forest(root, parent_frame):
             rt_Button.place_forget()
             mb_Button.place_forget()
             bg_label.place_forget()
-            Fight(root, parent_frame)
+            Fight(root, parent_frame, Vorluna)
     def vor():
         new_y = pc_loc[1] + 1
         
@@ -196,6 +200,62 @@ def forest(root, parent_frame):
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))
 
+    def MapButton():
+        Map = tk.Toplevel(root)
+        Map.title("Map")
+        Map.geometry("636x592")
+        Map.resizable(False, False)
+        Map.configure(bg="#6B6B6B")
+        Map.attributes("-fullscreen", False)
+
+        m_pfad = Image.open("C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\WorldMap.png")
+        m_image = ImageTk.PhotoImage(m_pfad)
+        m_label = tk.Label(Map, image=m_image)
+        m_label.image = m_image  # Wichtig: Behalte eine Referenz auf das Bild, um es anzuzeigen.
+        m_label.place(x=-1, y=0)
+        
+        def WaldButton(root, parent_frame):
+            for widget in parent_frame.winfo_children():
+                widget.destroy()
+            loc.place_forget()
+            coord.place_forget()
+            betrButton.place_forget() 
+            untButton.place_forget()
+            whrButton.place_forget()
+            aufhbButton.place_forget()
+            lp_Button.place_forget()
+            rp_Button.place_forget()
+            vp_Button.place_forget()
+            zp_Button.place_forget()
+            rt_Button.place_forget()
+            mb_Button.place_forget()
+            bg_label.place_forget()
+            forest(root, parent_frame)
+            
+        def VeridiaButton(root, parent_frame):
+            for widget in parent_frame.winfo_children():
+                widget.destroy()
+            loc.place_forget()
+            coord.place_forget()
+            betrButton.place_forget() 
+            untButton.place_forget()
+            whrButton.place_forget()
+            aufhbButton.place_forget()
+            lp_Button.place_forget()
+            rp_Button.place_forget()
+            vp_Button.place_forget()
+            zp_Button.place_forget()
+            rt_Button.place_forget()
+            mb_Button.place_forget()
+            bg_label.place_forget()
+            explore(root, parent_frame)
+            
+        Wald_Button = tk.Button(Map, text="Forest", command=lambda: WaldButton(root, parent_frame))
+        Wald_Button.place(x=370, y=300) 
+        Veridia_Button = tk.Button(Map, text="Veridia", command=lambda: VeridiaButton(root, parent_frame))
+        Veridia_Button.place(x=230, y=315) 
+        Kueste_Button = tk.Button(Map, text="Coast", command=lambda: explore(root, parent_frame))
+        Kueste_Button.place(x=300, y=10) 
     # Setzt die Breite der Buttons fest
     button_width = 15
     # Der "Examine" Button
@@ -247,7 +307,7 @@ def forest(root, parent_frame):
     # Der Button für die Karte
     mb_pfad = Image.open(KarteButton)
     mb_image = ImageTk.PhotoImage(mb_pfad)
-    mb_Button = ttk.Button(root, image=mb_image)
+    mb_Button = ttk.Button(root, image=mb_image, command=MapButton)
     mb_Button.place(x=1250, y=20)
 
     #Die textbox mit den Koordinaten
