@@ -351,3 +351,15 @@ ZVeridia_9_Examine = "As you venture deeper into the ruined village, the mist gr
 ZVeridia_9_Touch = "The mist becomes denser, and your sense of touch is heightened by the anticipation of discovery. The presence of \ncountless silhouettes adds to the allure of the veiled mystery."
 ZVeridia_9_Perceive = "Each step takes you further into the enigma. The silhouettes navigate the fog with familiarity, and you can't \nhelp but feel that the village holds untold stories waiting to be unveiled."
 ZVeridia_9_PickUp = "In the shrouded determination of this place, you find nothing to pick up, but the presence of the silhouettes adds \ndepth to the village's resilience and determination."
+
+Vorluna_Dialog = ""
+
+
+
+
+
+
+
+
+
+
