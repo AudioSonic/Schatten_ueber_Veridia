@@ -1,4 +1,3 @@
-import random
 import tkinter as tk
 from tkinter import ttk
 from tkinter import PhotoImage
@@ -7,7 +6,7 @@ from Bilder import *
 from Gegnerliste import *
 import random
 
-def Fight(root, parent_frame, gegner ):
+def Fight(root, parent_frame, gegner):
     for widget in parent_frame.winfo_children():
         widget.destroy()
   
@@ -37,6 +36,7 @@ def Fight(root, parent_frame, gegner ):
                     stamina_attack()
                     boss_attack()
                     update_player_stats()
+                    update_progress()
                
             else:
                 text_output.config(state=tk.NORMAL)
@@ -60,6 +60,7 @@ def Fight(root, parent_frame, gegner ):
                     stamina_counter()
                     boss_attack_counter()
                     update_player_stats()
+                    update_progress()
                
             else:
              text_output.config(state=tk.NORMAL)
@@ -86,11 +87,13 @@ def Fight(root, parent_frame, gegner ):
                     text_output.config(state=tk.DISABLED)
                     boss_attack()
                     update_player_stats()
+                    update_progress()
                 else:
                     text_output.config(state=tk.NORMAL)
                     text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
                     text_output.insert(tk.END, "You can not restore more stamina")
                     text_output.config(state=tk.DISABLED)
+                    update_progress()
         else:
             player_hp.set(0)
             GAME_OVER()
@@ -101,12 +104,15 @@ def Fight(root, parent_frame, gegner ):
         if current_player_hp >0: 
             if current_player_hp <60:
                player_hp.set(current_player_hp+60)
+               update_player_stats()
+               
                 
             else: 
                 text_output.config(state=tk.NORMAL)
                 text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
                 text_output.insert(tk.END, "Es ist noch zu früh einen Tank zu nehmen")
                 text_output.config(state=tk.DISABLED)
+                update_progress()
         else:
             GAME_OVER()
             
@@ -188,10 +194,8 @@ def Fight(root, parent_frame, gegner ):
     # Erstelle eine Variable zur Verfolgung der Spieler-STM
     player_STM = tk.IntVar()
     player_STM.set(30)  # Starte mit voller Stamina
-
-    # Erstelle eine Variable zur Verfolgung der Boss-HP
-    boss_hp = tk.IntVar()
-    boss_hp.set(gegner[0])  # Starte mit vollen HP
+    
+     
     
     # Textfeld fuer die Ausgabe
     gegner_name = tk.Text(root, height=1, width=33, wrap="none")
@@ -204,13 +208,16 @@ def Fight(root, parent_frame, gegner ):
     #Einfuegen und aendern des Lauftext
     gegner_name.config(state=tk.NORMAL)
     gegner_name.insert(tk.END, "Vorluna:")
-    gegner_name.config(state=tk.DISABLED)
+    gegner_name.config(state=tk.DISABLED) 
+    
+    # Erstelle eine Variable zur Verfolgung der Boss-HP
+    boss_hp = tk.IntVar()
+    boss_hp.set(100) # Starte mit vollen HP
     
     # Erstelle einen determinierten Ladebalken f�r die Boss-HP
     progress_bar = ttk.Progressbar(root, mode="determinate", variable=boss_hp, length=300)
-    progress_bar.place(x = 450, y = 50)
-   
-
+    progress_bar.place(x = 450, y = 50)  
+ 
     #Setzt die Breite der Buttons fest
     button_width = 12
     

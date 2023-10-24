@@ -6,6 +6,8 @@ from Bilder import *
 from Erkunden import explore
 from Fight import Fight
 from Erkunden_ZVeridia import zveridia
+from Gegnerliste import *
+import random
 
 def mainMenu():
     root = tk.Tk()
@@ -39,7 +41,7 @@ def mainMenu():
         ForestButton.place_forget()
         #Starte die "explore" Funktion aus der Erkunden Datei
         pygame.mixer.music.stop()
-        Fight(root, content_frame)
+        Fight(root, content_frame, Vorluna)
         ForestButton.place_forget()
     def ForestButtonClicked():
         # Blende den Button nach dem Klicken aus
