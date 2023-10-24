@@ -1,16 +1,16 @@
 ﻿import tkinter as tk
-from tkinter import ttk
+from tkinter import Toplevel, ttk
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
 from Bilder import *
 from Dialoge import *
 from Dialogsystem import TextboxManager
-from Erkunden_Wald import forest
-from Erkunden_Ebene import plain
-from Erkunden_Hoehle import cave
-from Erkunden_Sumpf import swamp
-from Erkunden_Kueste import coast
-from Erkunden_ZVeridia import zveridia
+import Erkunden_Wald as Wald
+import Erkunden_Ebene as Ebene
+import Erkunden_Hoehle as Hoehle
+import Erkunden_Sumpf as Sumpf
+import Erkunden_ZVeridia as ZVeridia
+import Erkunden_Kueste as Kueste
 
 
 def explore(root, parent_frame):  
@@ -356,40 +356,23 @@ def explore(root, parent_frame):
         m_label.place(x=-1, y=0)
         
         def WaldButton(root, parent_frame):
-            for widget in parent_frame.winfo_children():
-                widget.destroy()
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
-            forest(root, parent_frame)
-            
-        def VeridiaButton(root, parent_frame):
-            for widget in parent_frame.winfo_children():
-                widget.destroy()
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
-            explore(root, parent_frame)
+                for widget in parent_frame.winfo_children():
+                    widget.destroy()
+                loc.place_forget()
+                coord.place_forget()
+                betrButton.place_forget() 
+                untButton.place_forget()
+                whrButton.place_forget()
+                aufhbButton.place_forget()
+                lp_Button.place_forget()
+                rp_Button.place_forget()
+                vp_Button.place_forget()
+                zp_Button.place_forget()
+                rt_Button.place_forget()
+                mb_Button.place_forget()
+                bg_label.place_forget()
+                Map.destroy()
+                Wald.forest(root, parent_frame)
            
         def SumpfButton(root, parent_frame):
             for widget in parent_frame.winfo_children():
@@ -407,84 +390,89 @@ def explore(root, parent_frame):
             rt_Button.place_forget()
             mb_Button.place_forget()
             bg_label.place_forget()
-            swamp(root, parent_frame)
+            Map.destroy()
+            Sumpf.swamp(root, parent_frame)
+
+
             
         def HoehleButton(root, parent_frame):
-            for widget in parent_frame.winfo_children():
-                widget.destroy()
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
-            cave(root, parent_frame)
+                for widget in parent_frame.winfo_children():
+                    widget.destroy()
+                loc.place_forget()
+                coord.place_forget()
+                betrButton.place_forget() 
+                untButton.place_forget()
+                whrButton.place_forget()
+                aufhbButton.place_forget()
+                lp_Button.place_forget()
+                rp_Button.place_forget()
+                vp_Button.place_forget()
+                zp_Button.place_forget()
+                rt_Button.place_forget()
+                mb_Button.place_forget()
+                bg_label.place_forget()
+                Map.destroy()
+                Hoehle.cave(root, parent_frame)
 
         def EbeneButton(root, parent_frame):
-            for widget in parent_frame.winfo_children():
-                widget.destroy()
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
-            plain(root, parent_frame)
+                for widget in parent_frame.winfo_children():
+                    widget.destroy()
+                loc.place_forget()
+                coord.place_forget()
+                betrButton.place_forget() 
+                untButton.place_forget()
+                whrButton.place_forget()
+                aufhbButton.place_forget()
+                lp_Button.place_forget()
+                rp_Button.place_forget()
+                vp_Button.place_forget()
+                zp_Button.place_forget()
+                rt_Button.place_forget()
+                mb_Button.place_forget()
+                bg_label.place_forget()
+                Map.destroy()
+                Ebene.plain(root, parent_frame)
             
         def ZVeridiaButton(root, parent_frame):
-            for widget in parent_frame.winfo_children():
-                widget.destroy()
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
-            zveridia(root, parent_frame)
+                for widget in parent_frame.winfo_children():
+                    widget.destroy()
+                loc.place_forget()
+                coord.place_forget()
+                betrButton.place_forget() 
+                untButton.place_forget()
+                whrButton.place_forget()
+                aufhbButton.place_forget()
+                lp_Button.place_forget()
+                rp_Button.place_forget()
+                vp_Button.place_forget()
+                zp_Button.place_forget()
+                rt_Button.place_forget()
+                mb_Button.place_forget()
+                bg_label.place_forget()
+                Map.destroy()
+                ZVeridia.zveridia(root, parent_frame)
             
         def KuesteButton(root, parent_frame):
-            for widget in parent_frame.winfo_children():
-                widget.destroy()
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
-            coast(root, parent_frame)
-            
+                for widget in parent_frame.winfo_children():
+                    widget.destroy()
+                loc.place_forget()
+                coord.place_forget()
+                betrButton.place_forget() 
+                untButton.place_forget()
+                whrButton.place_forget()
+                aufhbButton.place_forget()
+                lp_Button.place_forget()
+                rp_Button.place_forget()
+                vp_Button.place_forget()
+                zp_Button.place_forget()
+                rt_Button.place_forget()
+                mb_Button.place_forget()
+                bg_label.place_forget()
+                Map.destroy()
+                Kueste.coast(root, parent_frame)
+        
         Wald_Button = tk.Button(Map, text="Forest", command=lambda: WaldButton(root, parent_frame))
         Wald_Button.place(x=370, y=300) 
-        Veridia_Button = tk.Button(Map, text="Veridia", command=lambda: VeridiaButton(root, parent_frame))
-        Veridia_Button.place(x=230, y=315) 
         ZVeridia_Button = tk.Button(Map, text="ZVeridia", command=lambda: ZVeridiaButton(root, parent_frame))
         ZVeridia_Button.place(x=230, y=300) 
         Kueste_Button = tk.Button(Map, text="Coast", command=lambda: KuesteButton(root, parent_frame))
@@ -494,9 +482,8 @@ def explore(root, parent_frame):
         Ebene_Button = tk.Button(Map, text="Plain", command=lambda: EbeneButton(root, parent_frame))
         Ebene_Button.place(x=280, y=510) 
         Hoehle_Button = tk.Button(Map, text="Cave", command=lambda: HoehleButton(root, parent_frame))
-        Hoehle_Button.place(x=570, y=370) 
+        Hoehle_Button.place(x=570, y=370)
         
-
     # Setzt die Breite der Buttons fest
     button_width = 15
     # Der "Betrachten" Button
