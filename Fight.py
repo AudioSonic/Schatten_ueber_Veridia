@@ -5,6 +5,7 @@ from PIL import Image, ImageTk
 from Bilder import *
 from Gegnerliste import *
 import random
+import Dialoge
 
 def Fight(root, parent_frame, gegner):
     for widget in parent_frame.winfo_children():
@@ -207,7 +208,7 @@ def Fight(root, parent_frame, gegner):
     
     #Einfuegen und aendern des Lauftext
     gegner_name.config(state=tk.NORMAL)
-    gegner_name.insert(tk.END, "Vorluna:")
+    gegner_name.insert(tk.END, gegner[6])
     gegner_name.config(state=tk.DISABLED) 
     
     # Erstelle eine Variable zur Verfolgung der Boss-HP
@@ -244,7 +245,7 @@ def Fight(root, parent_frame, gegner):
     
 
     #Der "Escape" Button
-    aufhbButton = ttk.Button(root, text="Escape", padding=(50, 10), width=button_width, style="TNR.TLabel")
+    aufhbButton = ttk.Button(root, text="Escape", padding=(50, 10), width=button_width, style="TNR.TLabel", command=Escape )
     aufhbButton.place(x=1043, y=680)
 
 
@@ -274,7 +275,7 @@ def Fight(root, parent_frame, gegner):
 
     #Einfuegen und aendern des Lauftext
     text_output.config(state=tk.NORMAL)
-    text_output.insert(tk.END, "A\nB\nC\nD\nF\nG")
+    text_output.insert(tk.END, gegner[5])
     text_output.config(state=tk.DISABLED)      
 
 
