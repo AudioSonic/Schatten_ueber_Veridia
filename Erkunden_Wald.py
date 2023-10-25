@@ -36,22 +36,38 @@ def forest(root, parent_frame):
     pc_loc = [1, 0]
     # Das Gitter-Wörterbuch, das Koordinaten mit Aktionen verknüpft
     grid = {
-        (0, 0): Wald_1,
-        (0, 1): Wald_2,
+        (0, 0): Wald_1, 
+        (0, 1): Wald_2, #Gegner
         (0, 2): Wald_3,
         (1, 0): Wald_4,
         (1, 1): Wald_5,
         (1, 2): Wald_6,
         (2, 0): Wald_7,
         (2, 1): Wald_8,
-        (2, 2): Wald_9
+        (2, 2): Wald_9 #Boss
     }
 
+    def Edelete():
+            betrButton.place_forget() 
+            loc.place_forget()
+            coord.place_forget()
+            untButton.place_forget()
+            whrButton.place_forget()
+            aufhbButton.place_forget()
+            lp_Button.place_forget()
+            rp_Button.place_forget()
+            vp_Button.place_forget()
+            zp_Button.place_forget()
+            rt_Button.place_forget()
+            mb_Button.place_forget()
+            bg_label.place_forget()
+        
     def examine():
         if pc_loc[0] == 0 and pc_loc[1] == 0:
             Dialog.update_text(Wald_1_Examine)
         elif pc_loc[0] == 0 and pc_loc[1] == 1:
-            Dialog.update_text(Wald_2_Examine)
+            Edelete()
+            Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Wald)
         elif pc_loc[0] == 0 and pc_loc[1] == 2:
             Dialog.update_text(Wald_3_Examine)   
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
@@ -65,7 +81,8 @@ def forest(root, parent_frame):
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Wald_8_Examine) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
-            Dialog.update_text(Wald_9_Examine)            
+            Edelete()
+            Fight.Fight(root, parent_frame,Gegnerliste.Zyrelia_Boss)          
 
     def touch():
         if pc_loc[0] == 0 and pc_loc[1] == 0:
@@ -126,22 +143,7 @@ def forest(root, parent_frame):
             Dialog.update_text(Wald_8_PickUp) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
             Dialog.update_text(Wald_9_PickUp) 
-    def kampf():
-        if pc_loc[0] == 2 and pc_loc[1] ==2:
-            betrButton.place_forget() 
-            loc.place_forget()
-            coord.place_forget()
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
-            Fight.Fight(root, parent_frame, Gegnerliste.Vorluna1)
+
     def vor():
         new_y = pc_loc[1] + 1
         
@@ -151,7 +153,7 @@ def forest(root, parent_frame):
             Dialog.update_text(action)
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))
-            kampf()
+
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
@@ -164,7 +166,7 @@ def forest(root, parent_frame):
             Dialog.update_text(action)
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))            
-            kampf()
+
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)        
@@ -177,7 +179,7 @@ def forest(root, parent_frame):
             Dialog.update_text(action)
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))
-            kampf()
+
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
@@ -190,7 +192,7 @@ def forest(root, parent_frame):
             Dialog.update_text(action)
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))
-            kampf()
+
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
