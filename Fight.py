@@ -117,7 +117,18 @@ def Fight(root, parent_frame, gegner):
         else:
             GAME_OVER()
             
-        
+    def escape():
+        if gegner[6] == 0:
+            text_output.config(state=tk.NORMAL)
+            text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+            text_output.insert(tk.END, "You can´t run away")
+            text_output.config(state=tk.DISABLED)
+        else:
+            gegner[6]
+            
+
+
+
     def update_player_stats():
         show_HP =  f"HP:                  {player_hp.get()}/120"    
         show_STM = f"Stamina:          {player_STM.get()}/30"
@@ -245,7 +256,7 @@ def Fight(root, parent_frame, gegner):
     
 
     #Der "Escape" Button
-    aufhbButton = ttk.Button(root, text="Escape", padding=(50, 10), width=button_width, style="TNR.TLabel", command=Escape )
+    aufhbButton = ttk.Button(root, text="Escape", padding=(50, 10), width=button_width, style="TNR.TLabel")
     aufhbButton.place(x=1043, y=680)
 
 

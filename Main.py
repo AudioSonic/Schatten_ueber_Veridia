@@ -3,11 +3,11 @@ import pygame
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
 from Bilder import *
-from Erkunden import explore
-from Fight import Fight
+import Fight
 from Erkunden_ZVeridia import zveridia
 from Gegnerliste import *
 import random
+from Intro import Intro, Intro
 
 def mainMenu():
     root = tk.Tk()
@@ -32,7 +32,7 @@ def mainMenu():
         ForestButton.place_forget()
         #Starte die "explore" Funktion aus der Erkunden Datei
         pygame.mixer.music.stop()
-        explore(root, content_frame)
+        Intro(root, content_frame)
        
     def FightButtonClicked():
         # Blende den Button nach dem Klicken aus
@@ -41,7 +41,7 @@ def mainMenu():
         ForestButton.place_forget()
         #Starte die "explore" Funktion aus der Erkunden Datei
         pygame.mixer.music.stop()
-        Fight(root, content_frame, Vorluna)
+        Fight.Fight(root, content_frame, Vorluna)
         ForestButton.place_forget()
     def ForestButtonClicked():
         # Blende den Button nach dem Klicken aus
@@ -50,7 +50,7 @@ def mainMenu():
         ForestButton.place_forget()
         #Starte die "explore" Funktion aus der Erkunden Datei
         pygame.mixer.music.stop()
-        zveridia(root, content_frame)
+        Intro(root, content_frame)
 
     StartButton = tk.Button(root, text="SPIEL STARTEN", font=("Times New Roman", 16),command=StartButtonClicked)
     StartButton.place(x=550, y=650)
