@@ -41,12 +41,26 @@ def cave(root, parent_frame):
         (0, 2): Hoehle_3,
         (1, 0): Hoehle_4,
         (1, 1): Hoehle_5,
-        (1, 2): Hoehle_6,
+        (1, 2): Hoehle_6, #Gegner Undead
         (2, 0): Hoehle_7,
         (2, 1): Hoehle_8,
-        (2, 2): Hoehle_9
+        (2, 2): Hoehle_9 #Boss Vorluna
     }
-
+    def Edelete():
+        betrButton.place_forget() 
+        loc.place_forget()
+        coord.place_forget()
+        untButton.place_forget()
+        whrButton.place_forget()
+        aufhbButton.place_forget()
+        lp_Button.place_forget()
+        rp_Button.place_forget()
+        vp_Button.place_forget()
+        zp_Button.place_forget()
+        rt_Button.place_forget()
+        mb_Button.place_forget()
+        bg_label.place_forget()
+    
     def examine():
         if pc_loc[0] == 0 and pc_loc[1] == 0:
             Dialog.update_text(Hoehle_1_Examine)
@@ -59,13 +73,15 @@ def cave(root, parent_frame):
         elif pc_loc[0] == 1 and pc_loc[1] == 1:
             Dialog.update_text(Hoehle_5_Examine)  
         elif pc_loc[0] == 1 and pc_loc[1] == 2:
-            Dialog.update_text(Hoehle_6_Examine)  
+            Edelete()
+            Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Hoehle)    
         elif pc_loc[0] == 2 and pc_loc[1] == 0:
             Dialog.update_text(Hoehle_7_Examine) 
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Hoehle_8_Examine) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
-            Dialog.update_text(Hoehle_9_Examine)            
+            Edelete()
+            Fight.Fight(root, parent_frame,Gegnerliste.Vorluna_Boss)            
 
     def touch():
         if pc_loc[0] == 0 and pc_loc[1] == 0:

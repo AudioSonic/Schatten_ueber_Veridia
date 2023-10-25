@@ -37,14 +37,14 @@ def forest(root, parent_frame):
     # Das Gitter-Wörterbuch, das Koordinaten mit Aktionen verknüpft
     grid = {
         (0, 0): Wald_1, 
-        (0, 1): Wald_2, #Gegner
+        (0, 1): Wald_2, #Gegner Rider
         (0, 2): Wald_3,
         (1, 0): Wald_4,
         (1, 1): Wald_5,
         (1, 2): Wald_6,
         (2, 0): Wald_7,
         (2, 1): Wald_8,
-        (2, 2): Wald_9 #Boss
+        (2, 2): Wald_9 #Boss Zyrelia
     }
 
     def Edelete():

@@ -41,13 +41,27 @@ def zveridia(root, parent_frame):
         (0, 1): ZVeridia_2,
         (0, 2): ZVeridia_3,
         (1, 0): ZVeridia_4,
-        (1, 1): ZVeridia_5,
+        (1, 1): ZVeridia_5, #Boss Malikar
         (1, 2): ZVeridia_6,
         (2, 0): ZVeridia_7,
         (2, 1): ZVeridia_8,
         (2, 2): ZVeridia_9
     }
-
+    def Edelete():
+        betrButton.place_forget() 
+        loc.place_forget()
+        coord.place_forget()
+        untButton.place_forget()
+        whrButton.place_forget()
+        aufhbButton.place_forget()
+        lp_Button.place_forget()
+        rp_Button.place_forget()
+        vp_Button.place_forget()
+        zp_Button.place_forget()
+        rt_Button.place_forget()
+        mb_Button.place_forget()
+        bg_label.place_forget()
+    
     def examine():
         if pc_loc[0] == 0 and pc_loc[1] == 0:
             Dialog.update_text(ZVeridia_1_Examine)
@@ -58,7 +72,8 @@ def zveridia(root, parent_frame):
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
             Dialog.update_text(ZVeridia_4_Examine)   
         elif pc_loc[0] == 1 and pc_loc[1] == 1:
-            Dialog.update_text(ZVeridia_5_Examine)  
+            Edelete()
+            Fight.Fight(root, parent_frame,Gegnerliste.Malikar_Boss)  
         elif pc_loc[0] == 1 and pc_loc[1] == 2:
             Dialog.update_text(ZVeridia_6_Examine)  
         elif pc_loc[0] == 2 and pc_loc[1] == 0:

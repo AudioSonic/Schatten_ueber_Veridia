@@ -41,12 +41,14 @@ def coast(root, parent_frame):
         (0, 1): Kueste_2,
         (0, 2): Kueste_3,
         (1, 0): Kueste_4,
-        (1, 1): Kueste_5, #Gegner
-        (1, 2): Kueste_6, #Boss
+        (1, 1): Kueste_5, #Gegner Ghoul
+        (1, 2): Kueste_6, #Boss Dazenar
         (2, 0): Kueste_7,
         (2, 1): Kueste_8,
         (2, 2): Kueste_9
     }
+
+
     def Edelete():
         betrButton.place_forget() 
         loc.place_forget()
@@ -72,9 +74,11 @@ def coast(root, parent_frame):
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
             Dialog.update_text(Kueste_4_Examine)   
         elif pc_loc[0] == 1 and pc_loc[1] == 1:
-            Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Wald)  
+            Edelete()
+            Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Kueste)  
         elif pc_loc[0] == 1 and pc_loc[1] == 2:
-            Dialog.update_text(Kueste_6_Examine)  
+            Edelete()
+            Fight.Fight(root, parent_frame,Gegnerliste.Dazenar_Boss) 
         elif pc_loc[0] == 2 and pc_loc[1] == 0:
             Dialog.update_text(Kueste_7_Examine) 
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
@@ -446,3 +450,4 @@ def coast(root, parent_frame):
     loc.place(x=1115, y=440)
     root.mainloop()
     return root
+
