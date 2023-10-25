@@ -7,6 +7,12 @@ from Dialoge import *
 from Dialogsystem import TextboxManager
 from Fight import Fight
 from Gegnerliste import Vorluna
+import Erkunden_Wald as Wald
+import Erkunden_Ebene as Ebene
+import Erkunden_Hoehle as Hoehle
+import Erkunden_Sumpf as Sumpf
+import Erkunden_ZVeridia as ZVeridia
+import Erkunden_Kueste as Kueste
 
 
 def swamp(root, parent_frame):  
@@ -25,7 +31,7 @@ def swamp(root, parent_frame):
 
     # Die TextboxManager aus der Dialogsystem Datei
     Dialog = TextboxManager(parent_frame)
-    Dialog.update_text(Einleitung)
+    Dialog.update_text(Sumpf_4)
 
     # Die Startposition des Charakters
     pc_loc = [1, 0]
@@ -200,6 +206,25 @@ def swamp(root, parent_frame):
         m_label.place(x=-1, y=0)
         
         def WaldButton(root, parent_frame):
+                for widget in parent_frame.winfo_children():
+                    widget.destroy()
+                loc.place_forget()
+                coord.place_forget()
+                betrButton.place_forget() 
+                untButton.place_forget()
+                whrButton.place_forget()
+                aufhbButton.place_forget()
+                lp_Button.place_forget()
+                rp_Button.place_forget()
+                vp_Button.place_forget()
+                zp_Button.place_forget()
+                rt_Button.place_forget()
+                mb_Button.place_forget()
+                bg_label.place_forget()
+                Map.destroy()
+                Wald.forest(root, parent_frame)
+           
+        def SumpfButton(root, parent_frame):
             for widget in parent_frame.winfo_children():
                 widget.destroy()
             loc.place_forget()
@@ -215,32 +240,99 @@ def swamp(root, parent_frame):
             rt_Button.place_forget()
             mb_Button.place_forget()
             bg_label.place_forget()
-            forest(root, parent_frame)
+            Map.destroy()
+            Sumpf.swamp(root, parent_frame)
+
+
             
-        def VeridiaButton(root, parent_frame):
-            for widget in parent_frame.winfo_children():
-                widget.destroy()
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
-            explore(root, parent_frame)
+        def HoehleButton(root, parent_frame):
+                for widget in parent_frame.winfo_children():
+                    widget.destroy()
+                loc.place_forget()
+                coord.place_forget()
+                betrButton.place_forget() 
+                untButton.place_forget()
+                whrButton.place_forget()
+                aufhbButton.place_forget()
+                lp_Button.place_forget()
+                rp_Button.place_forget()
+                vp_Button.place_forget()
+                zp_Button.place_forget()
+                rt_Button.place_forget()
+                mb_Button.place_forget()
+                bg_label.place_forget()
+                Map.destroy()
+                Hoehle.cave(root, parent_frame)
+
+        def EbeneButton(root, parent_frame):
+                for widget in parent_frame.winfo_children():
+                    widget.destroy()
+                loc.place_forget()
+                coord.place_forget()
+                betrButton.place_forget() 
+                untButton.place_forget()
+                whrButton.place_forget()
+                aufhbButton.place_forget()
+                lp_Button.place_forget()
+                rp_Button.place_forget()
+                vp_Button.place_forget()
+                zp_Button.place_forget()
+                rt_Button.place_forget()
+                mb_Button.place_forget()
+                bg_label.place_forget()
+                Map.destroy()
+                Ebene.plain(root, parent_frame)
             
+        def ZVeridiaButton(root, parent_frame):
+                for widget in parent_frame.winfo_children():
+                    widget.destroy()
+                loc.place_forget()
+                coord.place_forget()
+                betrButton.place_forget() 
+                untButton.place_forget()
+                whrButton.place_forget()
+                aufhbButton.place_forget()
+                lp_Button.place_forget()
+                rp_Button.place_forget()
+                vp_Button.place_forget()
+                zp_Button.place_forget()
+                rt_Button.place_forget()
+                mb_Button.place_forget()
+                bg_label.place_forget()
+                Map.destroy()
+                ZVeridia.zveridia(root, parent_frame)
+            
+        def KuesteButton(root, parent_frame):
+                for widget in parent_frame.winfo_children():
+                    widget.destroy()
+                loc.place_forget()
+                coord.place_forget()
+                betrButton.place_forget() 
+                untButton.place_forget()
+                whrButton.place_forget()
+                aufhbButton.place_forget()
+                lp_Button.place_forget()
+                rp_Button.place_forget()
+                vp_Button.place_forget()
+                zp_Button.place_forget()
+                rt_Button.place_forget()
+                mb_Button.place_forget()
+                bg_label.place_forget()
+                Map.destroy()
+                Kueste.coast(root, parent_frame)
+        
         Wald_Button = tk.Button(Map, text="Forest", command=lambda: WaldButton(root, parent_frame))
         Wald_Button.place(x=370, y=300) 
-        Veridia_Button = tk.Button(Map, text="Veridia", command=lambda: VeridiaButton(root, parent_frame))
-        Veridia_Button.place(x=230, y=315) 
-        Kueste_Button = tk.Button(Map, text="Coast", command=lambda: explore(root, parent_frame))
-        Kueste_Button.place(x=300, y=10) 
+        ZVeridia_Button = tk.Button(Map, text="ZVeridia", command=lambda: ZVeridiaButton(root, parent_frame))
+        ZVeridia_Button.place(x=230, y=300) 
+        Kueste_Button = tk.Button(Map, text="Coast", command=lambda: KuesteButton(root, parent_frame))
+        Kueste_Button.place(x=300, y=110) 
+        Sumpf_Button = tk.Button(Map, text="Swamp", command=lambda: SumpfButton(root, parent_frame))
+        Sumpf_Button.place(x=50, y=350) 
+        Ebene_Button = tk.Button(Map, text="Plain", command=lambda: EbeneButton(root, parent_frame))
+        Ebene_Button.place(x=280, y=510) 
+        Hoehle_Button = tk.Button(Map, text="Cave", command=lambda: HoehleButton(root, parent_frame))
+        Hoehle_Button.place(x=570, y=370)
     # Setzt die Breite der Buttons fest
     button_width = 15
     # Der "Examine" Button
