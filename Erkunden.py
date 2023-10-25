@@ -35,15 +35,15 @@ def explore(root, parent_frame):
 
     # Das Grid-Wörterbuch, das Koordinaten mit Aktionen verknüpft
     grid = {
-        (0, 0): Veridia_1,
+        (0, 0): Veridia_1, #Brigitte
         (0, 1): Veridia_2,
-        (0, 2): Veridia_3,
+        (0, 2): Veridia_3, #Ulrich
         (1, 0): Veridia_4,
-        (1, 1): Veridia_5,
+        (1, 1): Veridia_5, #Miriam
         (1, 2): Veridia_6,
         (2, 0): Veridia_7,
         (2, 1): Veridia_8,
-        (2, 2): Veridia_9
+        (2, 2): Veridia_9 #Gottfried
     }
     def examine():
         if pc_loc[0] == 0 and pc_loc[1] == 0:
@@ -619,6 +619,7 @@ def Dialogfenster(root, parent_frame, character):
     dlg2_Button = ttk.Button(root, text="LAST DIALOGUE", padding=(50, 10), width=button_width, style="TNR.TLabel", command=lambda: dialogmanager(current_index - 1))
     dlg2_Button.place(x=750, y=680)
 
+    #Der Return Button
     rt_pfad = Image.open(arrowReturn)
     rt_image = ImageTk.PhotoImage(rt_pfad)
     rt_Button = ttk.Button(root, image=rt_image, command = back)

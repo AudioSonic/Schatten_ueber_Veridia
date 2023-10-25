@@ -19,7 +19,7 @@ def plain(root, parent_frame):
     for widget in parent_frame.winfo_children():
         widget.destroy()
   
-    # Erstellt einen Stil für die Schrift. In dem Fall Times New Roman
+    # Erstellt einen Stil fï¿½r die Schrift. In dem Fall Times New Roman
     style = ttk.Style()
     style.configure("TNR.TLabel", font=("Times New Roman", 14))  
 
@@ -35,26 +35,41 @@ def plain(root, parent_frame):
 
     # Die Startposition des Charakters
     pc_loc = [1, 0]
-    # Das Gitter-Wörterbuch, das Koordinaten mit Aktionen verknüpft
+    # Das Gitter-Wï¿½rterbuch, das Koordinaten mit Aktionen verknï¿½pft
     grid = {
-        (0, 0): Ebene_1,
+        (0, 0): Ebene_1, 
         (0, 1): Ebene_2,
-        (0, 2): Ebene_3,
+        (0, 2): Ebene_3, #Gegner Wolf
         (1, 0): Ebene_4,
         (1, 1): Ebene_5,
         (1, 2): Ebene_6,
-        (2, 0): Ebene_7,
+        (2, 0): Ebene_7, #Boss Varoth
         (2, 1): Ebene_8,
         (2, 2): Ebene_9
     }
-
+    def Edelete():
+        betrButton.place_forget() 
+        loc.place_forget()
+        coord.place_forget()
+        untButton.place_forget()
+        whrButton.place_forget()
+        aufhbButton.place_forget()
+        lp_Button.place_forget()
+        rp_Button.place_forget()
+        vp_Button.place_forget()
+        zp_Button.place_forget()
+        rt_Button.place_forget()
+        mb_Button.place_forget()
+        bg_label.place_forget()
+        
     def examine():
         if pc_loc[0] == 0 and pc_loc[1] == 0:
             Dialog.update_text(Ebene_1_Examine)
         elif pc_loc[0] == 0 and pc_loc[1] == 1:
             Dialog.update_text(Ebene_2_Examine)
         elif pc_loc[0] == 0 and pc_loc[1] == 2:
-            Dialog.update_text(Ebene_3_Examine)   
+            Edelete()
+            Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Ebene)     
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
             Dialog.update_text(Ebene_4_Examine)   
         elif pc_loc[0] == 1 and pc_loc[1] == 1:
@@ -62,7 +77,8 @@ def plain(root, parent_frame):
         elif pc_loc[0] == 1 and pc_loc[1] == 2:
             Dialog.update_text(Ebene_6_Examine)  
         elif pc_loc[0] == 2 and pc_loc[1] == 0:
-            Dialog.update_text(Ebene_7_Examine) 
+            Edelete()
+            Fight.Fight(root, parent_frame,Gegnerliste.Varoth_Boss)  
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Ebene_8_Examine) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
@@ -376,7 +392,7 @@ def plain(root, parent_frame):
     rt_Button = ttk.Button(root, image=rt_image, command=reset)
     rt_Button.place(x=20, y=670)
 
-    # Der Button für die Karte
+    # Der Button fï¿½r die Karte
     mb_pfad = Image.open(KarteButton)
     mb_image = ImageTk.PhotoImage(mb_pfad)
     mb_Button = ttk.Button(root, image=mb_image, command=MapButton)
