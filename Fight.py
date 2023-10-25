@@ -256,7 +256,7 @@ def Fight(root, parent_frame, gegner):
     
 
     #Der "Escape" Button
-    aufhbButton = ttk.Button(root, text="Escape", padding=(50, 10), width=button_width, style="TNR.TLabel", command=Escape)
+    aufhbButton = ttk.Button(root, text="Escape", padding=(50, 10), width=button_width, style="TNR.TLabel", command=Escape )
     aufhbButton.place(x=1043, y=680)
 
 
