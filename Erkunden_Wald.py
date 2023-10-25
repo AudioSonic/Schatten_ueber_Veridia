@@ -13,11 +13,11 @@ import Erkunden_Sumpf as Sumpf
 import Erkunden_ZVeridia as ZVeridia
 import Erkunden_Kueste as Kueste
 
-
-def forest(root, parent_frame):  
+    
+def forest(root, parent_frame):
     for widget in parent_frame.winfo_children():
         widget.destroy()
-  
+
     # Erstellt einen Stil für die Schrift. In dem Fall Times New Roman
     style = ttk.Style()
     style.configure("TNR.TLabel", font=("Times New Roman", 14))  
@@ -315,7 +315,7 @@ def forest(root, parent_frame):
                 bg_label.place_forget()
                 Map.destroy()
                 Kueste.coast(root, parent_frame)
-        
+         
         ZVeridia_Button = tk.Button(Map, text="ZVeridia", command=lambda: ZVeridiaButton(root, parent_frame))
         ZVeridia_Button.place(x=230, y=300) 
         Kueste_Button = tk.Button(Map, text="Coast", command=lambda: KuesteButton(root, parent_frame))

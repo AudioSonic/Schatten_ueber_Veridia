@@ -1,3 +1,4 @@
+from ctypes import FormatError
 import tkinter as tk
 from tkinter import ttk
 from tkinter import PhotoImage
@@ -6,6 +7,11 @@ from Bilder import *
 from Gegnerliste import *
 import random
 import Dialoge
+import Erkunden_Wald
+import Erkunden_Ebene
+import Erkunden_Hoehle
+import Erkunden_Kueste
+import Erkunden_Sumpf
 
 def Fight(root, parent_frame, gegner):
     for widget in parent_frame.winfo_children():
@@ -23,7 +29,23 @@ def Fight(root, parent_frame, gegner):
     gegner_label = tk.Label(root, image= gegner_image)
     gegner_label.place(x=210, y=30)
     
-
+    def Rider():
+        Erkunden_Wald.forest(root, parent_frame)
+        
+    def Wolf():
+        Erkunden_Ebene.plain(root, parent_frame)
+    
+    def Gouhl():
+        Erkunden_Kueste.coast(root, parent_frame)
+      
+    
+    def Berserk():
+        Erkunden_Sumpf.swamp(root, parent_frame)
+       
+    def Undead():
+        Erkunden_Hoehle.cave(root, parent_frame)
+        
+    
     # Druck des Attack Button
     def attack():
         update_progress()
@@ -123,8 +145,66 @@ def Fight(root, parent_frame, gegner):
             text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
             text_output.insert(tk.END, "There is no Escape")
             text_output.config(state=tk.DISABLED)
-        else:
-            gegner[7]
+        elif gegner[7] == 1:
+            gegner_label.place_forget()
+            attack_button.place_forget()
+            recover_button.place_forget()
+            progress_bar.place_forget()
+            counter_button.place_forget()
+            potion_button.place_forget()
+            escape_button.place_forget()
+            gegner_name.place_forget()
+            Player_output.place_forget()
+            text_output.place_forget()
+            Rider()
+        elif gegner[7] == 2:
+            gegner_label.place_forget()
+            attack_button.place_forget()
+            recover_button.place_forget()
+            progress_bar.place_forget()
+            counter_button.place_forget()
+            potion_button.place_forget()
+            escape_button.place_forget()
+            gegner_name.place_forget()
+            Player_output.place_forget()
+            text_output.place_forget()
+            Berserk()
+        elif gegner[7] == 3:
+            gegner_label.place_forget()
+            attack_button.place_forget()
+            recover_button.place_forget()
+            progress_bar.place_forget()
+            counter_button.place_forget()
+            potion_button.place_forget()
+            escape_button.place_forget()
+            gegner_name.place_forget()
+            Player_output.place_forget()
+            text_output.place_forget()
+            Gouhl()
+        elif gegner[7] == 4:
+            gegner_label.place_forget()
+            attack_button.place_forget()
+            recover_button.place_forget()
+            progress_bar.place_forget()
+            counter_button.place_forget()
+            potion_button.place_forget()
+            escape_button.place_forget()
+            gegner_name.place_forget()
+            Player_output.place_forget()
+            text_output.place_forget()
+            Undead()
+        elif gegner[7] == 5:
+            gegner_label.place_forget()
+            attack_button.place_forget()
+            recover_button.place_forget()
+            progress_bar.place_forget()
+            counter_button.place_forget()
+            potion_button.place_forget()
+            escape_button.place_forget()
+            gegner_name.place_forget()
+            Player_output.place_forget()
+            text_output.place_forget()
+            Wolf()
             
 
 
