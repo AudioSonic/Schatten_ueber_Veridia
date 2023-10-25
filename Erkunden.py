@@ -12,7 +12,6 @@ import Erkunden_Sumpf as Sumpf
 import Erkunden_ZVeridia as ZVeridia
 import Erkunden_Kueste as Kueste
 
-
 def explore(root, parent_frame):  
     for widget in parent_frame.winfo_children():
         widget.destroy()
@@ -29,7 +28,7 @@ def explore(root, parent_frame):
 
     # Die TextboxManager aus der Dialogsystem Datei
     Dialog = TextboxManager(parent_frame)
-    Dialog.update_text(Einleitung)
+    Dialog.update_text(Veridia_4)
 
     # Die Startposition des Charakters
     pc_loc = [1, 0]

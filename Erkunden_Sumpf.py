@@ -31,7 +31,7 @@ def swamp(root, parent_frame):
 
     # Die TextboxManager aus der Dialogsystem Datei
     Dialog = TextboxManager(parent_frame)
-    Dialog.update_text(Einleitung)
+    Dialog.update_text(Sumpf_4)
 
     # Die Startposition des Charakters
     pc_loc = [1, 0]

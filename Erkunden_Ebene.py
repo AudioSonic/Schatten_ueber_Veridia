@@ -31,7 +31,7 @@ def plain(root, parent_frame):
 
     # Die TextboxManager aus der Dialogsystem Datei
     Dialog = TextboxManager(parent_frame)
-    Dialog.update_text(Einleitung)
+    Dialog.update_text(Ebene_4)
 
     # Die Startposition des Charakters
     pc_loc = [1, 0]
@@ -194,7 +194,7 @@ def plain(root, parent_frame):
             Map.resizable(False, False)
             Map.configure(bg="#6B6B6B")
             Map.attributes("-fullscreen", False)
-
+            global Boss
             m_pfad = Image.open("C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\WorldMap.png")
             m_image = ImageTk.PhotoImage(m_pfad)
             m_label = tk.Label(Map, image=m_image)
