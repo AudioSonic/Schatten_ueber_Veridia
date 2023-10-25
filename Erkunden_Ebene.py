@@ -70,7 +70,7 @@ def plain(root, parent_frame):
 
     def touch():
         if pc_loc[0] == 0 and pc_loc[1] == 0:
-            Fight.Fight(root, parent_frame, Gegnerliste.Varoth_Boss)
+            Fight.Fight(root, parent_frame, Gegnerliste.Gegner_Ebene)
         elif pc_loc[0] == 0 and pc_loc[1] == 1:
             Dialog.update_text(Ebene_2_Touch)
         elif pc_loc[0] == 0 and pc_loc[1] == 2:

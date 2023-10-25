@@ -141,7 +141,7 @@ def forest(root, parent_frame):
             rt_Button.place_forget()
             mb_Button.place_forget()
             bg_label.place_forget()
-            Fight.Fight(root, parent_frame, Gegnerliste.Vorluna1)
+            Fight.Fight(root, parent_frame, Gegnerliste.Vorluna_Boss)
     def vor():
         new_y = pc_loc[1] + 1
         
