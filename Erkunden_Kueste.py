@@ -145,24 +145,7 @@ def coast(root, parent_frame):
             Dialog.update_text(Kueste_8_PickUp) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
             Dialog.update_text(Kueste_9_PickUp) 
-    """
-     def kampf():
-        if pc_loc[0] == 2 and pc_loc[1] ==2:
-            betrButton.place_forget() 
-            loc.place_forget()
-            coord.place_forget()
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
-            Fight(root, parent_frame, Vorluna)
-     """
+            
     def vor():
         new_y = pc_loc[1] + 1
         
@@ -170,9 +153,10 @@ def coast(root, parent_frame):
             pc_loc[1] = new_y
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
-            coord.insert(tk.END, " Location: " + str(pc_loc))
-            #kampf()
+            coord.insert(tk.END, " Location: " + str(pc_loc))         
+            coord.config(state="disabled")  
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
@@ -183,9 +167,10 @@ def coast(root, parent_frame):
             pc_loc[0] = new_x
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
-            coord.insert(tk.END, " Location: " + str(pc_loc))            
-            #kampf()
+            coord.insert(tk.END, " Location: " + str(pc_loc))    
+            coord.config(state="disabled")            
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)        
@@ -196,9 +181,10 @@ def coast(root, parent_frame):
             pc_loc[0] = new_x
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))
-            #kampf()
+            coord.config(state="disabled")
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
@@ -209,9 +195,10 @@ def coast(root, parent_frame):
             pc_loc[1] = new_y
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))
-            #kampf()
+            coord.config(state="disabled")
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
@@ -223,9 +210,10 @@ def coast(root, parent_frame):
             if tuple(pc_loc) in grid:
                 action = grid[tuple(pc_loc)]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))
-
+            coord.config(state="disabled")
     def MapButton():
             Map = tk.Toplevel(root)
             Map.title("Map")
@@ -448,6 +436,8 @@ def coast(root, parent_frame):
     coord.insert(tk.END, " Location: " + str(pc_loc))
     coord.place(x=20, y=440)    
     loc.place(x=1115, y=440)
+    coord.config(state="disabled")
+    loc.config(state="disabled")
     root.mainloop()
     return root
 

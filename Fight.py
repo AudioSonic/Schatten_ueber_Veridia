@@ -412,7 +412,7 @@ def Fight(root, parent_frame, gegner):
     #Bearbeitung Name/HP/Stamina
     show_HP =  f"HP:                  {player_hp.get()}/120"
     show_STM = f"Stamina:          {player_STM.get()}/30"
-    player =    Main.Spielername
+    player =    "Felix"
 
     Player_output.config(state=tk.NORMAL)
     Player_output.insert(tk.END, f"   {player}\n   {show_HP}\n   {show_STM}")
