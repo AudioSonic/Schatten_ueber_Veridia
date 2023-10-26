@@ -75,11 +75,17 @@ def swamp(root, parent_frame):
         elif pc_loc[0] == 1 and pc_loc[1] == 1:
             Dialog.update_text(Sumpf_5_Examine)  
         elif pc_loc[0] == 1 and pc_loc[1] == 2:
-             Edelete()
-             Fight.Fight(root, parent_frame,Gegnerliste.Malkor_Boss)   
+            if Gegnerliste.Gegner_Sumpf[9] == 1:    
+                Edelete()
+                Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Sumpf)
+            else: 
+                Dialog.update_text(Sumpf_7_Examine)   
         elif pc_loc[0] == 2 and pc_loc[1] == 0:
-             Edelete()
-             Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Morast)  
+            if Gegnerliste.Malkor_Boss[9] == 1:    
+                Edelete()
+                Fight.Fight(root, parent_frame,Gegnerliste.Malkor_Boss)
+            else: 
+                Dialog.update_text(Sumpf_6_Examine)  
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Sumpf_8_Examine) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
