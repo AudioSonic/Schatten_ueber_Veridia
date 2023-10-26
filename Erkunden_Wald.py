@@ -144,16 +144,17 @@ def forest(root, parent_frame):
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
             Dialog.update_text(Wald_9_PickUp) 
 
-    def vor():
+     def vor():
         new_y = pc_loc[1] + 1
         
         if (pc_loc[0], new_y) in grid:
             pc_loc[1] = new_y
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
-            coord.insert(tk.END, " Location: " + str(pc_loc))
-
+            coord.insert(tk.END, " Location: " + str(pc_loc))         
+            coord.config(state="disabled")  
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
@@ -164,9 +165,10 @@ def forest(root, parent_frame):
             pc_loc[0] = new_x
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
-            coord.insert(tk.END, " Location: " + str(pc_loc))            
-
+            coord.insert(tk.END, " Location: " + str(pc_loc))    
+            coord.config(state="disabled")            
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)        
@@ -177,9 +179,10 @@ def forest(root, parent_frame):
             pc_loc[0] = new_x
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))
-
+            coord.config(state="disabled")
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
@@ -190,9 +193,10 @@ def forest(root, parent_frame):
             pc_loc[1] = new_y
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))
-
+            coord.config(state="disabled")
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
@@ -204,8 +208,11 @@ def forest(root, parent_frame):
             if tuple(pc_loc) in grid:
                 action = grid[tuple(pc_loc)]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))
+            coord.config(state="disabled")
+            
 
     def MapButton():
         Map = tk.Toplevel(root)
@@ -383,9 +390,11 @@ def forest(root, parent_frame):
     #Die textbox mit den Koordinaten
     coord = tk.Text(root, width=15, height=1, font=("Times New Roman", 14))
     loc = tk.Text(root, width=18, height=1, font=("Times New Roman", 14))
-    loc.insert(tk.END, "Urnacht-Wald")
+    loc.insert(tk.END, "Eternal Night Forest")
     coord.insert(tk.END, " Location: " + str(pc_loc))
-    coord.place(x=20, y=440)    
+    coord.place(x=20, y=440)   
+    coord.config(state="disabled")
     loc.place(x=1115, y=440)
+    loc.config(state="disabled")
     root.mainloop()
     return root
