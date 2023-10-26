@@ -6,6 +6,7 @@ from Bilder import *
 from tkinter import ttk
 import Intro
 
+
 def mainMenu():
     root = tk.Tk()
     root.title("Schatten ueber Veridia")

@@ -18,7 +18,7 @@ def forest(root, parent_frame):
     for widget in parent_frame.winfo_children():
         widget.destroy()
 
-    # Erstellt einen Stil für die Schrift. In dem Fall Times New Roman
+    # Erstellt einen Stil fï¿½r die Schrift. In dem Fall Times New Roman
     style = ttk.Style()
     style.configure("TNR.TLabel", font=("Times New Roman", 14))  
 
@@ -34,7 +34,7 @@ def forest(root, parent_frame):
 
     # Die Startposition des Charakters
     pc_loc = [1, 0]
-    # Das Gitter-Wörterbuch, das Koordinaten mit Aktionen verknüpft
+    # Das Gitter-Wï¿½rterbuch, das Koordinaten mit Aktionen verknï¿½pft
     grid = {
         (0, 0): Wald_1, 
         (0, 1): Wald_2, #Gegner Rider
@@ -353,7 +353,7 @@ def forest(root, parent_frame):
     rt_Button = ttk.Button(root, image=rt_image, command=reset)
     rt_Button.place(x=20, y=670)
 
-    # Der Button für die Karte
+    # Der Button fï¿½r die Karte
     mb_pfad = Image.open(KarteButton)
     mb_image = ImageTk.PhotoImage(mb_pfad)
     mb_Button = ttk.Button(root, image=mb_image, command=MapButton)

@@ -5,18 +5,16 @@ from PIL import Image, ImageTk
 from Bilder import *
 from Dialoge import *
 from Dialogsystem import TextboxManager
-import Erkunden as Veridia
+import Boss_Intro_2
 
 
-def Intro(root, parent_frame):
-    for widget in parent_frame.winfo_children():
-        widget.destroy()
+def Boss_Intro(root, parent_frame):
     #Erstellt einen Stil für die Schrift. In dem Fall Times New Roman
     style = ttk.Style()
     style.configure("TNR.TLabel", font=("Times New Roman", 14))  
 
     # Hintergrundbild einfuegen
-    vrd_pfad = Image.open(IntroBG)
+    vrd_pfad = Image.open(Schwarz)
     vrd_image = ImageTk.PhotoImage(vrd_pfad)
     vrd_label = tk.Label(root, image= vrd_image)
     vrd_label.place(x=210, y=30) 
@@ -25,7 +23,7 @@ def Intro(root, parent_frame):
     Dialog = TextboxManager(parent_frame)
 
     #Bestimmt bei welchem Charakter welches Bild verwendet werden soll
-    values = [Intro_1, Intro_2, Intro_3, Intro_4]
+    values = [Boss_1]
 
     def dialogmanager(dialog_index):
         global current_index
@@ -38,7 +36,7 @@ def Intro(root, parent_frame):
             dlg1_Button.place_forget()
             dlg2_Button.place_forget()
             vrd_label.place_forget()
-            Veridia.explore(root, parent_frame)
+            Endboss.Endboss(root, parent_frame)
 
     dialogmanager(0)    
     button_width = 18
@@ -52,3 +50,5 @@ def Intro(root, parent_frame):
 
     root.mainloop()
     return root
+
+
