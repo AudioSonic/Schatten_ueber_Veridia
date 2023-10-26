@@ -353,20 +353,40 @@ ZVeridia_9_Touch = "The mist becomes denser, and your sense of touch is heighten
 ZVeridia_9_Perceive = "Each step takes you further into the enigma. The silhouettes navigate the fog with familiarity, and you can't \nhelp but feel that the village holds untold stories waiting to be unveiled."
 ZVeridia_9_PickUp = "In the shrouded determination of this place, you find nothing to pick up, but the presence of the silhouettes adds \ndepth to the village's resilience and determination."
 
-Vorluna_Dialog = "In the pitch-black cave, a spider-like monster lurks. Its fangs gleam in the darkness, eager to seize the thoughts and senses of intruders. A creeping terror settles over the visitors, as if their souls are gripped by invisible claws. Senses stagger, and thoughts twist into a grotesque play. The spider creature weaves a web of madness and despair, while it lurks in the shadows, ready to drag its victims into the gaping abyss of madness."
-Malikar_Dialog = "A formidable figure cloaked in foreboding armor, accentuating his towering presence. Her very essence exudes an ominous aura, foretelling of impending doom. He manifests in a colossal, sinister form, exuding an insurmountable, malevolent presence - an unmistakable epitome of malevolence and dread."
-Varoth_Dialog = "In the shadows dwells a sinister creature, cloaked in impenetrable mist. Its bodily contours blur as it takes silent steps. From its shadowy, razor-sharp blades emanate mournful sounds that make the heart tremble. Luminous red eyes pierce through the darkness, fiery and eerie. Its breath creates the fog, dense and opaque, enveloping everything around. This dark figure from the shadows is a terrifying presence that instills deep fear."
-Zyrelia_Dialog = "A ghostly apparition, barely tangible, roams through the twilight. Its whispering essence touches the souls of people, influencing thoughts and emotions. In the stillness of the night, a shrill scream pierces the air, an echo of past torment. Its gaze from empty eyes carries the weight of long-forgotten secrets, a testament to forgotten sufferings. This ghostly presence, trapped between worlds, hovers as a warning of the unknown, a call from beyond."
-Malkor_Dialog = "A swamp monster, cloaked in deceptive calm, lurks hidden in the marsh. Its skin resembles decaying moss, soaked in a demonic aura. With greedy eyes, it scans for prey that comes near. Its slimy tentacles shoot out, sucking in life force and strength. A frigid breath envelops its victims as they grow weaker and more feeble. The howl of the swamp monster echoes through the gloomy swamp, a warning sign of the danger lurking there."
-Dreznar_Dialog = "A dark sea monster rises from the depths, its tentacles like shadowy claws, Glowing eyes, radiant with ominous cold, pierce through the darkness. A single strike summons storms that devour sky and sea, The balance of the elements shatters, nature bows to its will. This demonic creature, a nightmare from ancient legends, spreads fear and terror, In the hearts of those who must endure its sinister gaze."
+Vorluna_Dialog = "In the pitch-black cave, a spider-like monster lurks. Its fangs gleam in the darkness, eager to seize the thoughts\nand senses of intruders. A creeping terror settles over the visitors, as if their souls are gripped by invisible\nclaws. Senses stagger, and thoughts twist into a grotesque play. The spider creature weaves a web of madness\nand despair, while it lurks in the shadows, ready to drag its victims into the gaping abyss of madness."
+Malikar_Dialog = "A formidable figure cloaked in foreboding armor, accentuating his towering presence. Her very essence exudes an\nominous aura, foretelling of impending doom. He manifests in a colossal, sinister form, exuding an insurmountable,\nmalevolent presence - an unmistakable epitome of malevolence and dread."
+Varoth_Dialog = "In the shadows dwells a sinister creature, cloaked in impenetrable mist. Its bodily contours blur as it takes silent\nsteps. From its shadowy, razor-sharp blades emanate mournful sounds that make the heart tremble. Luminous\nred eyes pierce through the darkness, fiery and eerie. Its breath creates the fog, dense and opaque, enveloping\neverything around. This dark figure from the shadows is a terrifying presence that instills deep fear."
+Zyrelia_Dialog = "A ghostly apparition, barely tangible, roams through the twilight. Its whispering essence touches the souls of\npeople, influencing thoughts and emotions. In the stillness of the night, a shrill scream pierces the air, an\necho of past torment. Its gaze from empty eyes carries the weight of long-forgotten secrets, a testament to forgotten\nsufferings. This ghostly presence, trapped between worlds, hovers as a warning of the unknown, a call from beyond."
+Malkor_Dialog = "A swamp monster, cloaked in deceptive calm, lurks hidden in the marsh. Its skin resembles decaying moss, soaked\nin a demonic aura. With greedy eyes, it scans for prey that comes near. Its slimy tentacles shoot out, sucking\nin life force and strength. A frigid breath envelops its victims as they grow weaker and more feeble. The howl of\nthe swamp monster echoes through the gloomy swamp, a warning sign of the danger lurking there."
+Dreznar_Dialog = "A dark sea monster rises from the depths, its tentacles like shadowy claws, Glowing eyes, radiant with ominous\ncold, pierce through the darkness. A single strike summons storms that devour sky and sea, The balance of the\nelements shatters, nature bows to its will. This demonic creature, a nightmare from ancient legends, spreads fear\nand terror, In the hearts of those who must endure its sinister gaze."
 Gegner_Ebene_Dialog = "A wild wolf attacks you"
 Gegner_Hoehle_Dialog = "An undead caster attacks you"
 Gegner_Kueste_Dialog = "A seamonster attacks you"
 Gegner_Morast_Dialog = "An undead berserk attacks you"
 Gegner_Wald_Dialog = "A wolfrider attacks you"
 
+countertext=["The enemy delivers a critical strike, yet you counter with a powerful blow, leaving him stunned.",
+"While the enemy lands a critical hit, you retaliate with a devastating strike, catching him off guard.",
+"The enemy's attack hits hard, but your counterattack is even more fierce, surprising him.",
+"As the enemy strikes critically, you respond with a fierce counter, throwing him off balance.",
+"The enemy's hit is severe, but your counter is swift and powerful, momentarily stunning him.",
+"Despite the enemy's critical hit, your counter is relentless, taking him by surprise.",
+"The enemy's blow is harsh, but your counterattack is swift and forceful, staggering him.",
+"While the enemy scores a critical hit, you launch a fierce counterattack, leaving him dazed.",
+"The enemy's strike is brutal, yet your counter is swift and mighty, momentarily stunning him.",
+"Despite the enemy's critical hit, your counterattack is fierce, catching him off guard.",
+"The enemy lands a critical hit on you, but you counter with a devastating strike that leaves him staggered."]
 
-
+attacktext=["You strike the boss, landing a solid hit. In retaliation, he delivers a swift counterattack.",
+"Your attack connects with the boss, dealing a significant blow. He responds with a quick counterstrike.",
+"You launch a powerful attack, hitting the boss with force. He swiftly counterattacks in response.",
+"The boss takes a hit from your attack, staggering back. He retaliates with a swift counterblow.",
+"Your strike lands on the boss, causing him to recoil. In return, he counters with a rapid strike.",
+"The boss is struck by your attack, momentarily off balance. He swiftly retaliates in response.",
+"You deliver a strong blow, hitting the boss with impact. He counters swiftly and decisively.",
+"The boss is hit by your attack, momentarily stunned. He retaliates with a quick counterstrike.",
+"Your powerful strike connects with the boss, pushing him back. He swiftly counters your attack.",
+"You land a significant blow on the boss. In response, he quickly delivers a counterstrike."]
 
 
 

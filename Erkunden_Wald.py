@@ -144,7 +144,7 @@ def forest(root, parent_frame):
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
             Dialog.update_text(Wald_9_PickUp) 
 
-     def vor():
+    def vor():
         new_y = pc_loc[1] + 1
         
         if (pc_loc[0], new_y) in grid:

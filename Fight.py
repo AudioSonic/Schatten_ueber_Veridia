@@ -8,6 +8,7 @@ from typing import Callable
 from PIL import Image, ImageTk
 from Bilder import *
 from Gegnerliste import *
+import Erkunden
 import random
 import Dialoge
 import Erkunden_Wald
@@ -57,6 +58,7 @@ def Fight(root, parent_frame, gegner):
     def Gegner_Kueste():
         del_obj()
         Erkunden_Kueste.coast(root, parent_frame)
+       
         
     def Gegner_Sumpf():
         del_obj()
@@ -77,6 +79,7 @@ def Fight(root, parent_frame, gegner):
     def Dreznar_Boss():
         del_obj()
         Erkunden_Kueste.coast(root, parent_frame)
+        Erkunden_Kueste.grid(1 ,1)
 
     def Malkor_Boss():
         del_obj()
@@ -89,6 +92,10 @@ def Fight(root, parent_frame, gegner):
     def Malikar_Boss():
         del_obj()
         Erkunden_Hoehle.cave(root, parent_frame)
+    
+    def Respawn():
+        del_obj()
+        Erkunden.explore(root, parent_frame)
         
     
     # Druck des Attack Button
@@ -101,7 +108,7 @@ def Fight(root, parent_frame, gegner):
                 if current_boss_hp > 0:
                     text_output.config(state=tk.NORMAL)
                     text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
-                    text_output.insert(tk.END, "Filler")
+                    text_output.insert(tk.END, random.choice(Dialoge.attacktext))
                     text_output.config(state=tk.DISABLED)
                     boss_hp.set(current_boss_hp - 10)
                     update_progress()
@@ -129,7 +136,7 @@ def Fight(root, parent_frame, gegner):
                 if current_boss_hp >= 0:   
                     text_output.config(state=tk.NORMAL)
                     text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
-                    text_output.insert(tk.END, "Filler")
+                    text_output.insert(tk.END,  random.choice(Dialoge.countertext))
                     text_output.config(state=tk.DISABLED)
                     boss_hp.set(current_boss_hp - 25)
                     update_progress()
@@ -159,7 +166,7 @@ def Fight(root, parent_frame, gegner):
                     player_STM.set(stamina + 10)
                     text_output.config(state=tk.NORMAL)
                     text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
-                    text_output.insert(tk.END, "Filler 10 Stamina")
+                    text_output.insert(tk.END, "You restored stamina and the enemy hit´s you")
                     text_output.config(state=tk.DISABLED)
                     boss_attack()
                     update_player_stats()
@@ -181,7 +188,7 @@ def Fight(root, parent_frame, gegner):
             if current_player_hp <60:
                text_output.config(state=tk.NORMAL)
                text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
-               text_output.insert(tk.END, "Filler")
+               text_output.insert(tk.END, "You healed up")
                text_output.config(state=tk.DISABLED)
                player_hp.set(current_player_hp+60)
                update_player_stats()
@@ -244,6 +251,7 @@ def Fight(root, parent_frame, gegner):
             del_obj()
             Dreznar_Boss()
             
+
         elif gegner[7] == 11:
             del_obj()
             Vorluna_Boss()
@@ -292,7 +300,7 @@ def Fight(root, parent_frame, gegner):
                 text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
                 text_output.insert(tk.END, "Victory")
                 text_output.config(state=tk.DISABLED)
-                gegner[8] = 0
+                gegner[9] = 0
                 escape_button.config(text = "Back to start", command=back)
                 
     #Der "Back" Button          
@@ -306,6 +314,12 @@ def Fight(root, parent_frame, gegner):
        text_output.config(state=tk.DISABLED)
        player_hp.set(0)
        update_player_stats()
+       recover_button.place_forget()
+       counter_button.place_forget()
+       potion_button.place_forget()
+       escape_button.place_forget()
+       attack_button.config(text = "Respawn", command=Respawn)
+       
     
     def stamina_attack():
         current_stmna = player_STM.get()       
@@ -412,7 +426,7 @@ def Fight(root, parent_frame, gegner):
     #Bearbeitung Name/HP/Stamina
     show_HP =  f"HP:                  {player_hp.get()}/120"
     show_STM = f"Stamina:          {player_STM.get()}/30"
-    player =    Main.Spielername
+    player =    "Felix"
 
     Player_output.config(state=tk.NORMAL)
     Player_output.insert(tk.END, f"   {player}\n   {show_HP}\n   {show_STM}")
