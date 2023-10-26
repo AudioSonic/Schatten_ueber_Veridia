@@ -79,7 +79,7 @@ def Fight(root, parent_frame, gegner):
     def Dreznar_Boss():
         del_obj()
         Erkunden_Kueste.coast(root, parent_frame)
-        Erkunden_Kueste.grid(1 ,1)
+        
 
     def Malkor_Boss():
         del_obj()
@@ -276,7 +276,7 @@ def Fight(root, parent_frame, gegner):
             del_obj()
             Gegner_Ebene()
 
-
+    
     def update_player_stats():
         show_HP =  f"HP:                  {player_hp.get()}/120"    
         show_STM = f"Stamina:          {player_STM.get()}/30"
@@ -301,7 +301,11 @@ def Fight(root, parent_frame, gegner):
                 text_output.insert(tk.END, "Victory")
                 text_output.config(state=tk.DISABLED)
                 gegner[9] = 0
-                escape_button.config(text = "Back to start", command=back)
+                recover_button.place_forget()
+                counter_button.place_forget()
+                potion_button.place_forget()
+                escape_button.place_forget()
+                attack_button.config(text = "Back to start", command=back)
                 
     #Der "Back" Button          
     
