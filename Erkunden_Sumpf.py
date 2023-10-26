@@ -152,9 +152,10 @@ def swamp(root, parent_frame):
             pc_loc[1] = new_y
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
-            coord.insert(tk.END, " Location: " + str(pc_loc))
-
+            coord.insert(tk.END, " Location: " + str(pc_loc))         
+            coord.config(state="disabled")  
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
@@ -165,9 +166,10 @@ def swamp(root, parent_frame):
             pc_loc[0] = new_x
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
-            coord.insert(tk.END, " Location: " + str(pc_loc))            
-
+            coord.insert(tk.END, " Location: " + str(pc_loc))    
+            coord.config(state="disabled")            
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)        
@@ -178,9 +180,10 @@ def swamp(root, parent_frame):
             pc_loc[0] = new_x
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))
-
+            coord.config(state="disabled")
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
@@ -191,9 +194,10 @@ def swamp(root, parent_frame):
             pc_loc[1] = new_y
             action = grid[(pc_loc[0], pc_loc[1])]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))
-
+            coord.config(state="disabled")
         else:
             Dialog.update_text("You cannot go further in this direction.")
         print(pc_loc)
@@ -205,8 +209,10 @@ def swamp(root, parent_frame):
             if tuple(pc_loc) in grid:
                 action = grid[tuple(pc_loc)]
             Dialog.update_text(action)
+            coord.config(state="normal")
             coord.delete(1.0, tk.END)
             coord.insert(tk.END, " Location: " + str(pc_loc))
+            coord.config(state="disabled")
 
     def MapButton():
         Map = tk.Toplevel(root)
@@ -411,5 +417,7 @@ def swamp(root, parent_frame):
     coord.insert(tk.END, " Location: " + str(pc_loc))
     coord.place(x=20, y=440)    
     loc.place(x=1115, y=440)
+    coord.config(state="disabled")
+    loc.config(state="disabled")
     root.mainloop()
     return root

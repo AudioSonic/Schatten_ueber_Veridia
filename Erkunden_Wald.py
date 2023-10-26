@@ -229,21 +229,7 @@ def forest(root, parent_frame):
         m_label.place(x=-1, y=0)
            
         def SumpfButton(root, parent_frame):
-                for widget in parent_frame.winfo_children():
-                    widget.destroy()
-                loc.place_forget()
-                coord.place_forget()
-                betrButton.place_forget() 
-                untButton.place_forget()
-                whrButton.place_forget()
-                aufhbButton.place_forget()
-                lp_Button.place_forget()
-                rp_Button.place_forget()
-                vp_Button.place_forget()
-                zp_Button.place_forget()
-                rt_Button.place_forget()
-                mb_Button.place_forget()
-                bg_label.place_forget()
+                Edelete()
                 Map.destroy()
                 Sumpf.swamp(root, parent_frame)
             
@@ -267,21 +253,7 @@ def forest(root, parent_frame):
                 Hoehle.cave(root, parent_frame)
 
         def EbeneButton(root, parent_frame):
-                for widget in parent_frame.winfo_children():
-                    widget.destroy()
-                loc.place_forget()
-                coord.place_forget()
-                betrButton.place_forget() 
-                untButton.place_forget()
-                whrButton.place_forget()
-                aufhbButton.place_forget()
-                lp_Button.place_forget()
-                rp_Button.place_forget()
-                vp_Button.place_forget()
-                zp_Button.place_forget()
-                rt_Button.place_forget()
-                mb_Button.place_forget()
-                bg_label.place_forget()
+                Edelete()
                 Map.destroy()
                 Ebene.plain(root, parent_frame)
             
