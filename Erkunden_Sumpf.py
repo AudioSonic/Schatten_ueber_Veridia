@@ -407,7 +407,7 @@ def swamp(root, parent_frame):
     #Die textbox mit den Koordinaten
     coord = tk.Text(root, width=15, height=1, font=("Times New Roman", 14))
     loc = tk.Text(root, width=18, height=1, font=("Times New Roman", 14))
-    loc.insert(tk.END, "Truebwasser-Morast")
+    loc.insert(tk.END, "Murky Water Marsh")
     coord.insert(tk.END, " Location: " + str(pc_loc))
     coord.place(x=20, y=440)    
     loc.place(x=1115, y=440)
