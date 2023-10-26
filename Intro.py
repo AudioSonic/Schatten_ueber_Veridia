@@ -28,7 +28,6 @@ def Intro(root, parent_frame):
     values = [Intro_1, Intro_2, Intro_3]
 
     def dialogmanager(dialog_index):
-        
         global current_index
 
         if 0 <= dialog_index < len(values):

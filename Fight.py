@@ -12,6 +12,7 @@ import Erkunden_Ebene
 import Erkunden_Hoehle
 import Erkunden_Kueste
 import Erkunden_Sumpf
+import Main
 
 def Fight(root, parent_frame, gegner):
     for widget in parent_frame.winfo_children():
@@ -349,7 +350,7 @@ def Fight(root, parent_frame, gegner):
     #Bearbeitung Name/HP/Stamina
     show_HP =  f"HP:                  {player_hp.get()}/120"
     show_STM = f"Stamina:          {player_STM.get()}/30"
-    player =    "Markus"
+    player =    Main.Spielername
 
     Player_output.config(state=tk.NORMAL)
     Player_output.insert(tk.END, f"   {player}\n   {show_HP}\n   {show_STM}")

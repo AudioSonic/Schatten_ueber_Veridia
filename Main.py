@@ -3,11 +3,8 @@ import pygame
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
 from Bilder import *
-import Fight
-from Erkunden_ZVeridia import zveridia
-from Gegnerliste import *
-import random
-from Intro import Intro, Intro
+from tkinter import ttk
+import Intro
 
 def mainMenu():
     root = tk.Tk()
@@ -20,49 +17,47 @@ def mainMenu():
     
     pygame.mixer.music.load("C:\GitHub\Schatten_ueber_Veridia\Audio\MainMenu.mp3")
     pygame.mixer.music.play(-1)
-
+    
     # Erstelle ein Frame, um den Inhalt der explore-Funktion anzuzeigen
     content_frame = tk.Frame(root, bg="#6B6B6B")
     content_frame.pack(fill=tk.BOTH, expand=True)
 
     def StartButtonClicked():
+        global Spielername  # Verwenden Sie 'global', um die globale Variable zu aktualisieren
+        Spielername = Eingabe.get()  # Setze den Spielernamen
         # Blende den Button nach dem Klicken aus
-        StartButton.place_forget()  
-        FightButton.place_forget() 
-        ForestButton.place_forget()
-        #Starte die "explore" Funktion aus der Erkunden Datei
+        StartButton.place_forget()
+        NameText.place_forget()
+        Eingabe.place_forget()
+        # Starte die "explore" Funktion aus der Erkunden Datei
         pygame.mixer.music.stop()
-        Intro(root, content_frame)
-       
-    def FightButtonClicked():
-        # Blende den Button nach dem Klicken aus
-        FightButton.place_forget() 
-        StartButton.place_forget() 
-        ForestButton.place_forget()
-        #Starte die "explore" Funktion aus der Erkunden Datei
-        pygame.mixer.music.stop()
-        Fight.Fight(root, content_frame, Vorluna)
-        ForestButton.place_forget()
-    def ForestButtonClicked():
-        # Blende den Button nach dem Klicken aus
-        FightButton.place_forget() 
-        StartButton.place_forget() 
-        ForestButton.place_forget()
-        #Starte die "explore" Funktion aus der Erkunden Datei
-        pygame.mixer.music.stop()
-        Intro(root, content_frame)
+        Intro.Intro(root, content_frame)  # Stellen Sie sicher, dass Intro und content_frame definiert sind
 
-    StartButton = tk.Button(root, text="SPIEL STARTEN", font=("Times New Roman", 16),command=StartButtonClicked)
+    # Eingabefeld und Label erstellen
+    NameText = tk.Label(text="ENTER YOUR NAME", bg="#6B6B6B", font=("Times New Roman", 12))
+    NameText.place(x=545, y=570)
+    Eingabe = tk.Entry()
+    Eingabe.place(x=560, y=600)
+    
+    # Startbutton erstellen, der zuerst deaktiviert ist
+    StartButton = tk.Button(root, text="START GAME", font=("Times New Roman", 16), command=StartButtonClicked)
     StartButton.place(x=550, y=650)
-    
-    FightButton = tk.Button(root, text="Fight", font=("Times New Roman", 16),command=FightButtonClicked)
-    FightButton.place(x=550, y=600)
-    
-    ForestButton = tk.Button(root, text="Forest", font=("Times New Roman", 16),command=ForestButtonClicked)
-    ForestButton.place(x=550, y=550)
+    StartButton.config(state="disabled")
 
+    # Funktion zum Überprüfen des Eingabefelds
+    def check_input():
+        Spielername = Eingabe.get()
+        if Spielername == "":
+            StartButton.config(state="disabled")
+        else:
+            StartButton.config(state="active")
+        return Spielername  # Den eingegebenen Spielernamen zurückgeben
+
+    # Eingabefeld-Bindung hinzufügen, um bei Eingabe zu prüfen
+    Eingabe.bind("<KeyRelease>", lambda event: check_input())
+    
+    # Tkinter-Fenster ausführen
     root.mainloop()
-
+    
 if __name__ == "__main__":
-    mainMenu()
-
+    Spielername = mainMenu()

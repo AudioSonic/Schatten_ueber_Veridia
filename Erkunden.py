@@ -12,21 +12,18 @@ import Erkunden_Sumpf as Sumpf
 import Erkunden_ZVeridia as ZVeridia
 import Erkunden_Kueste as Kueste
 
-def explore(root, parent_frame):  
-    for widget in parent_frame.winfo_children():
-        widget.destroy()
-  
-    # Erstellt einen Stil für die Schrift. In dem Fall Times New Roman
+def explore(root, parent_frame):
+    # Erstellt einen Stil für die Schrift. In diesem Fall Times New Roman
     style = ttk.Style()
-    style.configure("TNR.TLabel", font=("Times New Roman", 14))  
+    style.configure("TNR.TLabel", font=("Times New Roman", 14))
 
-    # Hintergrundbild einfuegen
-    bg_pfad = Image.open(Veridia)
+    # Hintergrundbild einfügen
+    bg_pfad = Image.open(Veridia)  # Stellen Sie sicher, dass 'Veridia' definiert ist
     bg_image = ImageTk.PhotoImage(bg_pfad)
     bg_label = tk.Label(root, image=bg_image)
     bg_label.place(x=253, y=18)
 
-    # Die TextboxManager aus der Dialogsystem Datei
+    # Die TextboxManager aus der Dialogsystem-Datei
     Dialog = TextboxManager(parent_frame)
     Dialog.update_text(Veridia_4)
 
@@ -45,55 +42,34 @@ def explore(root, parent_frame):
         (2, 1): Veridia_8,
         (2, 2): Veridia_9 #Gottfried
     }
+    def EDelete():
+        loc.place_forget()
+        coord.place_forget()
+        betrButton.place_forget() 
+        untButton.place_forget()
+        whrButton.place_forget()
+        aufhbButton.place_forget()
+        lp_Button.place_forget()
+        rp_Button.place_forget()
+        vp_Button.place_forget()
+        zp_Button.place_forget()
+        rt_Button.place_forget()
+        mb_Button.place_forget()
+        bg_label.place_forget()
+        
     def examine():
         if pc_loc[0] == 0 and pc_loc[1] == 0:
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
+            EDelete()
             Dialogfenster(root, parent_frame, character="Brigitte")
         elif pc_loc[0] == 0 and pc_loc[1] == 1:
             Dialog.update_text(Veridia_2_Examine)
         elif pc_loc[0] == 0 and pc_loc[1] == 2:
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
+            EDelete()
             Dialogfenster(root, parent_frame, character="Ulrich")   
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
             Dialog.update_text(Veridia_4_Examine)   
         elif pc_loc[0] == 1 and pc_loc[1] == 1:
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
+            EDelete()
             Dialogfenster(root, parent_frame, character="Miriam")  
         elif pc_loc[0] == 1 and pc_loc[1] == 2:
             Dialog.update_text(Veridia_6_Examine)  
@@ -102,70 +78,22 @@ def explore(root, parent_frame):
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Veridia_8_Examine) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
+            EDelete()
             Dialogfenster(root, parent_frame, character="Gottfried")
 
     def touch():
         if pc_loc[0] == 0 and pc_loc[1] == 0:
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
+            EDelete()
             Dialogfenster(root, parent_frame, character="Brigitte")
         elif pc_loc[0] == 0 and pc_loc[1] == 1:
             Dialog.update_text(Veridia_2_Touch)
         elif pc_loc[0] == 0 and pc_loc[1] == 2:
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
+            EDelete()
             Dialogfenster(root, parent_frame, character="Ulrich")     
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
             Dialog.update_text(Veridia_4_Touch)   
         elif pc_loc[0] == 1 and pc_loc[1] == 1:
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
+            EDelete()
             Dialogfenster(root, parent_frame, character="Miriam")    
         elif pc_loc[0] == 1 and pc_loc[1] == 2:
             Dialog.update_text(Veridia_6_Touch)  
@@ -174,19 +102,7 @@ def explore(root, parent_frame):
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Veridia_8_Touch) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
+            EDelete()
             Dialogfenster(root, parent_frame, character="Gottfried")
 
     def perceive():
@@ -211,53 +127,17 @@ def explore(root, parent_frame):
 
     def pickup():
         if pc_loc[0] == 0 and pc_loc[1] == 0:
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
+            EDelete()
             Dialogfenster(root, parent_frame, character="Brigitte")
         elif pc_loc[0] == 0 and pc_loc[1] == 1:
             Dialog.update_text(Veridia_2_PickUp)
         elif pc_loc[0] == 0 and pc_loc[1] == 2:
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
+            EDelete()
             Dialogfenster(root, parent_frame, character="Ulrich")   
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
             Dialog.update_text(Veridia_4_PickUp)   
         elif pc_loc[0] == 1 and pc_loc[1] == 1:
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
+            EDelete()
             Dialogfenster(root, parent_frame, character="Miriam") 
         elif pc_loc[0] == 1 and pc_loc[1] == 2:
             Dialog.update_text(Veridia_6_PickUp)  
@@ -266,19 +146,7 @@ def explore(root, parent_frame):
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Veridia_8_PickUp) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
+            EDelete()
             Dialogfenster(root, parent_frame, character="Gottfried")
 
     def vor():
@@ -355,120 +223,36 @@ def explore(root, parent_frame):
         m_label.place(x=-1, y=0)
         
         def WaldButton(root, parent_frame):
-                for widget in parent_frame.winfo_children():
-                    widget.destroy()
-                loc.place_forget()
-                coord.place_forget()
-                betrButton.place_forget() 
-                untButton.place_forget()
-                whrButton.place_forget()
-                aufhbButton.place_forget()
-                lp_Button.place_forget()
-                rp_Button.place_forget()
-                vp_Button.place_forget()
-                zp_Button.place_forget()
-                rt_Button.place_forget()
-                mb_Button.place_forget()
-                bg_label.place_forget()
-                Map.destroy()
-                Wald.forest(root, parent_frame)
+            EDelete()
+            Map.destroy()
+            Wald.forest(root, parent_frame)
            
         def SumpfButton(root, parent_frame):
-            for widget in parent_frame.winfo_children():
-                widget.destroy()
-            loc.place_forget()
-            coord.place_forget()
-            betrButton.place_forget() 
-            untButton.place_forget()
-            whrButton.place_forget()
-            aufhbButton.place_forget()
-            lp_Button.place_forget()
-            rp_Button.place_forget()
-            vp_Button.place_forget()
-            zp_Button.place_forget()
-            rt_Button.place_forget()
-            mb_Button.place_forget()
-            bg_label.place_forget()
+            EDelete()
             Map.destroy()
             Sumpf.swamp(root, parent_frame)
 
 
             
         def HoehleButton(root, parent_frame):
-                for widget in parent_frame.winfo_children():
-                    widget.destroy()
-                loc.place_forget()
-                coord.place_forget()
-                betrButton.place_forget() 
-                untButton.place_forget()
-                whrButton.place_forget()
-                aufhbButton.place_forget()
-                lp_Button.place_forget()
-                rp_Button.place_forget()
-                vp_Button.place_forget()
-                zp_Button.place_forget()
-                rt_Button.place_forget()
-                mb_Button.place_forget()
-                bg_label.place_forget()
-                Map.destroy()
-                Hoehle.cave(root, parent_frame)
+            EDelete()
+            Map.destroy()
+            Hoehle.cave(root, parent_frame)
 
         def EbeneButton(root, parent_frame):
-                for widget in parent_frame.winfo_children():
-                    widget.destroy()
-                loc.place_forget()
-                coord.place_forget()
-                betrButton.place_forget() 
-                untButton.place_forget()
-                whrButton.place_forget()
-                aufhbButton.place_forget()
-                lp_Button.place_forget()
-                rp_Button.place_forget()
-                vp_Button.place_forget()
-                zp_Button.place_forget()
-                rt_Button.place_forget()
-                mb_Button.place_forget()
-                bg_label.place_forget()
-                Map.destroy()
-                Ebene.plain(root, parent_frame)
+            EDelete()
+            Map.destroy()
+            Ebene.plain(root, parent_frame)
             
         def ZVeridiaButton(root, parent_frame):
-                for widget in parent_frame.winfo_children():
-                    widget.destroy()
-                loc.place_forget()
-                coord.place_forget()
-                betrButton.place_forget() 
-                untButton.place_forget()
-                whrButton.place_forget()
-                aufhbButton.place_forget()
-                lp_Button.place_forget()
-                rp_Button.place_forget()
-                vp_Button.place_forget()
-                zp_Button.place_forget()
-                rt_Button.place_forget()
-                mb_Button.place_forget()
-                bg_label.place_forget()
-                Map.destroy()
-                ZVeridia.zveridia(root, parent_frame)
+            EDelete()
+            Map.destroy()
+            ZVeridia.zveridia(root, parent_frame)
             
         def KuesteButton(root, parent_frame):
-                for widget in parent_frame.winfo_children():
-                    widget.destroy()
-                loc.place_forget()
-                coord.place_forget()
-                betrButton.place_forget() 
-                untButton.place_forget()
-                whrButton.place_forget()
-                aufhbButton.place_forget()
-                lp_Button.place_forget()
-                rp_Button.place_forget()
-                vp_Button.place_forget()
-                zp_Button.place_forget()
-                rt_Button.place_forget()
-                mb_Button.place_forget()
-                bg_label.place_forget()
-                Map.destroy()
-                Kueste.coast(root, parent_frame)
+            EDelete()
+            Map.destroy()
+            Kueste.coast(root, parent_frame)
         
         Wald_Button = tk.Button(Map, text="Forest", command=lambda: WaldButton(root, parent_frame))
         Wald_Button.place(x=370, y=300) 
