@@ -1,7 +1,10 @@
 from ctypes import FormatError
+from os import name
 import tkinter as tk
 from tkinter import ttk
 from tkinter import PhotoImage
+from turtle import delay
+from typing import Callable
 from PIL import Image, ImageTk
 from Bilder import *
 from Gegnerliste import *
@@ -16,7 +19,7 @@ import Erkunden_Sumpf
 def Fight(root, parent_frame, gegner):
     for widget in parent_frame.winfo_children():
         widget.destroy()
-  
+    
 
     #Erstellt einen Stil f�r die Schrift. In dem Fall Times New Roman
     style = ttk.Style()
@@ -29,20 +32,61 @@ def Fight(root, parent_frame, gegner):
     gegner_label = tk.Label(root, image= gegner_image)
     gegner_label.place(x=210, y=30)
     
-    def Rider():
+    def del_obj():
+        gegner_label.place_forget()
+        attack_button.place_forget()
+        recover_button.place_forget()
+        progress_bar.place_forget()
+        counter_button.place_forget()
+        potion_button.place_forget()
+        escape_button.place_forget()
+        gegner_name.place_forget()
+        Player_output.place_forget()
+        text_output.place_forget()
+       
+    def Gegner_Wald():
+        del_obj()
         Erkunden_Wald.forest(root, parent_frame)
         
-    def Wolf():
+        
+    def Gegner_Ebene():
+        del_obj()
         Erkunden_Ebene.plain(root, parent_frame)
     
-    def Gouhl():
+    def Gegner_Kueste():
+        del_obj()
         Erkunden_Kueste.coast(root, parent_frame)
-      
-    
-    def Berserk():
+        
+    def Gegner_Sumpf():
+        del_obj()
         Erkunden_Sumpf.swamp(root, parent_frame)
        
-    def Undead():
+    def Gegner_Hoehle():
+        del_obj()
+        Erkunden_Hoehle.cave(root, parent_frame)
+    
+    def Zyrelia_Boss():
+        del_obj()
+        Erkunden_Wald.forest(root, parent_frame)
+        
+    def Varoth_Boss():
+        del_obj()
+        Erkunden_Ebene.plain(root, parent_frame)
+        
+    def Dreznar_Boss():
+        del_obj()
+        Erkunden_Kueste.coast(root, parent_frame)
+
+    def Malkor_Boss():
+        del_obj()
+        Erkunden_Sumpf.swamp(root, parent_frame)
+       
+    def Vorluna_Boss():
+        del_obj()
+        Erkunden_Hoehle.cave(root, parent_frame)
+    
+    def Malikar_Boss():
+        del_obj()
         Erkunden_Hoehle.cave(root, parent_frame)
         
     
@@ -54,6 +98,10 @@ def Fight(root, parent_frame, gegner):
         if player_hp_anzeige >0:
             if player_STM.get() >=10:
                 if current_boss_hp > 0:
+                    text_output.config(state=tk.NORMAL)
+                    text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+                    text_output.insert(tk.END, "Filler")
+                    text_output.config(state=tk.DISABLED)
                     boss_hp.set(current_boss_hp - 10)
                     update_progress()
                     stamina_attack()
@@ -78,6 +126,10 @@ def Fight(root, parent_frame, gegner):
         if player_hp_anzeige >0:
             if player_STM.get() >=25:        
                 if current_boss_hp >= 0:   
+                    text_output.config(state=tk.NORMAL)
+                    text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+                    text_output.insert(tk.END, "Filler")
+                    text_output.config(state=tk.DISABLED)
                     boss_hp.set(current_boss_hp - 25)
                     update_progress()
                     stamina_counter()
@@ -100,13 +152,13 @@ def Fight(root, parent_frame, gegner):
         update_progress()
         current_boss_hp = boss_hp.get()
         stamina = player_STM.get()
-        if player_hp_anzeige >0:
+        if player_hp_anzeige >0:                    
             if current_boss_hp > 0:
                 if stamina <= 20: 
                     player_STM.set(stamina + 10)
                     text_output.config(state=tk.NORMAL)
                     text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
-                    text_output.insert(tk.END, "You restored 10 stamina")
+                    text_output.insert(tk.END, "Filler 10 Stamina")
                     text_output.config(state=tk.DISABLED)
                     boss_attack()
                     update_player_stats()
@@ -126,6 +178,10 @@ def Fight(root, parent_frame, gegner):
         current_player_hp = player_hp.get()
         if current_player_hp >0: 
             if current_player_hp <60:
+               text_output.config(state=tk.NORMAL)
+               text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+               text_output.insert(tk.END, "Filler")
+               text_output.config(state=tk.DISABLED)
                player_hp.set(current_player_hp+60)
                update_player_stats()
                
@@ -140,73 +196,76 @@ def Fight(root, parent_frame, gegner):
             GAME_OVER()
             
     def escape():
-        if gegner[7] == 0:
+        if gegner[7] in range(6,12):
             text_output.config(state=tk.NORMAL)
             text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
             text_output.insert(tk.END, "There is no Escape")
             text_output.config(state=tk.DISABLED)
-        elif gegner[7] == 1:
-            gegner_label.place_forget()
-            attack_button.place_forget()
-            recover_button.place_forget()
-            progress_bar.place_forget()
-            counter_button.place_forget()
-            potion_button.place_forget()
-            escape_button.place_forget()
-            gegner_name.place_forget()
-            Player_output.place_forget()
-            text_output.place_forget()
-            Rider()
-        elif gegner[7] == 2:
-            gegner_label.place_forget()
-            attack_button.place_forget()
-            recover_button.place_forget()
-            progress_bar.place_forget()
-            counter_button.place_forget()
-            potion_button.place_forget()
-            escape_button.place_forget()
-            gegner_name.place_forget()
-            Player_output.place_forget()
-            text_output.place_forget()
-            Berserk()
-        elif gegner[7] == 3:
-            gegner_label.place_forget()
-            attack_button.place_forget()
-            recover_button.place_forget()
-            progress_bar.place_forget()
-            counter_button.place_forget()
-            potion_button.place_forget()
-            escape_button.place_forget()
-            gegner_name.place_forget()
-            Player_output.place_forget()
-            text_output.place_forget()
-            Gouhl()
-        elif gegner[7] == 4:
-            gegner_label.place_forget()
-            attack_button.place_forget()
-            recover_button.place_forget()
-            progress_bar.place_forget()
-            counter_button.place_forget()
-            potion_button.place_forget()
-            escape_button.place_forget()
-            gegner_name.place_forget()
-            Player_output.place_forget()
-            text_output.place_forget()
-            Undead()
-        elif gegner[7] == 5:
-            gegner_label.place_forget()
-            attack_button.place_forget()
-            recover_button.place_forget()
-            progress_bar.place_forget()
-            counter_button.place_forget()
-            potion_button.place_forget()
-            escape_button.place_forget()
-            gegner_name.place_forget()
-            Player_output.place_forget()
-            text_output.place_forget()
-            Wolf()
             
-
+        elif gegner[7] == 1:
+            del_obj()
+            Gegner_Wald()
+            
+        elif gegner[7] == 2:
+            del_obj()
+            Gegner_Sumpf()
+            
+        elif gegner[7] == 3:
+            del_obj()
+            Gegner_Kueste()
+            
+        elif gegner[7] == 4:
+            del_obj()
+            Gegner_Hoehle()
+            
+        elif gegner[7] == 5:
+            del_obj()
+            Gegner_Ebene()
+            
+    def back():
+        if gegner[7] == 6:
+            del_obj()
+            Malikar_Boss()
+            
+        elif gegner[7] == 7:
+            del_obj()
+            Varoth_Boss()
+            
+        elif gegner[7] == 8:
+            del_obj()
+            Zyrelia_Boss()
+            
+        elif gegner[7] == 9:
+            del_obj()
+            Malkor_Boss()
+            
+        elif gegner[7] == 10:
+            del_obj()
+            Dreznar_Boss()
+            
+        elif gegner[7] == 11:
+            del_obj()
+            Vorluna_Boss()
+            
+        elif gegner[7] == 1:
+            del_obj()
+            Gegner_Wald()
+            
+        elif gegner[7] == 2:
+            del_obj()
+            Gegner_Sumpf()
+            
+        elif gegner[7] == 3:
+            del_obj()
+            Gegner_Kueste()
+            
+        elif gegner[7] == 4:
+            del_obj()
+            Gegner_Hoehle()
+            
+        elif gegner[7] == 5:
+            del_obj()
+            Gegner_Ebene()
 
 
     def update_player_stats():
@@ -232,8 +291,11 @@ def Fight(root, parent_frame, gegner):
                 text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
                 text_output.insert(tk.END, "Victory")
                 text_output.config(state=tk.DISABLED)
-       
-            
+                gegner[8] = 0
+                escape_button.config(text = "Back to start", command=back)
+                
+    #Der "Back" Button          
+    
    
     def GAME_OVER():
        
