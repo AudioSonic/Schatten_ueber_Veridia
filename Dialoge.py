@@ -369,7 +369,7 @@ Dreznar_Dialog = "A dark sea monster rises from the depths, its tentacles like s
 Gegner_Ebene_Dialog = "The heavy mist conceals the wild beast's approach until it bursts forth, lunging at you with a snarl. Its fangs bared, \nit attacks with a sudden ferocity, its eyes gleaming with an untamed hunger. "
 Gegner_Hoehle_Dialog = "An undead caster attacks you"
 Gegner_Kueste_Dialog = "A seamonster attacks you"
-Gegner_Morast_Dialog = "Suddenly, a skeletal hand emerges from the thick, murky swamp water, reaching out menacingly towards you. \nClinging to the rotting remains of a once-proud armor, the hand reveals itself to be a part of a decaying corpse. \nThe foul-smelling muck of the swamp water drips from its bony fingers. As the undead warrior rises from the depths of the swamp, its hollow eye sockets lock onto you, and it lurches forward, ready to attack."
+Gegner_Morast_Dialog = "Suddenly, a skeletal hand emerges from the thick, murky swamp water, reaching out menacingly towards you. \nClinging to the rotting remains of a once-proud armor, the hand reveals itself to be a part of a decaying corpse. \nThe foul-smelling muck of the swamp water drips from its bony fingers. As the undead warrior rises from the \ndepths of the swamp, its hollow eye sockets lock onto you, and it lurches forward, ready to attack."
 Gegner_Wald_Dialog = "In a sudden, heart-pounding moment, you find yourself under attack. A wildling, perched atop a massive wolf, \nlunges out of the shadows. The wolf's snarling jaws and the wildling's fierce, unrelenting gaze leave you with no \nchoice but to defend yourself."
 
 countertext=["The enemy delivers a critical strike, yet you counter with a powerful blow, leaving him stunned.",
