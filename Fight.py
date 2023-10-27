@@ -19,6 +19,7 @@ import Erkunden_Sumpf
 import Main
 
 def Fight(root, parent_frame, gegner):
+    
     for widget in parent_frame.winfo_children():
         widget.destroy()
     
@@ -110,7 +111,7 @@ def Fight(root, parent_frame, gegner):
                     text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
                     text_output.insert(tk.END, random.choice(Dialoge.attacktext))
                     text_output.config(state=tk.DISABLED)
-                    boss_hp.set(current_boss_hp - 10)
+                    boss_hp.set(current_boss_hp - gegner[10])
                     update_progress()
                     stamina_attack()
                     boss_attack()
@@ -138,7 +139,7 @@ def Fight(root, parent_frame, gegner):
                     text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
                     text_output.insert(tk.END,  random.choice(Dialoge.countertext))
                     text_output.config(state=tk.DISABLED)
-                    boss_hp.set(current_boss_hp - 25)
+                    boss_hp.set(current_boss_hp - gegner[11])
                     update_progress()
                     stamina_counter()
                     boss_attack_counter()
@@ -430,7 +431,7 @@ def Fight(root, parent_frame, gegner):
     #Bearbeitung Name/HP/Stamina
     show_HP =  f"HP:                  {player_hp.get()}/120"
     show_STM = f"Stamina:          {player_STM.get()}/30"
-    player =    "Felix"
+    player =   "Max"
 
     Player_output.config(state=tk.NORMAL)
     Player_output.insert(tk.END, f"   {player}\n   {show_HP}\n   {show_STM}")
