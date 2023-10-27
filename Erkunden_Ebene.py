@@ -88,7 +88,7 @@ def plain(root, parent_frame):
         elif pc_loc[0] == 0 and pc_loc[1] == 1:
             Dialog.update_text(Ebene_2_Touch)
         elif pc_loc[0] == 0 and pc_loc[1] == 2:
-            if Gegnerliste.Gegner_Wald[9] == 1:    
+            if Gegnerliste.Gegner_Wald[8] == 1:    
                 Edelete()
                 Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Ebene)
             else: 
@@ -120,7 +120,7 @@ def plain(root, parent_frame):
         elif pc_loc[0] == 1 and pc_loc[1] == 2:
             Dialog.update_text(Ebene_6_Perceive)  
         elif pc_loc[0] == 2 and pc_loc[1] == 0:
-            if Gegnerliste.Varoth_Boss[9] == 1:    
+            if Gegnerliste.Varoth_Boss[8] == 1:    
                 Edelete()
                 Fight.Fight(root, parent_frame,Gegnerliste.Varoth_Boss)
             else: 

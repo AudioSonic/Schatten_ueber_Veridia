@@ -74,13 +74,13 @@ def coast(root, parent_frame):
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
             Dialog.update_text(Kueste_4_Examine)   
         elif pc_loc[0] == 1 and pc_loc[1] == 1:
-            if Gegnerliste.Gegner_Kueste[9] == 1:    
+            if Gegnerliste.Gegner_Kueste[8] == 1:    
                 Edelete()
                 Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Kueste)
             else: 
                 Dialog.update_text(Kueste_5_Examine) 
         elif pc_loc[0] == 1 and pc_loc[1] == 2:
-            if Gegnerliste.Dreznar_Boss[9] == 1:    
+            if Gegnerliste.Dreznar_Boss[8] == 1:    
                 Edelete()
                 Fight.Fight(root, parent_frame,Gegnerliste.Dreznar_Boss)
             else: 

@@ -80,15 +80,20 @@ def forest(root, parent_frame):
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Wald_8_Examine) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
-            Edelete()
-            Fight.Fight(root, parent_frame,Gegnerliste.Zyrelia_Boss)          
-
+            if Gegnerliste.Zyrelia_Boss[8] == 1:    
+                Edelete()
+                Fight.Fight(root, parent_frame,Gegnerliste.Zyrelia_Boss)
+            else: 
+                Dialog.update_text(Wald_6_Examine)       
     def touch():
         if pc_loc[0] == 0 and pc_loc[1] == 0:
             Dialog.update_text(Wald_1_Touch)
         elif pc_loc[0] == 0 and pc_loc[1] == 1:
-            Edelete()
-            Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Wald)
+            if Gegnerliste.Gegner_Wald[8] == 1:    
+                Edelete()
+                Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Wald)
+            else: 
+                Dialog.update_text(Wald_6_Examine) 
         elif pc_loc[0] == 0 and pc_loc[1] == 2:
             Dialog.update_text(Wald_3_Touch)   
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
