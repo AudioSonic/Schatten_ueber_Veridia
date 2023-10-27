@@ -68,11 +68,7 @@ def plain(root, parent_frame):
         elif pc_loc[0] == 0 and pc_loc[1] == 1:
             Dialog.update_text(Ebene_2_Examine)
         elif pc_loc[0] == 0 and pc_loc[1] == 2:
-            if Gegnerliste.Gegner_Wald[9] == 1:    
-                Edelete()
-                Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Ebene)
-            else: 
-                Dialog.update_text(Ebene_3_Examine)  
+            Dialog.update_text(Ebene_3_Examine)  
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
             Dialog.update_text(Ebene_4_Examine)   
         elif pc_loc[0] == 1 and pc_loc[1] == 1:
@@ -80,11 +76,7 @@ def plain(root, parent_frame):
         elif pc_loc[0] == 1 and pc_loc[1] == 2:
             Dialog.update_text(Ebene_6_Examine)  
         elif pc_loc[0] == 2 and pc_loc[1] == 0:
-            if Gegnerliste.Varoth_Boss[9] == 1:    
-                Edelete()
-                Fight.Fight(root, parent_frame,Gegnerliste.Varoth_Boss)
-            else: 
-                Dialog.update_text(Ebene_7_Examine)  
+            Dialog.update_text(Ebene_7_Examine)
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Ebene_8_Examine) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
@@ -128,7 +120,11 @@ def plain(root, parent_frame):
         elif pc_loc[0] == 1 and pc_loc[1] == 2:
             Dialog.update_text(Ebene_6_Perceive)  
         elif pc_loc[0] == 2 and pc_loc[1] == 0:
-            Dialog.update_text(Ebene_7_Perceive) 
+            if Gegnerliste.Varoth_Boss[9] == 1:    
+                Edelete()
+                Fight.Fight(root, parent_frame,Gegnerliste.Varoth_Boss)
+            else: 
+                Dialog.update_text(Ebene_7_Examine)  
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Ebene_8_Perceive) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:

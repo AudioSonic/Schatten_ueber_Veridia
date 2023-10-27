@@ -66,8 +66,7 @@ def forest(root, parent_frame):
         if pc_loc[0] == 0 and pc_loc[1] == 0:
             Dialog.update_text(Wald_1_Examine)
         elif pc_loc[0] == 0 and pc_loc[1] == 1:
-            Edelete()
-            Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Wald)
+             Dialog.update_text(Wald_2_Examine) 
         elif pc_loc[0] == 0 and pc_loc[1] == 2:
             Dialog.update_text(Wald_3_Examine)   
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
@@ -88,7 +87,8 @@ def forest(root, parent_frame):
         if pc_loc[0] == 0 and pc_loc[1] == 0:
             Dialog.update_text(Wald_1_Touch)
         elif pc_loc[0] == 0 and pc_loc[1] == 1:
-            Dialog.update_text(Wald_2_Touch)
+            Edelete()
+            Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Wald)
         elif pc_loc[0] == 0 and pc_loc[1] == 2:
             Dialog.update_text(Wald_3_Touch)   
         elif pc_loc[0] == 1 and pc_loc[1] == 0:
