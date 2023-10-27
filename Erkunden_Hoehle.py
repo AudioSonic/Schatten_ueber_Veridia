@@ -73,15 +73,21 @@ def cave(root, parent_frame):
         elif pc_loc[0] == 1 and pc_loc[1] == 1:
             Dialog.update_text(Hoehle_5_Examine)  
         elif pc_loc[0] == 1 and pc_loc[1] == 2:
-            Edelete()
-            Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Hoehle)    
+            if Gegnerliste.Gegner_Hoehle[9] == 1:    
+                Edelete()
+                Fight.Fight(root, parent_frame,Gegnerliste.Gegner_Hoehle)
+            else: 
+                Dialog.update_text(Hoehle_6_Examine)     
         elif pc_loc[0] == 2 and pc_loc[1] == 0:
             Dialog.update_text(Hoehle_7_Examine) 
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Hoehle_8_Examine) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
-            Edelete()
-            Fight.Fight(root, parent_frame,Gegnerliste.Vorluna_Boss)            
+            if Gegnerliste.Vorluna[9] == 1:    
+                Edelete()
+                Fight.Fight(root, parent_frame,Gegnerliste.Vorluna)
+            else: 
+                Dialog.update_text(Hoehle_6_Examine)       
 
     def touch():
         if pc_loc[0] == 0 and pc_loc[1] == 0:

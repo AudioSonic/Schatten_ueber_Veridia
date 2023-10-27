@@ -1,6 +1,13 @@
-Intro_1 = "You are an intrepid adventurer hailing from a distant land, drawn by curiosity to these uncharted territories. \nAs your boots touch the unfamiliar soil, an unsettling sensation sends shivers down your spine, an ominous weight \nlingering in the air. With every step, an eerie presence lurks, a feeling of being perpetually watched, as you step into \na realm where things seem awry."
-Intro_2 = "The land lies in a disquieting stillness, an eerie hush that chills the very core of your being. The path you \ntraverse remains devoid of any sign of life, as if the land has swallowed its inhabitants in an unsettling silence. \nNature, too, behaves in an oddly tranquil manner, with the breeze barely whispering through the trees and even \nthe leaves underfoot seeming reluctant to rustle. \nIt's a disconcerting calm, as if the very essence of existence holds its breath, leaving you alone with your thoughts \nand the oppressive weight of the unknown."
-Intro_3 = "Before you stands a small village, its once-charming exterior now smothered by the surrounding stillness. An old, \nweathered wayfarer's sign points the way to a place named 'Veridia'. As you step further into the village, it becomes \nevident that you are entering what appears to be the village's marketplace. The eerie silence continues to press \ndown on the scenery, creating a sense of desolation that clings to every building and structure."
+Intro_1 = "You are an intrepid adventurer hailing from a distant land, drawn by curiosity to these uncharted territories. \nAs your boots touch the unfamiliar soil, an unsettling sensation sends shivers down your spine, an ominous weight \nlingering in the air. With every step, an eerie presence lurks, a feeling of being perpetually watched, as you step \ninto a realm where things seem awry."
+Intro_2 = "The land lies in a disquieting stillness, an eerie hush that chills the very core of your being. The path you \ntraverse remains devoid of any sign of life, as if the land has swallowed its inhabitants in an unsettling silence. \nNature, too, behaves in an oddly tranquil manner, with the breeze barely whispering through the trees and even \nthe leaves underfoot seeming reluctant to rustle." 
+Intro_3 = "It's a disconcerting calm, as if the very essence of existence holds its breath, leaving you alone with your thoughts \nand the oppressive weight of the unknown."
+Intro_4 = "Before you stands a small village, its once-charming exterior now smothered by the surrounding stillness. An old, \nweathered wayfarer's sign points the way to a place named 'Veridia'. As you step further into the village, it becomes \nevident that you are entering what appears to be the village's marketplace. The eerie silence continues to press \ndown on the scenery, creating a sense of desolation that clings to every building and structure."
+
+Boss_1 = "As you stand victorious over the defeated, gruesome beast, a profound sense of dread takes hold. The monster's \nsoul, now severed from its monstrous body, drifts ominously away. Its spectral essence moves with an eerie \nswiftness, heading inexorably toward the village of Veridia."
+Boss_2 = "A shiver runs down your spine, for it becomes clear that the malevolent force, once confined within the creature, \nis now unleashed upon the unsuspecting village, and it falls to you to confront this new, otherworldly threat."
+Boss_3 = "You run as fast as you can back to the village, only to find it in ruins. The souls of the monsters you've defeated \nnow haunt the village, causing chaos and destruction."
+Boss_4 = "Ultimately, these restless souls converge at the marketplace, merging together to form a colossal monstrosity. \nThe once-peaceful village of Veridia has turned into a nightmare, and the fate of the land hangs in the balance."
+
 Brigitte_1 = "Well, hello there, stranger. I'm Brigitte. You find yourself in the quiet village of Veridia.What can I do for you?"
 Brigitte_2 = "You want to know more about this place? Well, it's not what it used to be, that's for sure. These last few months, \nthings have taken a dark turn. "
 Brigitte_3 = "Unsettling occurrences, like people vanishing without a trace, strange sounds echoing in the night, and those \nmysterious lights that draw the curious into the unknown. Many who wander towards those lights are never \nseen again."
@@ -32,22 +39,22 @@ Miriam_4 = "They went towards the forest, disappearing into the trees. I wish I 
 Miriam_5 = "If you find them, please tell them I'm not afraid. I just want to know where they came from and why they \nvisited me."
 
 Wald_1 = "You stand before a dense thicket of gnarled, moss-covered trees. The murmur of a hidden stream trickles softly \nto your ears."
-Wald_2 = "You enter a narrow path lined by towering, ominous tree trunks. Their shadows cast eerie patterns on the ground."
+Wald_2 = "There is a constant rustling in the underbrush, a presence you can't quite see. It feels as though you're being closely \nwatched, with every step met by the eerie sound of leaves crunching underfoot, accompanied by an occasional \nlow growl"
 Wald_3 = "The trees grow denser, and the forest appears even more impenetrable. A spooky wind rustles through the air."
 Wald_4 = "Amongst the trees, you see decayed tree stumps and overgrown stones. An eerie silence hangs in the air."
 Wald_5 = "The heart of the forest opens before you. An abandoned, decaying house stands in the midst of a small clearing, \nits windows shimmering in the darkness."
 Wald_6 = "You hear the rustling of animal paws in the underbrush, but you can't discern the source. Tension fills the air."
 Wald_7 = "Here, the path disappears into impenetrable thickets. You hear eerie sounds in the distance."
 Wald_8 = "The ground is covered with damp moss that squeaks beneath your feet. A chilling mist drifts through the treetops."
-Wald_9 = "A faint whisper reaches your ears, and you feel as if you're being watched. In the distance, you spot a sinister shadow amidst the trees."
+Wald_9 = "A faint whisper reaches your ears, and you feel as if you're being watched. In the distance, you spot a sinister \nshadow amidst the trees."
 Wald_1_Examine = "The thicket of trees seems ancient and overgrown, their bark rough to the touch. Moss and lichen cling to the \ntrunks, shrouding them in eerie shades of green and gray."
 Wald_1_Touch = "As you run your fingers along the tree bark, a dampness clings to your skin, and you can feel the rough, knotted \ntextures of the trees."
 Wald_1_Perceive = "You pause, and your senses sharpen. The forest is alive with the rustling of leaves, and you detect faint \nechoes of distant whispers."
 Wald_1_PickUp = "You search for something to pick up, but in this tangled mess of trees and underbrush, there's nothing of \ninterest to be found."
-Wald_2_Examine = "The narrow path is littered with fallen leaves and twigs. Shafts of moonlight barely penetrate the thick canopy, \ncasting eerie shadows across your path."
-Wald_2_Touch = "The tree trunks feel cold and imposing as you place your hand upon them, and their rough surfaces are strangely \ncomforting."
-Wald_2_Perceive = "As you stand still, the sound of your own breath seems unnaturally loud, and you pick up on subtle movements \nin the underbrush nearby."
-Wald_2_PickUp = "You search the path but find nothing worth picking up at the moment."
+Wald_2_Examine = "As you closely examine the surroundings, you notice the foliage has been disturbed, and there are fresh paw prints, \nsuggesting a large creature nearby."
+Wald_2_Touch = "You reach out cautiously to touch the nearby tree bark, feeling its rough texture. It sends a shiver down your spine, \nmaking you acutely aware of the wild presence lurking around."
+Wald_2_Perceive = "Your senses are on high alert. The forest's subtle sounds intensify, and you discern the faint, steady breathing of a \nhidden entity, amplifying the sense of being observed."
+Wald_2_PickUp = "You contemplate the idea of picking up a nearby stick or stone for protection, recognizing that the threat could be \nvery close."
 Wald_3_Examine = "The trees here seem to press in on you from all sides, creating a feeling of claustrophobia. The air is thick with \nan unsettling silence."
 Wald_3_Touch = "The trees' bark feels damp and eerie to the touch, like a cold, clammy embrace."
 Wald_3_Perceive = "You take a deep breath and listen intently, but all you hear is the eerie wind sighing \nthrough the branches."
@@ -73,9 +80,9 @@ Wald_8_Touch = "The moss is cold and slimy to the touch, almost like the grasp o
 Wald_8_Perceive = "The mist drifts through the forest, obscuring your vision and making you hyper-aware of every sound. \nThe air is thick with foreboding."
 Wald_8_PickUp = "The mossy ground offers nothing to pick up at the moment."
 Wald_9_Examine = "The sinister shadow deep within the trees remains elusive, and you can't make out \nany details from here."
-Wald_9_Touch = "Your hand reaches out, but it only encounters the cool, empty air. The shadow remains \ndistant and enigmatic."
-Wald_9_Perceive = "The whispering grows more pronounced, and you sense that you are not alone. An eerie presence \nlurks nearby, just beyond your perception."
-Wald_9_PickUp = "In this part of the forest, there's nothing to be picked up, only a \ngrowing sense of unease."
+Wald_9_Touch = "Your hand reaches out, but it only encounters the cool, empty air. The shadow remains distant and enigmatic."
+Wald_9_Perceive = "The whispering grows more pronounced, and you sense that you are not alone. An eerie presence lurks nearby, \njust beyond your perception."
+Wald_9_PickUp = "In this part of the forest, there's nothing to be picked up, only a growing sense of unease."
 
 Hoehle_1 = "You stand at the entrance of a dark cave, where darkness reigns and an oppressive silence prevails."
 Hoehle_2 = "A long, narrow corridor stretches before you, its walls adorned with eerie, shimmering patterns."
@@ -128,7 +135,7 @@ Sumpf_2 = "The water in the swamp is murky and opaque. The surface is constantly
 Sumpf_3 = "A rotting tree trunk emerges from the swamp. It's covered with slippery algae and appears unstable."
 Sumpf_4 = "The booming calls of cicadas fill the air. Dense reeds surround you, and the ground feels boggy."
 Sumpf_5 = "You find yourself in a small clearing in the swamp. Strange, glowing moss grows on the ground."
-Sumpf_6 = "Water lilies and other peculiar swamp flowers float on the water's surface. Their blossoms seem illuminated by \nan unnatural glow."
+Sumpf_6 = "As you watch in awe, strange, ethereal lights begin to dance around you. These mystical orbs, resembling tiny \nfairies, swirl in a mesmerizing display. It's as though they are guiding you, fluttering around your body with an \nenchanting grace. Their soft, radiant glow illuminates the path ahead, inviting you to follow their whimsical lead."
 Sumpf_7 = "A deep, gurgling sound emanates from the depths of the swamp. It sounds as if something large is moving \ndown there."
 Sumpf_8 = "You stand at the edge of a deeper section of the swamp, where the mud appears particularly thick and sticky."
 Sumpf_9 = "A narrow, moss-covered path winds through the swamp, shrouded in ghostly tendrils of mist. It leads deeper into \nthe impenetrable forest."
@@ -152,10 +159,10 @@ Sumpf_5_Examine = "You stand in a small clearing in the swamp, surrounded by glo
 Sumpf_5_Touch = "The moss is soft and oddly warm to the touch, emitting a faint, ghostly light. It feels strangely comforting."
 Sumpf_5_Perceive = "The moss seems to emit a soft hum, and you sense that the clearing has a serene, otherworldly quality."
 Sumpf_5_PickUp = "You can gather a handful of the glowing moss, creating a makeshift source of dim light."
-Sumpf_6_Examine = "Water lilies and peculiar swamp flowers float on the murky water's surface. Their blossoms emit an otherworldly \nglow."
-Sumpf_6_Touch = "The petals of the swamp flowers are velvety to the touch, and they give off a cold, ethereal radiance."
-Sumpf_6_Perceive = "The flowers seem to pulse with a gentle, enchanting rhythm, and you hear the faint humming of unseen insects."
-Sumpf_6_PickUp = "You can pluck one of the luminescent flowers, which continues to emit its haunting light."
+Sumpf_6_Examine = "You study the enchanting lights closely, completely unaware of their nefarious intent. Their delicate dance \nonly seems to intensify as they guide you towards an area of the swamp that appears deceptively solid."
+Sumpf_6_Touch = "As you reach out to touch one of the lights, it responds by enticing you deeper into the swamp. The soft glow \nbeneath your fingertips hides the trap you're walking into, luring you further into the unknown."
+Sumpf_6_Perceive = "Your senses remain inextricably tied to the mischievous lights, leading you into increasingly unstable terrain. \nThe ground grows softer with each step, a treacherous path orchestrated by the lights to further their malevolent \ndesign."
+Sumpf_6_PickUp = "Despite your attempts to grasp the lights, they continue their relentless quest to ensnare you in their trap. Every \nmovement you make results in the ground becoming more and more treacherous, as if the very swamp conspires \nwith the lights to lead you into an ominous fate."
 Sumpf_7_Examine = "A deep, gurgling sound emanates from the depths of the swamp, where the waters seem impenetrably dark \nand deep."
 Sumpf_7_Touch = "The water here is chilling to the touch and feels unnaturally thick. It's as if the swamp itself is breathing."
 Sumpf_7_Perceive = "The gurgling intensifies, and you can't shake the feeling that something massive lurks beneath the surface."
@@ -217,11 +224,11 @@ Kueste_9_PickUp = "There's nothing to pick up among the monastery ruins, but the
 
 Ebene_1 = "You find yourself in the midst of a vast grassland, where thick fog shrouds the landscape. The air is heavy with \nmoisture, and you can barely see beyond a few feet."
 Ebene_2 = "Gentle breezes rustle the tall grass around you, their whispers barely audible in the dense fog. Visibility is limited, \nand the world beyond remains veiled."
-Ebene_3 = "In the tall grass, you notice faint footprints, leading deeper into the fog. The path is unclear, and the fog seems to \nswallow any evidence of where they might lead."
+Ebene_3 = " In this eerie stillness, you perceive slight movements around you. These subtle motions are almost silent, with only \nthe gentle rustling of grass breaking the silence. It's as if something is moving around you, concealed by the \nthick mist."
 Ebene_4 = "A small, open meadow appears before you, devoid of tall grass. The silence here is eerie, the dense fog muffling \neven the sound of your own footsteps."
 Ebene_5 = "A solitary tree stands in the foggy plain, its branches barely visible. The tree exudes an eerie, lonesome presence, \nand the fog makes it seem like a spectral guardian."
 Ebene_6 = "You hear the gentle murmur of a stream somewhere nearby, but the fog makes it nearly impossible to locate. \nThe sound is a faint, distant comfort in this ethereal landscape."
-Ebene_7 = "The grass beneath your feet is dew-covered and cool, and the fog clings to the blades, giving the impression of an \nenchanted realm."
+Ebene_7 = "In the midst of the mist, something peculiar happens. The fog seems to take on an elusive form, simultaneously \ndiscernible and intangible. An overwhelming dread washes over you as you struggle to comprehend this eerie \nphenomenon, a sensation of unsettling fear gnawing at your core."
 Ebene_8 = "You stumble upon a circle of ancient standing stones, their origins lost in the fog. They exude an aura of \ntimelessness, their purpose a mystery."
 Ebene_9 = "As you move deeper into the foggy grassland, you sense that something may be hidden here. The fog seems to \nconceal secrets, making the atmosphere even more enigmatic."
 Ebene_1_Examine = "The thick fog envelops the grassland, shrouding everything in a ghostly haze. You can barely see beyond a few feet, \nand the atmosphere is eerie."
@@ -232,10 +239,10 @@ Ebene_2_Examine = "Gentle breezes sway the tall grass, their whispers barely aud
 Ebene_2_Touch = "The grass feels soft and cool to the touch, and the fog-kissed blades rustle beneath your hand. It's a soothing \nsensation amidst the eerie stillness."
 Ebene_2_Perceive = "You hear the faint, soothing whispers of the breeze through the grass. The fog conceals the horizon, leaving you \nwith a sense of isolation and serenity."
 Ebene_2_PickUp = "You find nothing worth picking up in this tranquil meadow, only the soft embrace of the fog."
-Ebene_3_Examine = "Faint footprints in the grass lead further into the fog, disappearing into obscurity. The trail is enigmatic, and the \nfog conceals the destination."
-Ebene_3_Touch = "The footprints are barely discernible under your fingers, and the grass around them feels untouched. \nThe fog adds an element of intrigue to the mystery."
-Ebene_3_Perceive = "The footprints invite you to follow, but the fog creates a sense of uncertainty. Every step feels like a leap into \nthe unknown, guided only by these traces."
-Ebene_3_PickUp = "There's nothing to pick up near the footprints, but they beckon you into the foggy enigma."
+Ebene_3_Examine = "You catch a glimpse of something lurking nearby. There's a sense of an elusive presence, and it's as though the \nhidden observer is keenly watching your every move."
+Ebene_3_Touch = "You reach out, your hand brushing against the cool, damp grass. Your touch feels a bit unnerving as if the environment is aware of your presence. The sensation leaves you with the uncanny feeling of being closely watched."
+Ebene_3_Perceive = "You hone your senses to detect anything unusual in the almost suffocating mist. A faint movement, barely audible, \nstirs the fog. It's as though something is silently pacing around you, perhaps curious or cautious."
+Ebene_3_PickUp = "As you consider picking up something from the ground, you notice that the grass beneath your feet is somewhat \ndisturbed, hinting at a recent presence. It's like you're treading through the territory of an unseen observer."
 Ebene_4_Examine = "The small meadow stands in stark contrast to the surrounding tall grass. The fog lends an eerie stillness to the open \nspace, and your own footsteps are muffled."
 Ebene_4_Touch = "The meadow is cool and calm, a sanctuary amidst the foggy landscape. The silence is almost reverential, as if nature \nitself holds its breath."
 Ebene_4_Perceive = "The silence in the meadow is profound. Even the fog seems to hush, and you sense a subtle, mystical presence \nin this quiet haven."
@@ -248,10 +255,10 @@ Ebene_6_Examine = "The gentle murmur of a stream reaches your ears, though the f
 Ebene_6_Touch = "The sound of running water is tantalizingly close, but the fog conceals the stream from your touch. \nThe moisture in the air adds to the sensory puzzle."
 Ebene_6_Perceive = "The stream's murmur provides a faint sense of direction, but the fog still obscures its location. \nThe ambiance is both eerie and intriguing."
 Ebene_6_PickUp = "You can't pick up the stream, but the thought of finding and following its course intrigues you."
-Ebene_7_Examine = "The grass shimmers with dew, creating a magical sheen amidst the fog. It feels like you've stepped into an enchanted \nrealm, where every blade is a jewel."
-Ebene_7_Touch = "The grass is cool and moist to the touch, the dew clinging to your fingers. The atmosphere is tranquil and mystical, \nlike a dream."
-Ebene_7_Perceive = "The fog enhances the magical quality of the dew-covered grass. It's a serene and otherworldly experience, \nwhere the everyday world fades away."
-Ebene_7_PickUp = "Among the dew-covered grass, you can collect a few glistening blades as tokens of this mystical place."
+Ebene_7_Examine = "As you intently examine the enigmatic form within the mist, you notice subtle, ever-changing contours, \nlike a specter in flux. It's both there and not there, defying easy description."
+Ebene_7_Touch = "Hesitatingly, you extend your hand, but it meets no resistance, just a cool, damp feeling where the form should be. \nYour unease deepens."
+Ebene_7_Perceive = "Attempting to perceive its true nature, you find yourself locked in a disconcerting dance of perception. \nWhat is tangible and what is illusory? The dread lingers."
+Ebene_7_PickUp = "Despite your instincts urging caution, you reach out to grasp the elusive form, but your hands grasp empty air. \nYour sense of fear intensifies, like the ominous presence knows you better than you know yourself."
 Ebene_8_Examine = "A circle of ancient standing stones looms in the fog, their origins lost to the mist. They emanate an aura of \ntimelessness, and the fog adds an element of mystique to their presence."
 Ebene_8_Touch = "The rough surfaces of the stones hint at centuries of history. You can feel the ancient energy they hold, as if they \nguard secrets of the ages."
 Ebene_8_Perceive = "The standing stones are both a mystery and a source of fascination. The fog cloaks them in an enigmatic shroud, \nmaking them seem like forgotten sentinels."
@@ -355,15 +362,15 @@ ZVeridia_9_PickUp = "In the shrouded determination of this place, you find nothi
 
 Vorluna_Dialog = "In the pitch-black cave, a spider-like monster lurks. Its fangs gleam in the darkness, eager to seize the thoughts\nand senses of intruders. A creeping terror settles over the visitors, as if their souls are gripped by invisible\nclaws. Senses stagger, and thoughts twist into a grotesque play. The spider creature weaves a web of madness\nand despair, while it lurks in the shadows, ready to drag its victims into the gaping abyss of madness."
 Malikar_Dialog = "A formidable figure cloaked in foreboding armor, accentuating his towering presence. Her very essence exudes an\nominous aura, foretelling of impending doom. He manifests in a colossal, sinister form, exuding an insurmountable,\nmalevolent presence - an unmistakable epitome of malevolence and dread."
-Varoth_Dialog = "In the shadows dwells a sinister creature, cloaked in impenetrable mist. Its bodily contours blur as it takes silent\nsteps. From its shadowy, razor-sharp blades emanate mournful sounds that make the heart tremble. Luminous\nred eyes pierce through the darkness, fiery and eerie. Its breath creates the fog, dense and opaque, enveloping\neverything around. This dark figure from the shadows is a terrifying presence that instills deep fear."
+Varoth_Dialog = "As the mist closes in around you, it begins to coalesce into a more tangible form, taking on the shape of a \nmonstrous beast. Its bodily contours blur as it takes silent steps. From its shadowy, razor-sharp blades emanate \nmournful sounds that make the heart tremble. Luminous red eyes pierce through the darkness, fiery and eerie. \nIts breath creates the fog, dense and opaque, enveloping everything around. It's a terrifying presence that instills \ndeep fear."
 Zyrelia_Dialog = "A ghostly apparition, barely tangible, roams through the twilight. Its whispering essence touches the souls of\npeople, influencing thoughts and emotions. In the stillness of the night, a shrill scream pierces the air, an\necho of past torment. Its gaze from empty eyes carries the weight of long-forgotten secrets, a testament to forgotten\nsufferings. This ghostly presence, trapped between worlds, hovers as a warning of the unknown, a call from beyond."
 Malkor_Dialog = "A swamp monster, cloaked in deceptive calm, lurks hidden in the marsh. Its skin resembles decaying moss, soaked\nin a demonic aura. With greedy eyes, it scans for prey that comes near. Its slimy tentacles shoot out, sucking\nin life force and strength. A frigid breath envelops its victims as they grow weaker and more feeble. The howl of\nthe swamp monster echoes through the gloomy swamp, a warning sign of the danger lurking there."
 Dreznar_Dialog = "A dark sea monster rises from the depths, its tentacles like shadowy claws, Glowing eyes, radiant with ominous\ncold, pierce through the darkness. A single strike summons storms that devour sky and sea, The balance of the\nelements shatters, nature bows to its will. This demonic creature, a nightmare from ancient legends, spreads fear\nand terror, In the hearts of those who must endure its sinister gaze."
-Gegner_Ebene_Dialog = "A wild wolf attacks you"
+Gegner_Ebene_Dialog = "The heavy mist conceals the wild beast's approach until it bursts forth, lunging at you with a snarl. Its fangs bared, \nit attacks with a sudden ferocity, its eyes gleaming with an untamed hunger. "
 Gegner_Hoehle_Dialog = "An undead caster attacks you"
 Gegner_Kueste_Dialog = "A seamonster attacks you"
-Gegner_Morast_Dialog = "An undead berserk attacks you"
-Gegner_Wald_Dialog = "A wolfrider attacks you"
+Gegner_Morast_Dialog = "Suddenly, a skeletal hand emerges from the thick, murky swamp water, reaching out menacingly towards you. \nClinging to the rotting remains of a once-proud armor, the hand reveals itself to be a part of a decaying corpse. \nThe foul-smelling muck of the swamp water drips from its bony fingers. As the undead warrior rises from the depths of the swamp, its hollow eye sockets lock onto you, and it lurches forward, ready to attack."
+Gegner_Wald_Dialog = "In a sudden, heart-pounding moment, you find yourself under attack. A wildling, perched atop a massive wolf, \nlunges out of the shadows. The wolf's snarling jaws and the wildling's fierce, unrelenting gaze leave you with no \nchoice but to defend yourself."
 
 countertext=["The enemy delivers a critical strike, yet you counter with a powerful blow, leaving him stunned.",
 "While the enemy lands a critical hit, you retaliate with a devastating strike, catching him off guard.",
@@ -377,18 +384,31 @@ countertext=["The enemy delivers a critical strike, yet you counter with a power
 "Despite the enemy's critical hit, your counterattack is fierce, catching him off guard.",
 "The enemy lands a critical hit on you, but you counter with a devastating strike that leaves him staggered."]
 
-attacktext=["You strike the boss, landing a solid hit. In retaliation, he delivers a swift counterattack.",
-"Your attack connects with the boss, dealing a significant blow. He responds with a quick counterstrike.",
-"You launch a powerful attack, hitting the boss with force. He swiftly counterattacks in response.",
-"The boss takes a hit from your attack, staggering back. He retaliates with a swift counterblow.",
-"Your strike lands on the boss, causing him to recoil. In return, he counters with a rapid strike.",
-"The boss is struck by your attack, momentarily off balance. He swiftly retaliates in response.",
-"You deliver a strong blow, hitting the boss with impact. He counters swiftly and decisively.",
-"The boss is hit by your attack, momentarily stunned. He retaliates with a quick counterstrike.",
-"Your powerful strike connects with the boss, pushing him back. He swiftly counters your attack.",
-"You land a significant blow on the boss. In response, he quickly delivers a counterstrike."]
+attacktext=["You strike the enemy, landing a solid hit. In retaliation, he delivers a swift counterattack.",
+"Your attack connects with the enemy, dealing a significant blow. He responds with a quick counterstrike.",
+"You launch a powerful attack, hitting the enemy with force. He swiftly counterattacks in response.",
+"The enemy takes a hit from your attack, staggering back. He retaliates with a swift counterblow.",
+"Your strike lands on the enemy, causing him to recoil. In return, he counters with a rapid strike.",
+"The enemy is struck by your attack, momentarily off balance. He swiftly retaliates in response.",
+"You deliver a strong blow, hitting the enemy with impact. He counters swiftly and decisively.",
+"The enemy is hit by your attack, momentarily stunned. He retaliates with a quick counterstrike.",
+"Your powerful strike connects with the enemy, pushing him back. He swiftly counters your attack.",
+"You land a significant blow on the enemy. In response, he quickly delivers a counterstrike."]
 
-
+Outro_1 = "The malevolent warlock has been vanquished and falls wordlessly to the ground. His body once again dissolves \ninto five souls, but this time, they slowly dissipate into thin air until they vanish completely into nothingness."
+Outro_2 = "Gradually, peace returns to Veridia. The villagers gather around you, praising your bravery and hailing you as their \nhero. The nightmare is over, and the land begins to heal thanks to your valor."
+Outro_3 = "Brigitte: \nOh, I can't believe it! You did it! I'm so excited! That was incredible! What just happened was... wow!"
+Outro_4 = "Miriam: \nIt seems like those lights weren't nice at all! Thank you so much for helping us. We couldn't have done it \nwithout you!"
+Outro_5 = "Ulrich: \nMany years ago, there was a legend of an ancient warlock who ruled these lands. It was said that he was defeated \nin his time. But I always thought it was just a fairy tale."
+Outro_6 = "Gottfried: \nIt seems the warlock divided his power into five fragments. As they gained more and more power, they began to \nterrorize the land. Those lights were their way of seeking new victims."
+Outro_7 = "Gottfried: \nBe that as it may, I thank you, and I wish you all the best for your future endeavors."
+Outro_8 = "Brigitte: \nThank you, kind adventurer. You saved our village from an unspeakable fate."
+Outro_9 = "Miriam: \nThank you very much!"
+Outro_10 = "Ulrich: \nAye, we owe you a debt of gratitude for putting an end to that wicked curse."
+Outro_11 = "As the sun rises slowly, a new day dawns. The oppressive atmosphere gradually lifts from the land, and you set out \nin search of new adventures."
+Outro_12 = "The weight of the recent events still lingers, and Veridia's residents will forever remember your heroic feats."
+Outro_13 = "You can't help but wonder what challenges and wonders the future holds for you on this intriguing journey."
+Outro_14 = "The End"
 
 
 

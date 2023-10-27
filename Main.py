@@ -5,6 +5,8 @@ from PIL import Image, ImageTk
 from Bilder import *
 from tkinter import ttk
 import Intro
+import Ending_1
+
 
 def mainMenu():
     global Spielername
