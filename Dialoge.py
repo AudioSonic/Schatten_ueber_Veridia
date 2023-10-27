@@ -395,7 +395,20 @@ attacktext=["You strike the boss, landing a solid hit. In retaliation, he delive
 "Your powerful strike connects with the boss, pushing him back. He swiftly counters your attack.",
 "You land a significant blow on the boss. In response, he quickly delivers a counterstrike."]
 
-
+Outro_1 = "The malevolent warlock has been vanquished and falls wordlessly to the ground. His body once again dissolves \ninto five souls, but this time, they slowly dissipate into thin air until they vanish completely into nothingness."
+Outro_2 = "Gradually, peace returns to Veridia. The villagers gather around you, praising your bravery and hailing you as their \nhero. The nightmare is over, and the land begins to heal thanks to your valor."
+Outro_3 = "Brigitte: \nOh, I can't believe it! You did it! I'm so excited! That was incredible! What just happened was... wow!"
+Outro_4 = "Miriam: \nIt seems like those lights weren't nice at all! Thank you so much for helping us. We couldn't have done it \nwithout you!"
+Outro_5 = "Ulrich: \nMany years ago, there was a legend of an ancient warlock who ruled these lands. It was said that he was defeated \nin his time. But I always thought it was just a fairy tale."
+Outro_6 = "Gottfried: \nIt seems the warlock divided his power into five fragments. As they gained more and more power, they began to \nterrorize the land. Those lights were their way of seeking new victims."
+Outro_7 = "Gottfried: \nBe that as it may, I thank you, and I wish you all the best for your future endeavors."
+Outro_8 = "Brigitte: \nThank you, kind adventurer. You saved our village from an unspeakable fate."
+Outro_9 = "Miriam: \nThank you very much!"
+Outro_10 = "Ulrich: \nAye, we owe you a debt of gratitude for putting an end to that wicked curse."
+Outro_11 = "As the sun rises slowly, a new day dawns. The oppressive atmosphere gradually lifts from the land, and you set out \nin search of new adventures."
+Outro_12 = "The weight of the recent events still lingers, and Veridia's residents will forever remember your heroic feats."
+Outro_13 = "You can't help but wonder what challenges and wonders the future holds for you on this intriguing journey."
+Outro_14 = "The End"
 
 
 
