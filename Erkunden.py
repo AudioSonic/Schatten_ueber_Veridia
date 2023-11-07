@@ -254,20 +254,13 @@ def explore(root, parent_frame):
             Map.destroy()
             Ebene.plain(root, parent_frame)
             
-        def ZVeridiaButton(root, parent_frame):
-            EDelete()
-            Map.destroy()
-            ZVeridia.zveridia(root, parent_frame)
-            
         def KuesteButton(root, parent_frame):
             EDelete()
             Map.destroy()
             Kueste.coast(root, parent_frame)
         
         Wald_Button = tk.Button(Map, text="Forest", command=lambda: WaldButton(root, parent_frame))
-        Wald_Button.place(x=370, y=300) 
-        ZVeridia_Button = tk.Button(Map, text="ZVeridia", command=lambda: ZVeridiaButton(root, parent_frame))
-        ZVeridia_Button.place(x=230, y=300) 
+        Wald_Button.place(x=370, y=300)  
         Kueste_Button = tk.Button(Map, text="Coast", command=lambda: KuesteButton(root, parent_frame))
         Kueste_Button.place(x=300, y=110) 
         Sumpf_Button = tk.Button(Map, text="Swamp", command=lambda: SumpfButton(root, parent_frame))

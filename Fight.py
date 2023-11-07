@@ -387,8 +387,6 @@ def Fight(root, parent_frame, gegner):
     player_STM = tk.IntVar()
     player_STM.set(30)  # Starte mit voller Stamina
     
-     
-    
     # Textfeld fuer die Ausgabe
     gegner_name = tk.Text(root, height=1, width=33, wrap="none")
     gegner_name.place(x = 355, y = 45)

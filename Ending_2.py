@@ -33,6 +33,8 @@ def Ending_2(root, parent_frame):
             value_to_display = values[dialog_index]
             Dialog.update_text(value_to_display)
             current_index = dialog_index
+        elif current_index == 0:
+            current_index += 1
         else:
             dlg1_Button.place_forget()
             dlg2_Button.place_forget()
