@@ -83,9 +83,9 @@ def cave(root, parent_frame):
         elif pc_loc[0] == 2 and pc_loc[1] == 1:
             Dialog.update_text(Hoehle_8_Examine) 
         elif pc_loc[0] == 2 and pc_loc[1] == 2:
-            if Gegnerliste.Vorluna[8] == 1:    
+            if Gegnerliste.Vorluna_Boss[8] == 1:    
                 Edelete()
-                Fight.Fight(root, parent_frame,Gegnerliste.Vorluna)
+                Fight.Fight(root, parent_frame,Gegnerliste.Vorluna_Boss)
             else: 
                 Dialog.update_text(Hoehle_6_Examine)       
 

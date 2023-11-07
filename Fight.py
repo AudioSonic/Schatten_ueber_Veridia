@@ -248,7 +248,7 @@ def Fight(root, parent_frame, gegner):
             del_obj()
             Boss_Intro.Boss_Intro(root, parent_frame)
             
-       
+        else:
             if gegner[7] == 6:
                 del_obj()
                 Malikar_Boss()
