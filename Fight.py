@@ -7,7 +7,7 @@ from turtle import delay
 from typing import Callable
 from PIL import Image, ImageTk
 from Bilder import *
-from Gegnerliste import *
+import Gegnerliste
 import Erkunden
 import random
 import Dialoge
@@ -17,6 +17,10 @@ import Erkunden_Hoehle
 import Erkunden_Kueste
 import Erkunden_Sumpf
 import Main
+import Boss_Intro
+import Ending_1
+import Erkunden_ZVeridia
+
 
 def Fight(root, parent_frame, gegner):
     
@@ -92,11 +96,15 @@ def Fight(root, parent_frame, gegner):
     
     def Malikar_Boss():
         del_obj()
-        Erkunden_Hoehle.cave(root, parent_frame)
-    
+        Erkunden_ZVeridia.zveridia(root, parent_frame)
+        
     def Respawn():
-        del_obj()
-        Erkunden.explore(root, parent_frame)
+        if Gegnerliste.Vorluna_Boss[8] == 0 and Gegnerliste.Varoth_Boss[8] == 0 and Gegnerliste.Zyrelia_Boss[8] == 0 and Gegnerliste.Malkor_Boss[8] == 0 and Gegnerliste.Dreznar_Boss[8] == 0:
+            del_obj()
+            Boss_Intro.Boss_Intro(root, parent_frame)
+        else:
+            del_obj()
+            Erkunden.explore(root, parent_frame)
         
     
     # Druck des Attack Button
@@ -232,50 +240,59 @@ def Fight(root, parent_frame, gegner):
             Gegner_Ebene()
             
     def back():
-        if gegner[7] == 6:
+        if gegner[6] == "Malikar":
             del_obj()
-            Malikar_Boss()
+            Ending_1.Ending(root, parent_frame)
             
-        elif gegner[7] == 7:
+        elif Gegnerliste.Vorluna_Boss[8] == 0 and Gegnerliste.Varoth_Boss[8] == 0 and Gegnerliste.Zyrelia_Boss[8] == 0 and Gegnerliste.Malkor_Boss[8] == 0 and Gegnerliste.Dreznar_Boss[8] == 0:
             del_obj()
-            Varoth_Boss()
+            Boss_Intro.Boss_Intro(root, parent_frame)
             
-        elif gegner[7] == 8:
-            del_obj()
-            Zyrelia_Boss()
+       
+            if gegner[7] == 6:
+                del_obj()
+                Malikar_Boss()
             
-        elif gegner[7] == 9:
-            del_obj()
-            Malkor_Boss()
+            elif gegner[7] == 7:
+                del_obj()
+                Varoth_Boss()
             
-        elif gegner[7] == 10:
-            del_obj()
-            Dreznar_Boss()
+            elif gegner[7] == 8:
+                del_obj()
+                Zyrelia_Boss()
+            
+            elif gegner[7] == 9:
+                del_obj()
+                Malkor_Boss()
+            
+            elif gegner[7] == 10:
+                del_obj()
+                Dreznar_Boss()
             
 
-        elif gegner[7] == 11:
-            del_obj()
-            Vorluna_Boss()
+            elif gegner[7] == 11:
+                del_obj()
+                Vorluna_Boss()
             
-        elif gegner[7] == 1:
-            del_obj()
-            Gegner_Wald()
+            elif gegner[7] == 1:
+                del_obj()
+                Gegner_Wald()
             
-        elif gegner[7] == 2:
-            del_obj()
-            Gegner_Sumpf()
+            elif gegner[7] == 2:
+                del_obj()
+                Gegner_Sumpf()
             
-        elif gegner[7] == 3:
-            del_obj()
-            Gegner_Kueste()
+            elif gegner[7] == 3:
+                del_obj()
+                Gegner_Kueste()
             
-        elif gegner[7] == 4:
-            del_obj()
-            Gegner_Hoehle()
+            elif gegner[7] == 4:
+                del_obj()
+                Gegner_Hoehle()
             
-        elif gegner[7] == 5:
-            del_obj()
-            Gegner_Ebene()
+            elif gegner[7] == 5:
+                del_obj()
+                Gegner_Ebene()
 
     
     def update_player_stats():
@@ -297,6 +314,7 @@ def Fight(root, parent_frame, gegner):
             
         else: 
             if current_boss_hp <= 0:
+  
                 text_output.config(state=tk.NORMAL)
                 text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
                 text_output.insert(tk.END, "Victory")
@@ -386,7 +404,7 @@ def Fight(root, parent_frame, gegner):
     
     # Erstelle eine Variable zur Verfolgung der Boss-HP
     boss_hp = tk.IntVar()
-    boss_hp.set(100) # Starte mit vollen HP
+    boss_hp.set(10) # Starte mit vollen HP
     
     # Erstelle einen determinierten Ladebalken f�r die Boss-HP
     progress_bar = ttk.Progressbar(root, mode="determinate", variable=boss_hp, length=300)

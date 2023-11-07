@@ -36,7 +36,7 @@ def Boss_Intro(root, parent_frame):
             dlg1_Button.place_forget()
             dlg2_Button.place_forget()
             vrd_label.place_forget()
-            Endboss.Endboss(root, parent_frame)
+            Boss_Intro_2.Endboss(root, parent_frame)
 
     dialogmanager(0)    
     button_width = 18
