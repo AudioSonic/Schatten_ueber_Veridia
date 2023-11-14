@@ -1,17 +1,11 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter import PhotoImage
 from PIL import Image, ImageTk
 from Bilder import *
 from Dialoge import *
 from Dialogsystem import TextboxManager
 import Fight
 import Gegnerliste 
-import Erkunden_Wald as Wald
-import Erkunden_Ebene as Ebene
-import Erkunden_Hoehle as Hoehle
-import Erkunden_Sumpf as Sumpf
-import Erkunden_Kueste as Kueste
 
 
 def zveridia(root, parent_frame):  

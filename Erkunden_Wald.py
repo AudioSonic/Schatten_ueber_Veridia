@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter import PhotoImage
 from PIL import Image, ImageTk
 from Bilder import *
 from Dialoge import *
@@ -10,15 +9,15 @@ import Gegnerliste
 import Erkunden_Ebene as Ebene
 import Erkunden_Hoehle as Hoehle
 import Erkunden_Sumpf as Sumpf
-import Erkunden_ZVeridia as ZVeridia
 import Erkunden_Kueste as Kueste
+import Erkunden as Veridia
 
     
 def forest(root, parent_frame):
     for widget in parent_frame.winfo_children():
         widget.destroy()
 
-    # Erstellt einen Stil f�r die Schrift. In dem Fall Times New Roman
+    # Erstellt einen Stil fr die Schrift. In dem Fall Times New Roman
     style = ttk.Style()
     style.configure("TNR.TLabel", font=("Times New Roman", 14))  
 
@@ -34,7 +33,7 @@ def forest(root, parent_frame):
 
     # Die Startposition des Charakters
     pc_loc = [1, 0]
-    # Das Gitter-W�rterbuch, das Koordinaten mit Aktionen verkn�pft
+    # Das Gitter-Wrterbuch, das Koordinaten mit Aktionen verknpft
     grid = {
         (0, 0): Wald_1, 
         (0, 1): Wald_2, #Gegner Rider
@@ -358,7 +357,7 @@ def forest(root, parent_frame):
     rt_Button = ttk.Button(root, image=rt_image, command=reset)
     rt_Button.place(x=20, y=670)
 
-    # Der Button f�r die Karte
+    # Der Button fr die Karte
     mb_pfad = Image.open(KarteButton)
     mb_image = ImageTk.PhotoImage(mb_pfad)
     mb_Button = ttk.Button(root, image=mb_image, command=MapButton)

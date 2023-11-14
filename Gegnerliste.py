@@ -1,11 +1,5 @@
-from tkinter import dialog
 from Bilder import * 
 import Dialoge
-import Erkunden_Ebene
-import Erkunden_Hoehle
-import Erkunden_Kueste
-import Erkunden_Sumpf
-import Erkunden_Wald
  
 
 

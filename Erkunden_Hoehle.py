@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter import PhotoImage
 from PIL import Image, ImageTk
 from Bilder import *
 from Dialoge import *
@@ -11,7 +10,6 @@ import Erkunden as Veridia
 import Erkunden_Wald as Wald
 import Erkunden_Ebene as Ebene
 import Erkunden_Sumpf as Sumpf
-import Erkunden_ZVeridia as ZVeridia
 import Erkunden_Kueste as Kueste
 
 def cave(root, parent_frame):  

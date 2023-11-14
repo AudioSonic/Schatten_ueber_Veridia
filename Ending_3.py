@@ -1,12 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter import PhotoImage
 from PIL import Image, ImageTk
 from Bilder import *
 from Dialoge import *
 from Dialogsystem import TextboxManager
-import Erkunden as Veridia
-import Erkunden_ZVeridia
 
 def Ending_3(root, parent_frame):
     #Erstellt einen Stil für die Schrift. In dem Fall Times New Roman

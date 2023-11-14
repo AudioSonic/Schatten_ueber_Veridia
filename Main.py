@@ -1,11 +1,7 @@
 import tkinter as tk
 import pygame
-from tkinter import PhotoImage
-from PIL import Image, ImageTk
 from Bilder import *
-from tkinter import ttk
 import Intro
-import Ending_1
 
 
 def mainMenu():
@@ -18,7 +14,7 @@ def mainMenu():
     root.attributes("-fullscreen", False)
     pygame.init()
     
-    pygame.mixer.music.load("C:\GitHub\Schatten_ueber_Veridia\Audio\MainMenu.mp3")
+    pygame.mixer.music.load('.\\Audio\\MainMenu.mp3')
     pygame.mixer.music.play(-1)
     
     # Erstelle ein Frame, um den Inhalt der explore-Funktion anzuzeigen
@@ -36,7 +32,7 @@ def mainMenu():
     StartButton = tk.Button(root, text="START GAME", font=("Times New Roman", 16), command=StartButtonClicked)
     StartButton.place(x=550, y=650)
 
-    # Tkinter-Fenster ausführen 
+    # Tkinter-Fenster ausfhren 
     root.mainloop()
 if __name__ == "__main__":
     mainMenu()

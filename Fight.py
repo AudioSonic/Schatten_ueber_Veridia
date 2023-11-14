@@ -1,10 +1,5 @@
-from ctypes import FormatError
-from os import name
 import tkinter as tk
 from tkinter import ttk
-from tkinter import PhotoImage
-from turtle import delay
-from typing import Callable
 from PIL import Image, ImageTk
 from Bilder import *
 import Gegnerliste
@@ -28,7 +23,7 @@ def Fight(root, parent_frame, gegner):
         widget.destroy()
     
 
-    #Erstellt einen Stil f�r die Schrift. In dem Fall Times New Roman
+    #Erstellt einen Stil fr die Schrift. In dem Fall Times New Roman
     style = ttk.Style()
     style.configure("TNR.TLabel", font=("Times New Roman", 14))  
 
@@ -116,7 +111,7 @@ def Fight(root, parent_frame, gegner):
             if player_STM.get() >=10:
                 if current_boss_hp > 0:
                     text_output.config(state=tk.NORMAL)
-                    text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+                    text_output.delete(1.0, tk.END)  # Lscht den aktuellen Text
                     text_output.insert(tk.END, random.choice(Dialoge.attacktext))
                     text_output.config(state=tk.DISABLED)
                     boss_hp.set(current_boss_hp - gegner[9])
@@ -128,7 +123,7 @@ def Fight(root, parent_frame, gegner):
                
             else:
                 text_output.config(state=tk.NORMAL)
-                text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+                text_output.delete(1.0, tk.END)  # Lscht den aktuellen Text
                 text_output.insert(tk.END, "Not enough stamina for this action recover first")
                 text_output.config(state=tk.DISABLED)
                 update_progress()
@@ -144,7 +139,7 @@ def Fight(root, parent_frame, gegner):
             if player_STM.get() >=25:        
                 if current_boss_hp >= 0:   
                     text_output.config(state=tk.NORMAL)
-                    text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+                    text_output.delete(1.0, tk.END)  # Lscht den aktuellen Text
                     text_output.insert(tk.END,  random.choice(Dialoge.countertext))
                     text_output.config(state=tk.DISABLED)
                     boss_hp.set(current_boss_hp - gegner[10])
@@ -156,7 +151,7 @@ def Fight(root, parent_frame, gegner):
                
             else:
              text_output.config(state=tk.NORMAL)
-             text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+             text_output.delete(1.0, tk.END)  # Lscht den aktuellen Text
              text_output.insert(tk.END, "Not enough stamina for this action")
              text_output.config(state=tk.DISABLED)
              update_progress()
@@ -174,7 +169,7 @@ def Fight(root, parent_frame, gegner):
                 if stamina <= 20: 
                     player_STM.set(stamina + 10)
                     text_output.config(state=tk.NORMAL)
-                    text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+                    text_output.delete(1.0, tk.END)  # Lscht den aktuellen Text
                     text_output.insert(tk.END, "You restored stamina and the enemy hit´s you")
                     text_output.config(state=tk.DISABLED)
                     boss_attack()
@@ -182,7 +177,7 @@ def Fight(root, parent_frame, gegner):
                     update_progress()
                 else:
                     text_output.config(state=tk.NORMAL)
-                    text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+                    text_output.delete(1.0, tk.END)  # Lscht den aktuellen Text
                     text_output.insert(tk.END, "You can not restore more stamina")
                     text_output.config(state=tk.DISABLED)
                     update_progress()
@@ -196,7 +191,7 @@ def Fight(root, parent_frame, gegner):
         if current_player_hp >0: 
             if current_player_hp <60:
                text_output.config(state=tk.NORMAL)
-               text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+               text_output.delete(1.0, tk.END)  # Lscht den aktuellen Text
                text_output.insert(tk.END, "You healed up")
                text_output.config(state=tk.DISABLED)
                player_hp.set(current_player_hp+60)
@@ -205,7 +200,7 @@ def Fight(root, parent_frame, gegner):
                 
             else: 
                 text_output.config(state=tk.NORMAL)
-                text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+                text_output.delete(1.0, tk.END)  # Lscht den aktuellen Text
                 text_output.insert(tk.END, "Es ist noch zu früh einen Tank zu nehmen")
                 text_output.config(state=tk.DISABLED)
                 update_progress()
@@ -215,7 +210,7 @@ def Fight(root, parent_frame, gegner):
     def escape():
         if gegner[7] in range(6,12):
             text_output.config(state=tk.NORMAL)
-            text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+            text_output.delete(1.0, tk.END)  # Lscht den aktuellen Text
             text_output.insert(tk.END, "There is no Escape")
             text_output.config(state=tk.DISABLED)
             
@@ -299,7 +294,7 @@ def Fight(root, parent_frame, gegner):
         show_HP =  f"HP:                  {player_hp.get()}/120"    
         show_STM = f"Stamina:          {player_STM.get()}/30"
         Player_output.config(state=tk.NORMAL)
-        Player_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+        Player_output.delete(1.0, tk.END)  # Lscht den aktuellen Text
         Player_output.insert(tk.END, f"{player}\n{show_HP}\n{show_STM}")
         Player_output.config(state=tk.DISABLED)
 
@@ -316,7 +311,7 @@ def Fight(root, parent_frame, gegner):
             if current_boss_hp <= 0:
   
                 text_output.config(state=tk.NORMAL)
-                text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+                text_output.delete(1.0, tk.END)  # Lscht den aktuellen Text
                 text_output.insert(tk.END, "Victory")
                 text_output.config(state=tk.DISABLED)
                 gegner[8] = 0
@@ -332,7 +327,7 @@ def Fight(root, parent_frame, gegner):
     def GAME_OVER():
        
        text_output.config(state=tk.NORMAL)
-       text_output.delete(1.0, tk.END)  # L�scht den aktuellen Text
+       text_output.delete(1.0, tk.END)  # Lscht den aktuellen Text
        text_output.insert(tk.END, "GAME OVER")
        text_output.config(state=tk.DISABLED)
        player_hp.set(0)
@@ -404,14 +399,14 @@ def Fight(root, parent_frame, gegner):
     boss_hp = tk.IntVar()
     boss_hp.set(100) # Starte mit vollen HP
     
-    # Erstelle einen determinierten Ladebalken f�r die Boss-HP
+    # Erstelle einen determinierten Ladebalken fr die Boss-HP
     progress_bar = ttk.Progressbar(root, mode="determinate", variable=boss_hp, length=300)
     progress_bar.place(x = 450, y = 50)  
  
     #Setzt die Breite der Buttons fest
     button_width = 12
     
-    # Button f�r den Spielerangriff
+    # Button fr den Spielerangriff
     attack_button = ttk.Button(root, text="Attack", padding=(50, 10), width= button_width, style="TNR.TLabel", command=attack)
     attack_button.place(x=43, y=680)
 
