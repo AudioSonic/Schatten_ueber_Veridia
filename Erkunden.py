@@ -225,7 +225,7 @@ def explore(root, parent_frame):
         Map.configure(bg="#6B6B6B")
         Map.attributes("-fullscreen", False)
 
-        m_pfad = Image.open("C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\WorldMap.png")
+        m_pfad = Image.open(WorldMap)
         m_image = ImageTk.PhotoImage(m_pfad)
         m_label = tk.Label(Map, image=m_image)
         m_label.image = m_image  # Wichtig: Behalte eine Referenz auf das Bild, um es anzuzeigen.

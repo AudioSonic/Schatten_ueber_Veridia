@@ -16,7 +16,7 @@ def cave(root, parent_frame):
     for widget in parent_frame.winfo_children():
         widget.destroy()
   
-    # Erstellt einen Stil für die Schrift. In dem Fall Times New Roman
+    # Erstellt einen Stil fï¿½r die Schrift. In dem Fall Times New Roman
     style = ttk.Style()
     style.configure("TNR.TLabel", font=("Times New Roman", 14))  
 
@@ -32,7 +32,7 @@ def cave(root, parent_frame):
 
     # Die Startposition des Charakters
     pc_loc = [1, 0]
-    # Das Gitter-Wörterbuch, das Koordinaten mit Aktionen verknüpft
+    # Das Gitter-Wï¿½rterbuch, das Koordinaten mit Aktionen verknï¿½pft
     grid = {
         (0, 0): Hoehle_1,
         (0, 1): Hoehle_2,
@@ -224,7 +224,7 @@ def cave(root, parent_frame):
             Map.configure(bg="#6B6B6B")
             Map.attributes("-fullscreen", False)
 
-            m_pfad = Image.open("C:\\GitHub\\Schatten_ueber_Veridia\\Bilder\\WorldMap.png")
+            m_pfad = Image.open(WorldMap)
             m_image = ImageTk.PhotoImage(m_pfad)
             m_label = tk.Label(Map, image=m_image)
             m_label.image = m_image  # Wichtig: Behalte eine Referenz auf das Bild, um es anzuzeigen.
@@ -384,7 +384,7 @@ def cave(root, parent_frame):
     rt_Button = ttk.Button(root, image=rt_image, command=reset)
     rt_Button.place(x=20, y=670)
 
-    # Der Button für die Karte
+    # Der Button fï¿½r die Karte
     mb_pfad = Image.open(KarteButton)
     mb_image = ImageTk.PhotoImage(mb_pfad)
     mb_Button = ttk.Button(root, image=mb_image, command=MapButton)
